@@ -8,7 +8,7 @@ SELECT game_click.id as click_id,
 FROM game_game
 INNER JOIN game_click
 ON game_game.uuid = game_click.game_uuid
-WHERE user_id IN (
+WHERE game_click.userid IN (
     SELECT userid
     FROM game_gamewon
     WHERE game_gamewon.count > 499

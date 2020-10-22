@@ -11,7 +11,7 @@ SELECT game_click.click_time as click_time,
 FROM game_game
 INNER JOIN game_click
 ON game_game.uuid = game_click.game_uuid
-WHERE user_id IN (
+WHERE game_click.userid IN (
     SELECT userid
     FROM game_gamewon
     WHERE game_gamewon.count > 29
