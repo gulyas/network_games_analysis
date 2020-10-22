@@ -11,8 +11,8 @@ SELECT game_gamewinner.userid as user_id,
 FROM game_gamewinner
 INNER JOIN game_game
 ON game_gamewinner.game_id = game_game.id
-WHERE user_id IN (
-    SELECT COUNT(userid)
+WHERE game_gamewinner.userid IN (
+    SELECT userid
     FROM game_gamewon
     WHERE game_gamewon.count > 29
 );

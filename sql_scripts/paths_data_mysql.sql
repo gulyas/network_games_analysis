@@ -12,7 +12,7 @@ FROM game_game
 INNER JOIN game_click
 ON game_game.uuid = game_click.game_uuid
 WHERE user_id IN (
-    SELECT COUNT(userid)
+    SELECT userid
     FROM game_gamewon
     WHERE game_gamewon.count > 29
 )
