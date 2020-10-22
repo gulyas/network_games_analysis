@@ -1,4 +1,4 @@
---Aggregate data from Postgres Database for examining path stretch
+/*Aggregate data from Postgres Database for examining path stretch*/
 
 SELECT game_click.id as click_id,
        game_click.created as click_created,
