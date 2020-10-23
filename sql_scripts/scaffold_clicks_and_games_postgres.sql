@@ -10,7 +10,7 @@ FROM game_game
 INNER JOIN game_click
 ON game_game.id = game_click.game_id
 WHERE player_id IN (
-    SELECT COUNT(id), player_id
+    SELECT player_id
     FROM game_game
     WHERE won IS TRUE
     GROUP BY player_id
