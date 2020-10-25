@@ -46,7 +46,7 @@ def parse_data(filename):
                     user_last_clicks.append({"article": article, "game": game})
                     user_count += 1
                     idx = len(users) - 1
-                    print("User {} created with index {}".format(user, idx))
+                    print("At line {} user {} created with index {}".format(line_count, user, idx))
 
                 # Add edge to the users graph
                 if user_last_clicks[idx][game] == game:
