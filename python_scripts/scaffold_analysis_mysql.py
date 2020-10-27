@@ -8,6 +8,7 @@ import json
 import igraph
 
 PATH = "D:\\network_games\\"
+SAVE_PATH = "D:\\network_games\\scaffold"
 FILENAME = "scaffold_data_mysql.csv"
 
 
@@ -55,7 +56,11 @@ def parse_data(filename):
                     user_graphs[idx].add_vertex(name=article)
                 if user_last_clicks[idx]['game'] == game:
                     if user_last_clicks[idx]['article'] != article:
-                        user_graphs[idx].add_edge(source=user_last_clicks[idx]['article'], target=article)
+                        try:
+                            e = user_graphs[idx].es.select(_source=user_last_clicks[idx]['article'], _target=article)
+                            e['weight'] += 1
+                        except ValueError:
+                            user_graphs[idx].add_edge(source=user_last_clicks[idx]['article'], target=article, weight=1)
 
                 user_last_clicks[idx] = {"article": article, "game": game}
 
@@ -76,7 +81,7 @@ def analyse_graphs(user_graphs, users):
         apl = user_graph.average_path_length(directed=True, unconn=True)
         diameter = user_graph.diameter(directed=True, unconn=True)
         average_deg = igraph.mean(user_graph.degree())
-        degree_dist = user_graph.degree_distribution()
+        # degree_dist = user_graph.degree_distribution()
         giant_component_size = max(user_graph.components().sizes())
         user_graph_data.append(
             {
@@ -86,24 +91,23 @@ def analyse_graphs(user_graphs, users):
                 "apl": apl,
                 "diameter": diameter,
                 "avg_degree": average_deg,
-                "degree_dist": degree_dist,
                 "giant_component_size": giant_component_size
             }
         )
 
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
-                        "vertex_label_size": 8, "edge_curved": True}
+                        "vertex_label_size": 8, "edge_curved": False}
 
         # Set the layout
-        layout = user_graph.layout_lgl()
+        layout = user_graph.layout_kk()
         visual_style["layout"] = layout
-        save_name = f'{users[i]}.eps'
-        igraph.plot(user_graph, save_name, **visual_style)
+        save_name = f'mysql_{users[i]}.eps'
+        igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
         print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
 
-    # Saving results
-    with open('scaffold_results_mysql.json', 'w') as fp:
-        json.dump(user_graph_data, fp)
+        # Saving results
+        with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
+            json.dump(user_graph_data, fp)
 
 
 def main():
