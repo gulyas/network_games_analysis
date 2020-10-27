@@ -4,6 +4,7 @@ Data from the MySQL Database.
 """
 import csv
 import json
+from datetime import datetime
 from .wikiracer import check_pages, find_shortest_path, redirected
 
 PATH = "D:\\network_games\\"
@@ -47,8 +48,9 @@ def parse_data(filename):
                 click_count = row[1]
                 start_article = row[2]
                 goal_article = row[3]
-                start_time = row[5]
-                end_time = row[6]
+                start_time = datetime.strptime(row[5], '%Y-%m-%d %H:%M:%S')
+                end_time = datetime.strptime(row[6], '%Y-%m-%d %H:%M:%S')
+                timediff = end_time - start_time
 
                 # New user found
                 try:

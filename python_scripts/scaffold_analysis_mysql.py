@@ -7,7 +7,7 @@ import json
 
 import igraph
 
-PATH = "D:\\network_games\\scaffold"
+PATH = "D:\\network_games\\"
 FILENAME = "scaffold_data_mysql.csv"
 
 
@@ -59,6 +59,7 @@ def parse_data(filename):
 
                 user_last_clicks[idx] = {"article": article, "game": game}
 
+    print("{} users created".format(user_count))
     return user_graphs, users
 
 
@@ -67,16 +68,17 @@ def analyse_graphs(user_graphs, users):
     Analyses the click graphs of the users.
     """
     user_graph_data = []
+    print("Analysing user graphs...")
 
-    for i in range(len(user_graphs)):
-        nodes = user_graphs[i].vcount()
-        edges = user_graphs[i].ecount()
-        apl = user_graphs[i].average_path_length(directed=True, unconn=True)
-        aspl = igraph.mean(user_graphs[i].shortest_paths())
-        diameter = user_graphs[i].diameter(directed=True, unconn=True)
-        average_deg = igraph.mean(user_graphs[i].degree())
-        degree_dist = user_graphs[i].degree_distribution()
-        giant_component_size = max(user_graphs[i].components().sizes())
+    for i, user_graph in enumerate(user_graphs):
+        nodes = user_graph.vcount()
+        edges = user_graph.ecount()
+        apl = user_graph.average_path_length(directed=True, unconn=True)
+        aspl = igraph.mean(user_graph.shortest_paths())
+        diameter = user_graph.diameter(directed=True, unconn=True)
+        average_deg = igraph.mean(user_graph.degree())
+        degree_dist = user_graph.degree_distribution()
+        giant_component_size = max(user_graph.components().sizes())
         user_graph_data.append(
             {
                 "user": users[i],
@@ -91,29 +93,15 @@ def analyse_graphs(user_graphs, users):
             }
         )
 
-        visual_style = {}
-
-        # Set bbox and margin
-        visual_style["bbox"] = (3000, 3000)
-        visual_style["margin"] = 17
-
-        # Set vertex colours
-        visual_style["vertex_color"] = 'grey'
-
-        # Set vertex size
-        visual_style["vertex_size"] = 20
-
-        # Set vertex lable size
-        visual_style["vertex_label_size"] = 8
-
-        # Don't curve the edges
-        visual_style["edge_curved"] = False
+        visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
+                        "vertex_label_size": 8, "edge_curved": True}
 
         # Set the layout
-        layout = user_graphs[i].layout_lgl()
+        layout = user_graph.layout_lgl()
         visual_style["layout"] = layout
-        save_name = users[i] + ".eps"
-        igraph.plot(user_graphs[i], save_name, **visual_style)
+        save_name = f'{users[i]}.eps'
+        igraph.plot(user_graph, save_name, **visual_style)
+        print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
 
     # Saving results
     with open('scaffold_results_mysql.json', 'w') as fp:
