@@ -8,6 +8,7 @@ from datetime import datetime
 from .wikiracer import check_pages, find_shortest_path, redirected
 
 PATH = "D:\\network_games\\"
+SAVE_PATH = "D:\\network_games\\paths\\"
 FILENAME = "paths_data_mysql.csv"
 EXPORT_FILE_NAME = "paths_stats.json"
 
@@ -88,7 +89,7 @@ def save_data(users, user_stats, global_stats):
         "global_stats": global_stats
     }
     json_data = json.dumps(data, indent=4)
-    with open(EXPORT_FILE_NAME, 'w') as fp:
+    with open(SAVE_PATH + EXPORT_FILE_NAME, 'w') as fp:
         print(json_data, file=fp)
 
 

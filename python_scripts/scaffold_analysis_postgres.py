@@ -7,8 +7,8 @@ import json
 
 import igraph
 
-PATH = "D:\\network_games\\scaffold"
-SAVE_PATH = "D:\\network_games\\scaffold"
+PATH = "D:\\network_games\\"
+SAVE_PATH = "D:\\network_games\\scaffold\\"
 FILENAME = "scaffold_data_postgres.csv"
 
 
@@ -52,8 +52,9 @@ def parse_data(filename):
                 user_graphs[idx].add_vertex(name=article)
             if user_last_clicks[idx]['game'] == game:
                 if user_last_clicks[idx]['article'] != article:
+                    # Add edge or increase its weight
                     try:
-                        e = user_graphs[idx].es.select(_source=user_last_clicks[idx]['article'], _target=article)
+                        e = user_graphs[idx].es.find(_source=user_last_clicks[idx]['article'], _target=article)
                         e['weight'] += 1
                     except ValueError:
                         user_graphs[idx].add_edge(source=user_last_clicks[idx]['article'], target=article, weight=1)
@@ -91,19 +92,34 @@ def analyse_graphs(user_graphs, users):
             }
         )
 
+        colors = ["orange", "darkorange", "red", "blue"]
+        for e in user_graph.es:
+            weight = e['weight']
+            if weight >= 15:
+                e['color'] = colors[3]
+            elif 8 <= weight < 15:
+                e['color'] = colors[2]
+            elif 3 <= weight < 8:
+                e['color'] = colors[1]
+            else:
+                e['color'] = colors[0]
+
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
                         "vertex_label_size": 8, "edge_curved": False}
 
         # Set the layout
-        layout = user_graph.layout_kk()
-        visual_style["layout"] = layout
-        save_name = f'postgres_{users[i]}.eps'
-        igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
-        print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
-
+        try:
+            layout = user_graph.layout("fr")
+            visual_style["layout"] = layout
+            save_name = f'postgres_{users[i]}.eps'
+            igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
+            print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
+        except MemoryError:
+            print("Memory error. Skipping to plot {}'s graph.".format(users[i]))
+            continue
         # Saving results
         with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
-            json.dump(user_graph_data, fp)
+            json.dump(user_graph_data, fp, indent=4)
 
 
 def main():

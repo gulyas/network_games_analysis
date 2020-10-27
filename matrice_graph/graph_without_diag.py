@@ -1,5 +1,6 @@
 import igraph
 
+SAVE_PATH = "D:\\network_games\\matrice"
 
 # mind az 512 állapothoz egyértelműen hozzárendel egy számot 0 és 511 között
 def getId(state):
@@ -92,7 +93,7 @@ def main():
             graph.add_edge(i, neighbourId)
 
     # többszörös élek törlése
-    # graph.simplify(True, True)
+    graph.simplify(multiple=True)
     graph.vs["label"] = range(graph.vcount())
 
     components = graph.components()
@@ -113,13 +114,13 @@ def main():
     # for component in components:
     #    print(component)
 
-    layout = graph.layout("kk")
-    visual_style = {"vertex_size": 40, "edge_width": 2, "layout": layout, "bbox": (4000, 4000)}
+    layout = graph.layout("lgl")
+    visual_style = {"vertex_size": 40, "edge_width": 2, "layout": layout, "bbox": (3000, 3000)}
 
-    # igraph.plot(graph, "graphall.pdf", **visual_style)
+    igraph.plot(graph, SAVE_PATH + "graphall.eps", **visual_style)
 
     # Save graph
-    graph.save("matrice_graph.gml")
+    graph.save(SAVE_PATH + "matrice_graph.gml")
 
 
 if __name__ == '__main__':

@@ -6,28 +6,34 @@ import igraph
 
 GRAPH_FILE = "..\\matrice_graph\\matrice_graph.gml"
 DATA_FILE = "..\\json_data\\matrice-36856749-export.json"
-PATH = "D:\\network_games\\"
+SAVE_PATH = "D:\\network_games\\matrice\\"
 
 
 def read_graph(filename):
+    """Reads whole graph from file."""
     return igraph.load(filename)
 
 
-def parse_data(filename):
-    data = {}
+def load_data(filename):
+    """Loads data from Firebase export."""
     with open(filename, "r") as json_file:
         data = json.load(json_file)
-        player_games = data["games"]
+        return data['games']
 
-        for player in player_games:
 
-            for game in player:
-                pass
+def analyse_data(data, graph):
+
+    for player_games in data:
+
+        for game in player_games:
+            pass
 
 
 def main():
     graph = read_graph(GRAPH_FILE)
-    parse_data(DATA_FILE)
+    games_data = load_data(DATA_FILE)
+
+    analyse_data(games_data, graph)
 
 
 if __name__ == '__main__':
