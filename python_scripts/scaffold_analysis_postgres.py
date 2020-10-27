@@ -45,13 +45,13 @@ def parse_data(filename):
                 print("At line {} user {} created with index {}".format(line_count, user, idx))
 
             # Add edge to the users graph
-            if user_last_clicks[idx][game] == game:
-                if user_last_clicks[idx][article] != article:
-                    try:
-                        user_graphs[idx].vs.find(article)
-                    except ValueError:
-                        user_graphs[idx].add_vertex(name=article)
-                    user_graphs[idx].add_edge(source=user_last_clicks[idx][article], target=article)
+            try:
+                user_graphs[idx].vs.find(article)
+            except ValueError:
+                user_graphs[idx].add_vertex(name=article)
+            if user_last_clicks[idx]['game'] == game:
+                if user_last_clicks[idx]['article'] != article:
+                    user_graphs[idx].add_edge(source=user_last_clicks[idx]['article'], target=article)
 
             user_last_clicks[idx] = {"article": article, "game": game}
 
@@ -70,7 +70,6 @@ def analyse_graphs(user_graphs, users):
         nodes = user_graph.vcount()
         edges = user_graph.ecount()
         apl = user_graph.average_path_length(directed=True, unconn=True)
-        aspl = igraph.mean(user_graph.shortest_paths())
         diameter = user_graph.diameter(directed=True, unconn=True)
         average_deg = igraph.mean(user_graph.degree())
         degree_dist = user_graph.degree_distribution()
@@ -81,7 +80,6 @@ def analyse_graphs(user_graphs, users):
                 "node_count": nodes,
                 "edge_count": edges,
                 "apl": apl,
-                "aspl": aspl,
                 "diameter": diameter,
                 "avg_degree": average_deg,
                 "degree_dist": degree_dist,
