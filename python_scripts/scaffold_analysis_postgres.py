@@ -23,7 +23,7 @@ def parse_data(filename):
     user_last_clicks = []
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
-        csv_reader = csv.reader(csvfile, delimiter='\t')
+        csv_reader = csv.reader(csvfile, delimiter=',')
         print("Parsed file: {}".format(FILENAME))
         line_count = 0
         user_count = 0
@@ -118,7 +118,7 @@ def analyse_graphs(user_graphs, users):
             print("Memory error. Skipping to plot {}'s graph.".format(users[i]))
             continue
         # Saving results
-        with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
+        with open(SAVE_PATH + 'scaffold_results_postgres.json', 'w') as fp:
             json.dump(user_graph_data, fp, indent=4)
 
 
