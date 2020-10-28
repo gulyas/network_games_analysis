@@ -112,7 +112,7 @@ def analyse_graphs(user_graphs, users):
 
         # Set the layout
         try:
-            layout = user_graph.layout("fr")
+            layout = user_graph.layout("kk")
             visual_style["layout"] = layout
             save_name = f'mysql_{users[i]}.eps'
             igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
