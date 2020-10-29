@@ -73,7 +73,7 @@ def parse_data(filename):
 
                 user_stats[idx]['user_clicks'].append(click_count)
                 user_stats[idx]['shortest_clicks'].append(shortest_clicks)
-                user_stats[idx]['durations'].append(timediff)  # TODO
+                user_stats[idx]['durations'].append(timediff)
 
                 global_stats['user_clicks'].append(click_count)
                 global_stats['shortest_clicks'].append(shortest_clicks)
@@ -83,6 +83,7 @@ def parse_data(filename):
 
 
 def save_data(users, user_stats, global_stats):
+    """Saves statistics in JSON format"""
     data = {
         "users": users,
         "user_stats": user_stats,
