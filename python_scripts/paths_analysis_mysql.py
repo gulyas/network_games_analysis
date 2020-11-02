@@ -5,16 +5,23 @@ Data from the MySQL Database.
 import csv
 import json
 from datetime import datetime
-from .wikiracer import check_pages, find_shortest_path, redirected
+import requests
+from python_scripts.wikiracer import check_pages, find_shortest_path, redirected
 
 PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\paths\\"
-FILENAME = "paths_data_mysql.csv"
+FILENAME = "paths_data_mysql2.csv"
 EXPORT_FILE_NAME = "paths_stats.json"
 
-BASE_URL = "https://en.wikipedia.org/wiki/"
+BASE_URL = "http://localhost:5000/paths"
 
 LAST_READ_LINES = 0
+
+MANUAL_SHORTEST = True
+
+
+def get_shortest_input(start, goal):
+    return input(f'Provide shortest clicks for {start} to {goal}:')
 
 
 def parse_data(filename):
@@ -65,19 +72,25 @@ def parse_data(filename):
                     save_data(users, user_stats, global_stats)
 
                 # Finding shortest path
-                start_url = BASE_URL + start_article
-                goal_url = BASE_URL + goal_article
-                if check_pages(start_url, goal_url):
-                    result = find_shortest_path(start_url, redirected(goal_url))
-                    shortest_clicks = len(result['path'])
+                print(f'[Line: {line_count}] Searching shortest path between {start_article} and {goal_article}...')
+
+                data = {"source": start_article, "target": goal_article}
+                # data = json.dumps(data)
+
+                response = requests.post(BASE_URL, json=data)
+                if response.status_code == 200:
+                    response = response.json()
+                    shortest_clicks = len(response["paths"][0])
+                else:
+                    shortest_clicks = -1
 
                 user_stats[idx]['user_clicks'].append(click_count)
                 user_stats[idx]['shortest_clicks'].append(shortest_clicks)
-                user_stats[idx]['durations'].append(timediff)
+                user_stats[idx]['durations'].append(timediff.total_seconds())
 
                 global_stats['user_clicks'].append(click_count)
                 global_stats['shortest_clicks'].append(shortest_clicks)
-                global_stats['durations'].append(timediff)
+                global_stats['durations'].append(timediff.total_seconds())
 
     return users, user_stats
 

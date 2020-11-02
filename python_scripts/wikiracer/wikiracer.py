@@ -2,6 +2,7 @@ import json
 import time
 import requests
 import argparse
+import functools
 from bs4 import BeautifulSoup
 from collections import deque
 
@@ -108,7 +109,7 @@ def main(args):
     """
     Executes the WikiRacer for args (input arguments).
     """
-    #input_json = args.input_json
+    # input_json = args.input_json
     input_json = '{"start": "https://en.wikipedia.org/wiki/Malaria", "end": "https://en.wikipedia.org/wiki/Geophysics"}'
     data = json.loads(input_json)
     start = data["start"]
