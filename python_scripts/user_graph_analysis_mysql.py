@@ -1,5 +1,5 @@
 """
-Examines scaffold hypothesis.
+Examines scaffold hypothesis on a particular user.
 Data from the MySQL Database.
 """
 import csv

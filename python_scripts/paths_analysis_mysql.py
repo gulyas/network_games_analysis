@@ -5,8 +5,8 @@ Data from the MySQL Database.
 import csv
 import json
 from datetime import datetime
+
 import requests
-from python_scripts.wikiracer import check_pages, find_shortest_path, redirected
 
 PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\paths\\"
@@ -15,28 +15,29 @@ EXPORT_FILE_NAME = "paths_stats.json"
 
 BASE_URL = "http://localhost:5000/paths"
 
-LAST_READ_LINES = 0
-
-MANUAL_SHORTEST = True
+LAST_READ_LINES = 16750
 
 
-def get_shortest_input(start, goal):
-    return input(f'Provide shortest clicks for {start} to {goal}:')
+def load_stats(filename):
+    """
+    Loads statistics.
+    :param filename: File to be loaded.
+    :return: users, user_stats, global_stats arrays
+    """
+    with open(filename, 'r', encoding='utf-8') as jsonfile:
+        data = json.load(jsonfile)
+        return data["users"], data["user_stats"], data["global_stats"]
 
 
-def parse_data(filename):
+def parse_data(filename, users, user_stats, global_stats):
     """
     Parses data from CSV
+    :param global_stats: Global stats
+    :param user_stats: Array of user stats
+    :param users: Array of users
     :param filename: Input file name
     :return:
     """
-    users = []
-    user_stats = []
-    global_stats = {
-        "user_clicks": [],
-        "shortest_clicks": [],
-        "durations": []
-    }
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
@@ -49,6 +50,7 @@ def parse_data(filename):
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
             elif line_count <= LAST_READ_LINES:
+                line_count += 1
                 continue
             else:
                 line_count += 1
@@ -108,7 +110,8 @@ def save_data(users, user_stats, global_stats):
 
 
 def main():
-    users, user_stats = parse_data(PATH + FILENAME)
+    users, user_stats, global_stats = load_stats(SAVE_PATH + EXPORT_FILE_NAME)
+    parse_data(PATH + FILENAME, users, user_stats, global_stats)
 
 
 if __name__ == '__main__':
