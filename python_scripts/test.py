@@ -2,8 +2,9 @@ from igraph import Graph
 
 
 def main():
-    g = Graph()
-    print(g)
+    g = Graph().K_Regular(20,3)
+    for edge in g.es:
+        print(edge)
 
 
 if __name__ == '__main__':

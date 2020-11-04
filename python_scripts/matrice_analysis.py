@@ -32,16 +32,25 @@ def analyse_data(data, graph):
     for player, player_games in data.items():
         print("Analysing {}'s data...".format(player))
         player_stats = {
+            "user": player,
             "user_clicks": [],
             "shortest_clicks": [],
             "durations": []
         }
         player_graph = copy.deepcopy(graph)
         player_graph.es['weight'] = [0 in range(player_graph.ecount())]
+        game_count = 0
 
         for game in player_games.values():
-            player_stats['user_clicks'].append(game['chainLength'])
-            player_stats['durations'].append(game['duration'])
+            clicks = game['chainLength']
+            duration = game['duration']
+            # Discard too long games
+            if clicks > 25 or duration > 100:
+                print("Discarding long game.")
+                continue
+            game_count += 1
+            player_stats['user_clicks'].append(clicks)
+            player_stats['durations'].append(duration)
             start = game['startState']
             end = game['endState']
             shortest = graph.shortest_paths_dijkstra(source=start, target=end, weights=None)
@@ -59,18 +68,28 @@ def analyse_data(data, graph):
                 except ValueError:
                     print("Not existing edge found.")
 
+        if game_count < 35:
+            print("Skipping rookie player.")
+            continue
         # Plotting graph
-        colors = ["grey", "orange", "red", "blue"]
+        colors = ["lightgrey", "orange", "red", "blue"]
         for e in player_graph.es:
             weight = e['weight']
-            if weight >= 15:
+            if weight >= 10:
                 e['color'] = colors[3]
-            elif 8 <= weight < 15:
+            elif 5 <= weight < 10:
                 e['color'] = colors[2]
-            elif 2 <= weight < 8:
+            elif 2 <= weight < 5:
                 e['color'] = colors[1]
             else:
                 e['color'] = colors[0]
+
+        """
+        # Plotting only edges with significant weight
+        for edge in player_graph.es:
+            if edge['weight'] <= 5:
+                player_graph.delete_edges(edge)
+        """
 
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
                         "vertex_label_size": 8, "edge_curved": False, "layout": player_graph.layout("fr")}
@@ -94,6 +113,7 @@ def analyse_data(data, graph):
         plt.grid()
         fig.savefig(SAVE_PATH + f"matrice_{player}_ew.png")
         # plt.show()
+        plt.close(fig)
         # Saving results
         players_stats.append(player_stats)
         with open(SAVE_PATH + 'matrice_results.json', 'w') as fp:

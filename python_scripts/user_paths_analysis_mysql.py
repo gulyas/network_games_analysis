@@ -16,7 +16,7 @@ PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\paths\\"
 FILENAME = "paths_data_mysql2.csv"
 
-USER = "b3b6"
+USER = "nbobbed37"
 
 BASE_URL = "http://localhost:5000/paths"
 
@@ -24,6 +24,8 @@ BASE_URL = "http://localhost:5000/paths"
 def choose_random(list):
     """Chooses a random element from a list"""
     n = len(list)
+    if n == 1:
+        return list[0]
     idx = randint(0, n - 1)
     return list[idx]
 
@@ -85,7 +87,10 @@ def parse_data(filename):
                     if response.status_code == 200:
                         response = response.json()
                         paths = response["paths"]
-                        chosen_path = choose_random(paths)
+                        try:
+                            chosen_path = choose_random(paths)
+                        except ValueError:
+                            continue
                         add_to_graph(shortest_graph, chosen_path)
                         shortest_clicks = len(chosen_path)
                     else:
@@ -134,6 +139,7 @@ def plot_data(user_stat):
     ax1[2].plot(x, diffs, color=color, label='difference')
     ax1[2].axhline(y=avg, color='r', label=f'average = {avg}')
     ax1[2].tick_params(axis='y', labelcolor=color)
+    ax1[2].legend()
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.show()
