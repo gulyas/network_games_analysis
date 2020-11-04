@@ -32,9 +32,11 @@ def parse_data(filename):
         user_graph = igraph.Graph()
 
         for row in csv_reader:
+            # Header row
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
+            # Ignoring data from other users
             elif row[2] == USER:
                 line_count += 1
                 user = row[2]
@@ -48,7 +50,7 @@ def parse_data(filename):
                     user_graph.add_vertex(name=article)
                 if user_last_clicks.get('game', "") == game:
                     if user_last_clicks['article'] != article:
-                        # Add edge or increase its weight
+                        # Either add edge or increase its weight if it already exists
                         try:
                             e = user_graph.es.find(_source=user_last_clicks['article'], _target=article)
                             e['weight'] += 1
@@ -63,13 +65,13 @@ def parse_data(filename):
     return user_graph, user
 
 
-def analyse_graphs(user_graph, user):
+def analyse_graph(user_graph, user):
     """
-    Analyses the click graphs of the users.
+    Analyses the scaffold graph of the current user.
     """
     print("Analysing user graph...")
 
-    # Creating edge weights distribution
+    # Creating edge weight distribution
     edge_weights = user_graph.es['weight']
     counts = np.bincount(edge_weights)
     x = range(counts.size)
@@ -118,9 +120,15 @@ def analyse_graphs(user_graph, user):
         print("Memory error. Skipping to plot {}'s graph.".format(user))
 
 
+def save_graph(graph):
+    """Saves scaffold graph in GML format"""
+    igraph.save(graph, filename=SAVE_PATH + f'mysql_{USER}.gml')
+
+
 def main():
-    user_graphs, users = parse_data(PATH + FILENAME)
-    analyse_graphs(user_graphs, users)
+    user_graph, user = parse_data(PATH + FILENAME)
+    analyse_graph(user_graph, user)
+    save_graph(user_graph)
 
 
 if __name__ == '__main__':

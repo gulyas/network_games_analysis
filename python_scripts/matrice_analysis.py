@@ -4,6 +4,8 @@ Examining data from the Matrice puzzle game for Android devices.
 import copy
 import json
 import igraph
+import numpy as np
+import matplotlib.pyplot as plt
 
 GRAPH_FILE = "..\\matrice_graph\\matrice_graph.gml"
 DATA_FILE = "..\\json_data\\matrice-36856749-export.json"
@@ -76,6 +78,22 @@ def analyse_data(data, graph):
         save_name = f'matrice_{player}.eps'
         igraph.plot(player_graph, SAVE_PATH + save_name, **visual_style)
         print("Graph from {} analysed and plotted to {}".format(player, save_name))
+
+        # Creating edge weight distribution
+        edge_weights = player_graph.es['weight']
+        counts = np.bincount(edge_weights)
+        x = range(counts.size)
+
+        fig, ax = plt.subplots()
+        ax.plot(x, counts, 'bo')
+        ax.set_xlabel("Weights (Number of uses)")
+        ax.set_ylabel("Occurrences (Number of edges with particular weight)")
+        ax.set_title("Edge weight distribution")
+        plt.yscale("log")
+        plt.xscale("log")
+        plt.grid()
+        fig.savefig(SAVE_PATH + f"matrice_{player}_ew.png")
+        # plt.show()
         # Saving results
         players_stats.append(player_stats)
         with open(SAVE_PATH + 'matrice_results.json', 'w') as fp:
