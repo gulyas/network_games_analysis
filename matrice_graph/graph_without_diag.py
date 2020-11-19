@@ -2,6 +2,7 @@ import igraph
 
 SAVE_PATH = "D:\\network_games\\matrice"
 
+
 # mind az 512 állapothoz egyértelműen hozzárendel egy számot 0 és 511 között
 def getId(state):
     cellId = 0
@@ -117,10 +118,10 @@ def main():
     layout = graph.layout("lgl")
     visual_style = {"vertex_size": 40, "edge_width": 2, "layout": layout, "bbox": (3000, 3000)}
 
-    igraph.plot(graph, SAVE_PATH + "graphall.eps", **visual_style)
+    # igraph.plot(graph, SAVE_PATH + "graphall.eps", **visual_style)
 
     # Save graph
-    graph.save(SAVE_PATH + "matrice_graph.gml")
+    # graph.save(SAVE_PATH + "matrice_graph.gml")
 
 
 if __name__ == '__main__':
