@@ -59,7 +59,7 @@ def rotate(state, id, isRow):
 
 def main():
     # ---- MAIN PART ----
-    graph = igraph.Graph(512)
+    graph = igraph.Graph(n=512, directed=True)
 
     for i in range(512):
         state = getState(i)
@@ -103,8 +103,8 @@ def main():
     print(component_sizes)
     # print(components.giant())
 
-    diam = igraph.Graph.diameter(graph, False, False, None)
-    apl = igraph.Graph.average_path_length(graph, False, False)
+    diam = igraph.Graph.diameter(graph, True, False, None)
+    apl = igraph.Graph.average_path_length(graph, True, False)
     cl = igraph.Graph.transitivity_undirected(graph)
     print(graph.summary())
     print(graph.vcount(), graph.ecount())

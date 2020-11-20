@@ -29,8 +29,13 @@ def load_data(filename):
 
 def analyse_data(data, graph):
     players_stats = []
+    player_count = 0
+    good_player_count = 0
+    all_game_count = 0
     for player, player_games in data.items():
         print("Analysing {}'s data...".format(player))
+        player_count += 1
+        good_player_count += 1
         player_stats = {
             "user": player,
             "user_clicks": [],
@@ -45,7 +50,7 @@ def analyse_data(data, graph):
             clicks = game['chainLength']
             duration = game['duration']
             # Discard too long games
-            if clicks > 25 or duration > 100:
+            if clicks > 30 or duration > 100:
                 print("Discarding long game.")
                 continue
             game_count += 1
@@ -70,7 +75,9 @@ def analyse_data(data, graph):
 
         if game_count < 35:
             print("Skipping rookie player.")
+            good_player_count -= 1
             continue
+        all_game_count += game_count
         # Plotting graph
         colors = ["lightgrey", "orange", "red", "blue"]
         for e in player_graph.es:
@@ -118,6 +125,8 @@ def analyse_data(data, graph):
         players_stats.append(player_stats)
         with open(SAVE_PATH + 'matrice_results.json', 'w') as fp:
             json.dump(players_stats, fp, indent=2)
+
+    print(f'Players: {player_count}, good players: {good_player_count}, games: {all_game_count}')
 
 
 def main():
