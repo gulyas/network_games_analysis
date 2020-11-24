@@ -1,0 +1,73 @@
+"""
+Analysing the graph behind the Matrice android game.
+"""
+import igraph
+import numpy as np
+import matplotlib.pyplot as plt
+from pylab import hist
+
+GRAPH_FILE = "..\\matrice_graph\\matrice_graph.gml"
+SAVE_PATH = "D:\\network_games\\matrice\\"
+
+
+def load_graph(filename):
+    return igraph.load(filename=filename)
+
+
+def plot_degree_dist(graph):
+    ba_graph = igraph.Graph.Barabasi(n=512, directed=True)
+
+    # Plotting mean degrees and standard deviation
+    degrees = graph.degree()
+    avg = np.mean(degrees)
+    stdev = np.std(degrees)
+
+    ba_degrees = ba_graph.degree()
+    ba_avg = np.mean(ba_degrees)
+    ba_stdev = np.std(ba_degrees)
+
+    fig, (ax0, ax1) = plt.subplots(nrows=1, ncols=2)
+    fig.suptitle("Mean degree and standard deviation")
+    ax0.errorbar(1, avg, yerr=stdev, fmt='-o', elinewidth=2, capsize=4)
+    ax0.set_title('Matrice graph')
+    ax0.set_ylabel('Degree')
+    ax0.axes.get_xaxis().set_visible(False)
+    ax0.set_ylim(11, 19)
+
+    ax1.errorbar(1, ba_avg, yerr=ba_stdev, fmt='-o', elinewidth=2, capsize=4, c='green')
+    ax1.set_title('BA scale-free graph')
+    ax1.axes.get_xaxis().set_visible(False)
+    ax1.set_ylim(-2, 6)
+
+    plt.show()
+    # fig.savefig(SAVE_PATH + f'degree_mean_std.png')
+    # fig.close()
+
+    # Plotting degree distributions
+    degree_dist = np.bincount(graph.degree())
+    x = range(degree_dist.size)
+    ba_degree_dist = np.bincount(ba_graph.degree())
+    ba_x = range(ba_degree_dist.size)
+
+    fig = plt.figure()
+    fig.suptitle("Degree distributions")
+    plt.plot(x, degree_dist, c="blue", label="Matrice")
+    plt.plot(ba_x, ba_degree_dist, c="green", label="BA")
+    plt.xlabel("Number of connections")
+    plt.ylabel("Number of nodes")
+    plt.xscale("log")
+    plt.yscale("log")
+    plt.legend()
+
+    plt.show()
+    fig.savefig(SAVE_PATH + f'degree_dist.png')
+    # fig.close()
+
+
+def main():
+    graph = load_graph(GRAPH_FILE)
+    plot_degree_dist(graph)
+
+
+if __name__ == '__main__':
+    main()

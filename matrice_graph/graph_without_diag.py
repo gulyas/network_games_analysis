@@ -110,7 +110,8 @@ def main():
     print(graph.vcount(), graph.ecount())
     print("diameter: ", diam, " path length: ", apl, " clustering: ", cl)
     # print(graph.degree())
-    print("average degree: ", igraph.mean(graph.degree()))
+    print("average out degree: ", igraph.mean(graph.outdegree()))
+    print("average in degree: ", igraph.mean(graph.indegree()))
 
     # for component in components:
     #    print(component)
