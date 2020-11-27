@@ -1,4 +1,4 @@
-/*Aggregate data from MySQL Database for examining path stretch*/
+--Aggregate data from MySQL Database for examining path stretch
 
 SELECT game_click.click_time as click_time,
        game_click.userid as user_id,

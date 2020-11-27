@@ -1,5 +1,5 @@
-/*Aggregate data from MySQL Database for examining path stretch
-  Using the game_gamewinner table instead of counting clicks separately*/
+--Aggregate data from MySQL Database for examining path stretch
+--Using the game_gamewinner table instead of counting clicks separately
 
 SELECT game_gamewinner.userid as user_id,
        game_gamewinner.clicks as clicks,

@@ -1,4 +1,4 @@
-/*Aggregates data from the Postgres Database for examining scaffold theory*/
+--Aggregates data from the Postgres Database for examining scaffold theory
 
 SELECT game_click.id as click_id,
        game_click.created as click_created,

@@ -1,4 +1,4 @@
-/*Aggregates data from the MySQL Database for examining scaffold theory*/
+--Aggregates data from the MySQL Database for examining scaffold theory
 
 SELECT game_click.id as click_id,
        game_click.click_time as click_created,
