@@ -21,10 +21,12 @@ def plot_degree_dist(graph):
     degrees = graph.degree()
     avg = np.mean(degrees)
     stdev = np.std(degrees)
+    closeness = graph.closeness()
 
     ba_degrees = ba_graph.degree()
     ba_avg = np.mean(ba_degrees)
     ba_stdev = np.std(ba_degrees)
+    ba_closeness = ba_graph.closeness()
 
     fig, (ax0, ax1) = plt.subplots(nrows=1, ncols=2)
     fig.suptitle("Mean degree and standard deviation")
@@ -60,7 +62,31 @@ def plot_degree_dist(graph):
     plt.legend()
 
     plt.show()
-    fig.savefig(SAVE_PATH + f'degree_dist.png')
+    # fig.savefig(SAVE_PATH + f'degree_dist.png')
+    # fig.close()
+
+    # Plotting closeness centrality
+    y = np.random.rand(len(closeness))
+    ba_y = np.random.rand(len(ba_closeness))
+
+    fig, (ax0, ax1) = plt.subplots(nrows=1, ncols=2, sharex='row')
+    fig.suptitle("Closeness centrality")
+    ax0.scatter(closeness, y, alpha=0.8, c='blue')
+    ax1.scatter(ba_closeness, ba_y, alpha=0.8, c='green')
+
+    ax0.set_title("Matrice graph")
+    ax0.set_xlabel("Closeness")
+    ax0.axes.get_yaxis().set_visible(False)
+    ax1.set_title('BA scale-free graph')
+    ax1.set_xlabel("Closeness")
+    ax1.axes.get_yaxis().set_visible(False)
+
+    ax0.grid(True)
+    ax1.grid(True)
+    fig.tight_layout()
+
+    plt.show()
+    fig.savefig(SAVE_PATH + f'closeness_centrality.png')
     # fig.close()
 
 
