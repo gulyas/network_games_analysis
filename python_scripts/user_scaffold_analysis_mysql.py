@@ -12,7 +12,7 @@ PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\scaffold\\"
 FILENAME = "scaffold_data_mysql.csv"
 
-USER = "nbobbed37"
+USER = "darigan17"
 
 
 def parse_data(filename):

@@ -8,6 +8,8 @@ import json
 PATH = "D:\\network_games\\matrice\\"
 FILENAME = "matrice_results.json"
 
+USER = "kGgIUjtRccY1QxnvFPdmHB4QM542"
+
 
 def parse_data(filename):
     """Loads data from file."""
@@ -18,11 +20,13 @@ def parse_data(filename):
 
 def moving_average(x, w):
     """Calculates moving average"""
-    return np.convolve(x, np.ones(w)/w, 'valid')
+    return np.convolve(x, np.ones(w) / w, 'valid')
 
 
 def plot_data(data):
     for player_data in data:
+        if player_data["user"] != USER:
+            continue
         user = player_data["user"]
         user_clicks = player_data["user_clicks"]
         shortest_clicks = player_data["shortest_clicks"]
@@ -30,7 +34,14 @@ def plot_data(data):
         avg_durations = moving_average(x=durations, w=8)
 
         diffs = np.subtract(user_clicks, shortest_clicks)
-        avg = moving_average(x=diffs, w=8)
+        mavg = moving_average(x=diffs, w=8)
+        avg_diff = np.mean(diffs)
+        std_diff = np.std(diffs)
+        avg_sh = np.mean(shortest_clicks)
+        std_sh = np.std(shortest_clicks)
+        avg_us = np.mean(user_clicks)
+        std_us = np.std(user_clicks)
+        print(f'User avg, std: {avg_us}, {std_us}; Shortest avg, std: {avg_sh}, {std_sh}; Diff avg, std: {avg_diff}, {std_diff}.')
 
         x = range(len(user_clicks))
 
@@ -63,7 +74,7 @@ def plot_data(data):
         ax.set_xlabel("Game")
         ax.set_ylabel("Difference [Number of clicks]")
         ax.plot(x, diffs, color=color, label='difference')
-        ax.plot(avg, color='r', label='moving average [w=8]')
+        ax.plot(mavg, color='r', label='moving average [w=8]')
         ax.tick_params(axis='y', labelcolor=color)
         ax.legend()
 

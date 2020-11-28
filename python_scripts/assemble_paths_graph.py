@@ -1,6 +1,5 @@
 """
-Assembles graph of all Wikipedia links on the English language Wikipedia to be able to get shortest paths
-between articles.
+Assembles graph of all Wikipedia links in the English Wikipedia.
 """
 import csv
 import igraph
@@ -48,11 +47,11 @@ def export_graph(graph, filename):
 
 
 def main():
-    #try:
-        graph = read_graph(PATH + FILENAME)
-        export_graph(graph, PATH + EXPORT_FILE)
-    #except Exception as error:
-     #   print(error)
+    # try:
+    graph = read_graph(PATH + FILENAME)
+    export_graph(graph, PATH + EXPORT_FILE)
+    # except Exception as error:
+    #   print(error)
 
 
 if __name__ == '__main__':

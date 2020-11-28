@@ -129,7 +129,14 @@ def plot_data(user_stat):
     shortest_cl = user_stat["shortest_clicks"][::-1]
     durations = user_stat["durations"][::-1]
     diffs = np.subtract(user_cl, shortest_cl)
-    avg = moving_average(x=diffs, w=50)
+    mavg = moving_average(x=diffs, w=50)
+    avg_diff = np.mean(diffs)
+    std_diff = np.std(diffs)
+    avg_sh = np.mean(shortest_cl)
+    std_sh = np.std(shortest_cl)
+    avg_us = np.mean(user_cl)
+    std_us = np.std(user_cl)
+    print(f'User avg, std: {avg_us}, {std_us}; Shortest avg, std: {avg_sh}, {std_sh}; Diff avg, std: {avg_diff}, {std_diff}.')
 
     x = range(len(user_cl))
 
@@ -140,6 +147,7 @@ def plot_data(user_stat):
     ax0.set_ylabel('Number of clicks')
     ax0.plot(x, user_cl, 'r', label='user')
     ax0.plot(x, shortest_cl, 'b', label='shortest')
+    ax0.grid(True)
     ax0.legend()
 
     # color = 'tab:red'
@@ -154,8 +162,9 @@ def plot_data(user_stat):
     ax1.set_xlabel("Game")
     ax1.set_ylabel("Difference [Number of clicks]")
     ax1.plot(x, diffs, color=color, label='difference')
-    ax1.plot(avg, color='purple', label='moving average [w=50]')
+    ax1.plot(mavg, color='purple', label='moving average [w=50]')
     ax1.tick_params(axis='y')
+    ax1.grid(True)
     ax1.legend()
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
@@ -186,7 +195,7 @@ def plot_graph(graph):
             e['color'] = colors[0]
 
     edge_widths = np.clip(a=sub_graph.es['weight'], a_min=4, a_max=15)
-    visual_style = {"bbox": (3000, 3000), "margin": 150, "vertex_color": 'grey', "vertex_size": 15,
+    visual_style = {"bbox": (1000, 1000), "margin": 15, "vertex_color": 'grey', "vertex_size": 15,
                     "vertex_label_size": 4, "edge_curved": False, "edge_width": edge_widths}
 
     # Set the layout
