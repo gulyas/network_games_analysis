@@ -99,9 +99,9 @@ def analyse_data(data, graph):
         """
 
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
-                        "vertex_label_size": 8, "edge_curved": False, "layout": player_graph.layout("fr")}
-
-        save_name = f'matrice_{player}.eps'
+                        "vertex_label_size": 8, "edge_curved": False, "layout": player_graph.layout("fr"),
+                        "edge_width": player_graph.es['weight']}
+        save_name = f'matrice_{player}.png'
         igraph.plot(player_graph, SAVE_PATH + save_name, **visual_style)
         print("Graph from {} analysed and plotted to {}".format(player, save_name))
 

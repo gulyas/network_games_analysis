@@ -16,47 +16,61 @@ def parse_data(filename):
         return data
 
 
+def moving_average(x, w):
+    """Calculates moving average"""
+    return np.convolve(x, np.ones(w)/w, 'valid')
+
+
 def plot_data(data):
     for player_data in data:
         user = player_data["user"]
         user_clicks = player_data["user_clicks"]
         shortest_clicks = player_data["shortest_clicks"]
         durations = player_data["durations"]
+        avg_durations = moving_average(x=durations, w=8)
 
         diffs = np.subtract(user_clicks, shortest_clicks)
-        avg = np.average(diffs)
+        avg = moving_average(x=diffs, w=8)
 
         x = range(len(user_clicks))
 
-        fig, ax1 = plt.subplots(nrows=3, ncols=1)
-        color = 'tab:red'
-        ax1[0].set_title("Length of user and shortest paths")
-        ax1[0].set_xlabel('Game')
-        ax1[0].set_ylabel('Number of clicks')
-        ax1[0].plot(x, user_clicks, 'r', label='user')
-        ax1[0].plot(x, shortest_clicks, 'b', label='shortest')
-        ax1[0].legend()
+        fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1)
+        ax0.set_title("Length of user and shortest paths")
+        ax0.set_xlabel('Game')
+        ax0.set_ylabel('Number of clicks')
+        ax0.plot(x, user_clicks, 'r', label='user')
+        ax0.plot(x, shortest_clicks, 'b', label='shortest')
+        ax0.legend()
 
         color = 'tab:red'
-        ax1[1].set_title("Durations of the games")
-        ax1[1].set_xlabel("Game")
-        ax1[1].set_ylabel("Duration [s]")
-        ax1[1].plot(x, durations, color=color)
-        ax1[1].tick_params(axis='y', labelcolor=color)
-
-        color = 'tab:green'
-        ax1[2].set_title("Difference between user and shortest path lenghts")
-        ax1[2].set_xlabel("Game")
-        ax1[2].set_ylabel("Difference [Number of clicks]")
-        ax1[2].plot(x, diffs, color=color, label='difference')
-        ax1[2].axhline(y=avg, color='r', label=f'average = {avg}')
-        ax1[2].tick_params(axis='y', labelcolor=color)
-        ax1[2].legend()
+        ax1.set_title("Durations of the games")
+        ax1.set_xlabel("Game")
+        ax1.set_ylabel("Duration [s]")
+        ax1.plot(x, durations, color=color, label='durations')
+        ax1.plot(avg_durations, color='purple', label='moving average [w=8]')
+        ax1.tick_params(axis='y', labelcolor=color)
+        ax1.legend()
 
         fig.tight_layout()  # otherwise the right y-label is slightly clipped
         # plt.show()
         print(f'Plotting {user}\'s stats.')
-        fig.savefig(PATH + f"matrice_{user}_stats.png")
+        fig.savefig(PATH + f"matrice_{user}_length_duration.png")
+        plt.close(fig)
+
+        color = 'tab:green'
+        fig, ax = plt.subplots(nrows=1, ncols=1)
+        ax.set_title("Difference between user and shortest path lenghts")
+        ax.set_xlabel("Game")
+        ax.set_ylabel("Difference [Number of clicks]")
+        ax.plot(x, diffs, color=color, label='difference')
+        ax.plot(avg, color='r', label='moving average [w=8]')
+        ax.tick_params(axis='y', labelcolor=color)
+        ax.legend()
+
+        fig.tight_layout()  # otherwise the right y-label is slightly clipped
+        # plt.show()
+        print(f'Plotting {user}\'s stats.')
+        fig.savefig(PATH + f"matrice_{user}_difference.png")
         plt.close(fig)
 
 

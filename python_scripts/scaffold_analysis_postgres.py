@@ -105,21 +105,20 @@ def analyse_graphs(user_graphs, users):
                 e['color'] = colors[0]
 
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
-                        "vertex_label_size": 8, "edge_curved": False}
-
+                        "vertex_label_size": 8, "edge_curved": False, "edge_width": user_graph.es['weight']}
         # Set the layout
         try:
             layout = user_graph.layout("kk")
             visual_style["layout"] = layout
-            save_name = f'postgres_{users[i]}.eps'
+            save_name = f'postgres_{users[i]}.png'
             igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
             print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
         except MemoryError:
             print("Memory error. Skipping to plot {}'s graph.".format(users[i]))
             continue
         # Saving results
-        with open(SAVE_PATH + 'scaffold_results_postgres.json', 'w') as fp:
-            json.dump(user_graph_data, fp, indent=4)
+        # with open(SAVE_PATH + 'scaffold_results_postgres.json', 'w') as fp:
+        #    json.dump(user_graph_data, fp, indent=4)
 
 
 def main():
