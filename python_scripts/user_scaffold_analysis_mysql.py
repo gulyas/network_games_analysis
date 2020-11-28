@@ -106,14 +106,15 @@ def analyse_graph(user_graph, user):
         else:
             e['color'] = colors[0]
 
-    visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 10,
-                    "vertex_label_size": 4, "edge_curved": False}
+    edge_widths = np.clip(a=sub_graph.es['weight'], a_min=4, a_max=15)
+    visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 15,
+                    "vertex_label_size": 4, "edge_curved": False, "edge_width": edge_widths}
 
     # Set the layout
     try:
         layout = sub_graph.layout("fr")
         visual_style["layout"] = layout
-        save_name = f'mysql_{user}_reduced.eps'
+        save_name = f'mysql_{user}_reduced.png'
         igraph.plot(sub_graph, SAVE_PATH + save_name, **visual_style)
         print("Graph from {} analysed and plotted to {}".format(user, save_name))
     except MemoryError:

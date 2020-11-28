@@ -16,7 +16,7 @@ PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\paths\\"
 FILENAME = "paths_data_mysql2.csv"
 
-USER = "nbobbed37"
+USER = "b3b6"
 
 BASE_URL = "http://localhost:5000/paths"
 
@@ -28,6 +28,23 @@ def choose_random(list):
         return list[0]
     idx = randint(0, n - 1)
     return list[idx]
+
+
+def moving_average(x, w):
+    """Calculates moving average"""
+    return np.convolve(x, np.ones(w) / w, 'valid')
+
+
+def load_graph(filename):
+    """Loads graph from file"""
+    return igraph.load(filename)
+
+
+def load_data(filename):
+    """Loads user stat data from JSON file"""
+    with open(filename, 'r', encoding='utf-8') as jsonfile:
+        data = json.load(jsonfile)
+    return data
 
 
 def add_to_graph(graph, path):
@@ -112,34 +129,34 @@ def plot_data(user_stat):
     shortest_cl = user_stat["shortest_clicks"][::-1]
     durations = user_stat["durations"][::-1]
     diffs = np.subtract(user_cl, shortest_cl)
-    avg = np.average(diffs)
+    avg = moving_average(x=diffs, w=50)
 
     x = range(len(user_cl))
 
-    fig, ax1 = plt.subplots(nrows=3, ncols=1)
+    fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1)
     color = 'tab:red'
-    ax1[0].set_title("Length of user and shortest paths")
-    ax1[0].set_xlabel('Game')
-    ax1[0].set_ylabel('Number of clicks')
-    ax1[0].plot(x, user_cl, 'r', label='user')
-    ax1[0].plot(x, shortest_cl, 'b', label='shortest')
-    ax1[0].legend()
+    ax0.set_title("Length of user and shortest paths")
+    ax0.set_xlabel('Game')
+    ax0.set_ylabel('Number of clicks')
+    ax0.plot(x, user_cl, 'r', label='user')
+    ax0.plot(x, shortest_cl, 'b', label='shortest')
+    ax0.legend()
+
+    # color = 'tab:red'
+    # ax1.set_title("Durations of the games")
+    # ax1.set_xlabel("Game")
+    # ax1.set_ylabel("Duration [s]")
+    # ax1.plot(x, durations, color=color)
+    # ax1.tick_params(axis='y', labelcolor=color)
 
     color = 'tab:red'
-    ax1[1].set_title("Durations of the games")
-    ax1[1].set_xlabel("Game")
-    ax1[1].set_ylabel("Duration [s]")
-    ax1[1].plot(x, durations, color=color)
-    ax1[1].tick_params(axis='y', labelcolor=color)
-
-    color = 'tab:green'
-    ax1[2].set_title("Difference between user and shortest path lenghts")
-    ax1[2].set_xlabel("Game")
-    ax1[2].set_ylabel("Difference [Number of clicks]")
-    ax1[2].plot(x, diffs, color=color, label='difference')
-    ax1[2].axhline(y=avg, color='r', label=f'average = {avg}')
-    ax1[2].tick_params(axis='y', labelcolor=color)
-    ax1[2].legend()
+    ax1.set_title("Difference between user and shortest path lenghts")
+    ax1.set_xlabel("Game")
+    ax1.set_ylabel("Difference [Number of clicks]")
+    ax1.plot(x, diffs, color=color, label='difference')
+    ax1.plot(avg, color='purple', label='moving average [w=50]')
+    ax1.tick_params(axis='y')
+    ax1.legend()
 
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.show()
@@ -147,7 +164,15 @@ def plot_data(user_stat):
 
 
 def plot_graph(graph):
-    """Plots graph and saves it in .eps format"""
+    """Plots graph and saves it in .png format"""
+
+    # Creating subgraph by betweenness centrality
+    btwn = graph.betweenness(directed=True, weights=None)
+    ntile = np.percentile(btwn, 90)
+    sub_vs = graph.vs.select([v for v, b in enumerate(btwn) if b >= ntile])
+    sub_graph = graph.subgraph(sub_vs)
+    print(f'Generated subgraph with {sub_graph.vcount()} vertices and {sub_graph.ecount()} edges.')
+
     colors = ["orange", "darkorange", "red", "blue"]
     for e in graph.es:
         weight = e['weight']
@@ -160,15 +185,16 @@ def plot_graph(graph):
         else:
             e['color'] = colors[0]
 
-    visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 10,
-                    "vertex_label_size": 4, "edge_curved": False}
+    edge_widths = np.clip(a=sub_graph.es['weight'], a_min=4, a_max=15)
+    visual_style = {"bbox": (3000, 3000), "margin": 150, "vertex_color": 'grey', "vertex_size": 15,
+                    "vertex_label_size": 4, "edge_curved": False, "edge_width": edge_widths}
 
     # Set the layout
     try:
-        layout = graph.layout("kk")
+        layout = sub_graph.layout("kk")
         visual_style["layout"] = layout
-        save_name = f'mysql_{USER}_shortest.eps'
-        igraph.plot(graph, SAVE_PATH + save_name, **visual_style)
+        save_name = f'mysql_{USER}_shortest.png'
+        igraph.plot(sub_graph, SAVE_PATH + save_name, **visual_style)
         print("Graph from {} analysed and plotted to {}".format(USER, save_name))
     except MemoryError:
         print("Memory error. Skipping to plot {}'s graph.".format(USER))
@@ -187,11 +213,20 @@ def save_graph(graph):
 
 
 def main():
-    user_stat, shortest_graph = parse_data(PATH + FILENAME)
+    # Complete analysis of a user
+    """user_stat, shortest_graph = parse_data(PATH + FILENAME)
     plot_data(user_stat)
     plot_graph(shortest_graph)
     save_data(user_stat)
-    save_graph(shortest_graph)
+    save_graph(shortest_graph)"""
+
+    # Load and plot graph
+    # graph = load_graph(SAVE_PATH + "mysql_nbobbed37_shortest.gml")
+    # plot_graph(graph)
+
+    # Load and plot data
+    user_stat = load_data(SAVE_PATH + "mysql_b3b6_stats.json")
+    plot_data(user_stat)
 
 
 if __name__ == '__main__':
