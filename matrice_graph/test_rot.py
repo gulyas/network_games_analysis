@@ -1,22 +1,26 @@
-def rotate(state, id, isRow):
+"""
+Test script for rotation.
+"""
+
+
+def rotate(state, n, is_row):
     rowOrCol = [0, 0, 0]
-    temp = 0
-    if isRow:
-        rowOrCol = state[id]
+    if is_row:
+        rowOrCol = state[n]
         temp = rowOrCol[0]
         for i in range(2):
             rowOrCol[i] = rowOrCol[i + 1]
         rowOrCol[2] = temp
-        state[id] = rowOrCol
+        state[n] = rowOrCol
     else:
         for i in range(3):
-            rowOrCol[i] = state[i][id]
+            rowOrCol[i] = state[i][n]
         temp = rowOrCol[0]
         for j in range(2):
             rowOrCol[j] = rowOrCol[j + 1]
         rowOrCol[2] = temp
         for k in range(3):
-            state[k][id] = rowOrCol[k]
+            state[k][n] = rowOrCol[k]
     return
 
 

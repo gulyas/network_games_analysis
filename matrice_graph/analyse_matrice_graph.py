@@ -2,15 +2,15 @@
 Analysing the graph behind the Matrice android game.
 """
 import igraph
-import numpy as np
 import matplotlib.pyplot as plt
-from pylab import hist
+import numpy as np
 
 GRAPH_FILE = "..\\matrice_graph\\matrice_graph.gml"
 SAVE_PATH = "D:\\network_games\\matrice\\"
 
 
 def load_graph(filename):
+    """Loads graph from a file"""
     return igraph.load(filename=filename)
 
 

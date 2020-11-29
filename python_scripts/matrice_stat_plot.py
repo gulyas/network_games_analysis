@@ -25,14 +25,15 @@ def moving_average(x, w):
 
 def plot_data(data):
     for player_data in data:
-        if player_data["user"] != USER:
-            continue
+        # if player_data["user"] != USER:
+        #    continue
         user = player_data["user"]
         user_clicks = player_data["user_clicks"]
         shortest_clicks = player_data["shortest_clicks"]
         durations = player_data["durations"]
         avg_durations = moving_average(x=durations, w=8)
 
+        # Calculating means and standard deviations
         diffs = np.subtract(user_clicks, shortest_clicks)
         mavg = moving_average(x=diffs, w=8)
         avg_diff = np.mean(diffs)
@@ -45,6 +46,7 @@ def plot_data(data):
 
         x = range(len(user_clicks))
 
+        # Plotting path lengths and durations
         fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1)
         ax0.set_title("Length of user and shortest paths")
         ax0.set_xlabel('Game')

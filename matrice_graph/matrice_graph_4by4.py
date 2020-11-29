@@ -1,20 +1,24 @@
+"""
+Variant of the Matrice graph.
+The game with a boardsize of 4 by 4.
+"""
 import igraph
 
 
-def getId(state):
-    cellId = 0
+def get_id(state):
+    cell_id = 0
     exponent = 15
     for row in state:
         for column in row:
             if column == 1:
-                cellId += pow(2, exponent)
+                cell_id += pow(2, exponent)
             exponent -= 1
-    return cellId
+    return cell_id
 
 
-def getState(cellId):
+def get_state(cell_id):
     state = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
-    binary = '{0:09b}'.format(cellId)
+    binary = '{0:09b}'.format(cell_id)
     index = 0
     for char in binary:
         state[index // 4][index % 4] = int(char)
@@ -29,41 +33,42 @@ def invert(state, row, col):
         state[row][col] = 1
     return
 
+
 def main():
     # ---- MAIN PART ----
-    graph = igraph.Graph(65536)
+    graph = igraph.Graph(65536, directed=True)
 
     for i in range(65536):
         print(i)
-        state1 = getState(i)
+        state1 = get_state(i)
         # neighbours with inverting rows
         for j in range(4):
             state2 = state1
             for k in range(4):
                 invert(state2, j, k)
-            neighbourId = getId(state2)
-            graph.add_edge(i, neighbourId)
+            neighbour_id = get_id(state2)
+            graph.add_edge(i, neighbour_id)
 
         # neighbours with inverting columns
         for j in range(4):
             state2 = state1
             for k in range(4):
                 invert(state2, k, j)
-            neighbourId = getId(state2)
-            graph.add_edge(i, neighbourId)
+            neighbour_id = get_id(state2)
+            graph.add_edge(i, neighbour_id)
 
         # neighbours with inverting diagonals
         state2 = state1
         for j in range(4):
             invert(state2, j, j)
-        neighbourId = getId(state2)
-        graph.add_edge(i, neighbourId)
+        neighbour_id = get_id(state2)
+        graph.add_edge(i, neighbour_id)
 
         state2 = state1
         for j in range(4):
             invert(state2, 3 - j, j)
-        neighbourId = getId(state2)
-        graph.add_edge(i, neighbourId)
+        neighbour_id = get_id(state2)
+        graph.add_edge(i, neighbour_id)
 
     # deleting multiple edges
     graph.simplify(True, True)

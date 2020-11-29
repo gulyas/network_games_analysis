@@ -1,6 +1,6 @@
 """
 Examines scaffold hypothesis on a particular user.
-Data from the MySQL Database.
+Uses data from the MySQL Database.
 """
 import csv
 import json
@@ -17,9 +17,9 @@ USER = "darigan17"
 
 def parse_data(filename):
     """
-    Parses data from CSV, assembles graphs by users
+    Parses data from a tab delimited CSV file, assembles user graph
     :param filename: Input file name
-    :return: List of users and user graphs
+    :return: The user and its edge usage graph
     """
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
@@ -32,7 +32,7 @@ def parse_data(filename):
         user_graph = igraph.Graph()
 
         for row in csv_reader:
-            # Header row
+            # Ignoring header row
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
@@ -43,7 +43,7 @@ def parse_data(filename):
                 article = row[3]
                 game = row[4]
 
-                # Add edge to the users graph
+                # Add edge to the user graph
                 try:
                     user_graph.vs.find(article)
                 except ValueError:
@@ -94,6 +94,8 @@ def analyse_graph(user_graph, user):
     sub_graph = user_graph.subgraph(sub_vs)
     print(f'Generated subgraph with {sub_graph.vcount()} vertices and {sub_graph.ecount()} edges.')
 
+    # Plotting subgraph
+    # Coloring edges
     colors = ["orange", "darkorange", "red", "blue"]
     for e in sub_graph.es:
         weight = e['weight']
@@ -106,7 +108,9 @@ def analyse_graph(user_graph, user):
         else:
             e['color'] = colors[0]
 
+    # Clipping edge widths
     edge_widths = np.clip(a=sub_graph.es['weight'], a_min=4, a_max=15)
+    # Styling graph
     visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 15,
                     "vertex_label_size": 4, "edge_curved": False, "edge_width": edge_widths}
 

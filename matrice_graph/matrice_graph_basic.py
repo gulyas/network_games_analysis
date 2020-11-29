@@ -1,22 +1,36 @@
+"""
+The basic Matrice graph.
+Board size: 3x3
+Transformations: inversion
+Directions: horizontal, vertical, diagonal
+"""
 import igraph
 
 
-# mind az 512 állapothoz egyértelműen hozzárendel egy számot 0 és 511 között
-def getId(state):
-    cellId = 0
+def get_id(state):
+    """
+    Assigns a unique natural number to each board state.
+    :param state: Two dimensional array containing the state of the game board
+    :return: Id number of the state
+    """
+    cell_id = 0
     exponent = 8
     for row in state:
         for column in row:
             if column == 1:
-                cellId += pow(2, exponent)
+                cell_id += pow(2, exponent)
             exponent -= 1
-    return cellId
+    return cell_id
 
 
-# az állapotot azonosító számból visszaszámolja az állapotot
-def getState(cellId):
+def get_state(cell_id):
+    """
+    Gets the state from a state identification number.
+    :param cell_id: Natural number identifying the state
+    :return: Twon dimensional array containing the state
+    """
     state = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-    binary = '{0:09b}'.format(cellId)
+    binary = '{0:09b}'.format(cell_id)
     index = 0
     for char in binary:
         state[index // 3][index % 3] = int(char)
@@ -24,8 +38,14 @@ def getState(cellId):
     return state
 
 
-# inverzió egy mátrix mezőn
 def invert(state, row, col):
+    """
+    Inversion on a state cell
+    :param state: Two dimensional array containing the state
+    :param row: Row index of the cell
+    :param col: Column index of the cell
+    :return: Nothing
+    """
     if state[row][col] == 1:
         state[row][col] = 0
     else:
@@ -38,36 +58,36 @@ def main():
     graph = igraph.Graph(512)
 
     for i in range(512):
-        # azok a szomszédok, amiket sorok inverziójával kapni
+        # neighbours with inverting rows
         for j in range(3):
-            state = getState(i)
+            state = get_state(i)
             for k in range(3):
                 invert(state, j, k)
-            neighbourId = getId(state)
-            graph.add_edge(i, neighbourId)
+            neighbour_id = get_id(state)
+            graph.add_edge(i, neighbour_id)
 
-        # azok a szomszédok, amiket oszlopok inverziójával kapni
+        # neighbours with inverting columns
         for j in range(3):
-            state = getState(i)
+            state = get_state(i)
             for k in range(3):
                 invert(state, k, j)
-            neighbourId = getId(state)
-            graph.add_edge(i, neighbourId)
+            neighbour_id = get_id(state)
+            graph.add_edge(i, neighbour_id)
 
-        # azok a szomszédok, amiket átlók inverziójával kapni
-        state = getState(i)
+        # neighbours with inverting diagonals
+        state = get_state(i)
         for j in range(3):
             invert(state, j, j)
-        neighbourId = getId(state)
-        graph.add_edge(i, neighbourId)
+        neighbour_id = get_id(state)
+        graph.add_edge(i, neighbour_id)
 
-        state = getState(i)
+        state = get_state(i)
         for j in range(3):
             invert(state, 2 - j, j)
-        neighbourId = getId(state)
-        graph.add_edge(i, neighbourId)
+        neighbour_id = get_id(state)
+        graph.add_edge(i, neighbour_id)
 
-    # többszörös élek törlése
+    # deleting multiple edges
     graph.simplify(True, True)
     graph.vs["label"] = range(graph.vcount())
 

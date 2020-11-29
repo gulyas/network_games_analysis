@@ -13,7 +13,7 @@ SAVE_PATH = "D:\\network_games\\matrice\\"
 
 
 def read_graph(filename):
-    """Reads whole graph from file."""
+    """Reads whole graph from a file."""
     graph = igraph.load(filename)
     print(f'Loaded {filename}.')
     return graph
@@ -28,9 +28,11 @@ def load_data(filename):
 
 
 def analyse_data(data, graph):
+    """Perform analysis"""
+
     players_stats = []
     player_count = 0
-    good_player_count = 0
+    good_player_count = 0  # who played at least 35 games
     all_game_count = 0
     for player, player_games in data.items():
         print("Analysing {}'s data...".format(player))
@@ -42,6 +44,7 @@ def analyse_data(data, graph):
             "shortest_clicks": [],
             "durations": []
         }
+        # Creating an own copy of the Matrice graph for the player's routes
         player_graph = copy.deepcopy(graph)
         player_graph.es['weight'] = [0 in range(player_graph.ecount())]
         game_count = 0
@@ -58,9 +61,12 @@ def analyse_data(data, graph):
             player_stats['durations'].append(duration)
             start = game['startState']
             end = game['endState']
+            # Searching for shortest path
             shortest = graph.shortest_paths_dijkstra(source=start, target=end, weights=None)
             shortest = shortest[0][0]
             player_stats['shortest_clicks'].append(shortest)
+
+            # Inserting path into the graph
             chain = game['stateChain'].split(" ")
             del chain[-1]
 
@@ -78,7 +84,9 @@ def analyse_data(data, graph):
             good_player_count -= 1
             continue
         all_game_count += game_count
-        # Plotting graph
+
+        # Plotting graph of edge usage
+        # Coloring edges
         colors = ["lightgrey", "orange", "red", "blue"]
         for e in player_graph.es:
             weight = e['weight']
@@ -91,13 +99,7 @@ def analyse_data(data, graph):
             else:
                 e['color'] = colors[0]
 
-        """
-        # Plotting only edges with significant weight
-        for edge in player_graph.es:
-            if edge['weight'] <= 5:
-                player_graph.delete_edges(edge)
-        """
-
+        # Styling graph
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
                         "vertex_label_size": 8, "edge_curved": False, "layout": player_graph.layout("fr"),
                         "edge_width": player_graph.es['weight']}

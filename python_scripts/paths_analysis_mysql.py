@@ -1,6 +1,6 @@
 """
 Examines shortest paths assumption.
-Data from the MySQL Database.
+Uses data from the MySQL Database.
 """
 import csv
 import json
@@ -31,7 +31,7 @@ def load_stats(filename):
 
 def parse_data(filename, users, user_stats, global_stats):
     """
-    Parses data from CSV
+    Parses data from a tab delimited CSV file
     :param global_stats: Global stats
     :param user_stats: Array of user stats
     :param users: Array of users
@@ -46,12 +46,14 @@ def parse_data(filename, users, user_stats, global_stats):
         user_count = 0
 
         for row in csv_reader:
+            # Ignoring first row with column names
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
-            elif line_count <= LAST_READ_LINES:
-                line_count += 1
-                continue
+            # Optionally: continue from the last run
+            # elif line_count <= LAST_READ_LINES:
+            #    line_count += 1
+            #    continue
             else:
                 line_count += 1
                 user = row[0]
@@ -62,10 +64,11 @@ def parse_data(filename, users, user_stats, global_stats):
                 end_time = datetime.strptime(row[6], '%Y-%m-%d %H:%M:%S')
                 timediff = end_time - start_time
 
-                # New user found
+                # Finding user
                 try:
                     idx = users.index(user)
                 except ValueError:
+                    # New user found
                     users.append(user)
                     user_stats.append({"user_clicks": [], "shortest_clicks": [], "durations": []})
                     user_count += 1
@@ -79,11 +82,13 @@ def parse_data(filename, users, user_stats, global_stats):
                 data = {"source": start_article, "target": goal_article}
                 # data = json.dumps(data)
 
+                # Getting the result from Six Degrees of Wikipedia running locally
                 response = requests.post(BASE_URL, json=data)
                 if response.status_code == 200:
                     response = response.json()
                     shortest_clicks = len(response["paths"][0])
                 else:
+                    # If there are no short paths or an error occurred
                     shortest_clicks = -1
 
                 user_stats[idx]['user_clicks'].append(click_count)

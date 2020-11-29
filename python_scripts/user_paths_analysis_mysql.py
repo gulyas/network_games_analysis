@@ -1,6 +1,6 @@
 """
 Examines shortest paths assumption on a particular user.
-Data from the MySQL Database.
+Uses data from the MySQL Database.
 """
 import csv
 import json
@@ -48,6 +48,7 @@ def load_data(filename):
 
 
 def add_to_graph(graph, path):
+    """Adds a whole path to a graph including its nodes and edges"""
     last_node = None
     for node in path:
         node = str(node)
@@ -66,9 +67,9 @@ def add_to_graph(graph, path):
 
 def parse_data(filename):
     """
-    Parses data from CSV
+    Parses data from a tab delimited CSV file
     :param filename: Input file name
-    :return:
+    :return: User statistics and a graph containing the shortest paths
     """
     user_stat = {"user": USER, "user_clicks": [], "shortest_clicks": [], "durations": []}
     shortest_graph = igraph.Graph()
@@ -79,7 +80,7 @@ def parse_data(filename):
         line_count = 0
 
         for row in csv_reader:
-            # Header row
+            # Ignoring header row
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
@@ -100,6 +101,7 @@ def parse_data(filename):
                     data = {"source": start_article, "target": goal_article}
                     # data = json.dumps(data)
 
+                    # Getting the result from Six Degrees of Wikipedia running locally
                     response = requests.post(BASE_URL, json=data)
                     if response.status_code == 200:
                         response = response.json()
@@ -140,6 +142,7 @@ def plot_data(user_stat):
 
     x = range(len(user_cl))
 
+    # Plotting path lengths
     fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1)
     color = 'tab:red'
     ax0.set_title("Length of user and shortest paths")
@@ -182,6 +185,7 @@ def plot_graph(graph):
     sub_graph = graph.subgraph(sub_vs)
     print(f'Generated subgraph with {sub_graph.vcount()} vertices and {sub_graph.ecount()} edges.')
 
+    # Coloring edges
     colors = ["orange", "darkorange", "red", "blue"]
     for e in graph.es:
         weight = e['weight']
@@ -194,7 +198,9 @@ def plot_graph(graph):
         else:
             e['color'] = colors[0]
 
+    # Clipping edge widths
     edge_widths = np.clip(a=sub_graph.es['weight'], a_min=4, a_max=15)
+    # Styling graph
     visual_style = {"bbox": (1000, 1000), "margin": 15, "vertex_color": 'grey', "vertex_size": 15,
                     "vertex_label_size": 4, "edge_curved": False, "edge_width": edge_widths}
 
@@ -223,19 +229,19 @@ def save_graph(graph):
 
 def main():
     # Complete analysis of a user
-    """user_stat, shortest_graph = parse_data(PATH + FILENAME)
+    user_stat, shortest_graph = parse_data(PATH + FILENAME)
     plot_data(user_stat)
     plot_graph(shortest_graph)
     save_data(user_stat)
-    save_graph(shortest_graph)"""
+    save_graph(shortest_graph)
 
     # Load and plot graph
     # graph = load_graph(SAVE_PATH + "mysql_nbobbed37_shortest.gml")
     # plot_graph(graph)
 
     # Load and plot data
-    user_stat = load_data(SAVE_PATH + "mysql_b3b6_stats.json")
-    plot_data(user_stat)
+    # user_stat = load_data(SAVE_PATH + "mysql_b3b6_stats.json")
+    # plot_data(user_stat)
 
 
 if __name__ == '__main__':

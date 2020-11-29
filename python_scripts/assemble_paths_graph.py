@@ -10,6 +10,8 @@ EXPORT_FILE = "wikilink_graph"
 
 
 def read_graph(filename):
+    """Reads and assembles graph from a tab delimited CSV file"""
+
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
         print("Parsed file: {}".format(filename))
@@ -18,6 +20,7 @@ def read_graph(filename):
         line_count = 0
         vertex_count = 0
         for row in csv_reader:
+            # Ignoring first row with column names
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
@@ -25,6 +28,7 @@ def read_graph(filename):
                 line_count += 1
                 source = row[1]
                 target = row[3]
+                # Inserting source and target nodes of the link if they are absent
                 try:
                     graph.vs.find(source)
                 except ValueError:
@@ -41,6 +45,7 @@ def read_graph(filename):
 
 
 def export_graph(graph, filename):
+    """Saves graph in GML format"""
     print("Exporting...")
     igraph.write(graph, filename, format="graphmlz")
     print("Exported file to {}".format(filename))

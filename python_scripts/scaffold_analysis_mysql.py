@@ -1,6 +1,6 @@
 """
 Examines scaffold hypothesis.
-Data from the MySQL Database.
+Uses data from the MySQL Database.
 """
 import csv
 import json
@@ -14,7 +14,7 @@ FILENAME = "scaffold_data_mysql.csv"
 
 def parse_data(filename):
     """
-    Parses data from CSV, assembles graphs by users
+    Parses data from tab delimited CSV and assembles user graphs
     :param filename: Input file name
     :return: List of users and user graphs
     """
@@ -29,6 +29,7 @@ def parse_data(filename):
         user_count = 0
 
         for row in csv_reader:
+            # Ignoring first row with column names
             if line_count == 0:
                 print(f'Columns: {", ".join(row)}')
                 line_count += 1
@@ -38,10 +39,11 @@ def parse_data(filename):
                 article = row[3]
                 game = row[4]
 
-                # New user found
+                # Finding user
                 try:
                     idx = users.index(user)
                 except ValueError:
+                    # New user found
                     users.append(user)
                     user_graphs.append(igraph.Graph())
                     user_last_clicks.append({"article": article, "game": game})
@@ -49,7 +51,7 @@ def parse_data(filename):
                     idx = len(users) - 1
                     print("At line {} user {} created with index {}".format(line_count, user, idx))
 
-                # Add edge to the users graph
+                # Add edges to the user graph
                 try:
                     user_graphs[idx].vs.find(article)
                 except ValueError:
@@ -71,7 +73,7 @@ def parse_data(filename):
 
 def analyse_graphs(user_graphs, users):
     """
-    Analyses the click graphs of the users.
+    Analysis of the edge usage graph of the users.
     """
     user_graph_data = []
     print("Analysing user graphs...")
@@ -95,6 +97,9 @@ def analyse_graphs(user_graphs, users):
                 "giant_component_size": giant_component_size
             }
         )
+
+        # Plotting graph
+        # Coloring edges
         colors = ["orange", "darkorange", "red", "blue"]
         for e in user_graph.es:
             weight = e['weight']
@@ -107,6 +112,7 @@ def analyse_graphs(user_graphs, users):
             else:
                 e['color'] = colors[0]
 
+        # Styling graph
         visual_style = {"bbox": (3000, 3000), "margin": 17, "vertex_color": 'grey', "vertex_size": 20,
                         "vertex_label_size": 8, "edge_curved": False, "edge_width": user_graph.es['weight']}
         # Set the layout
@@ -120,8 +126,8 @@ def analyse_graphs(user_graphs, users):
             print("Memory error. Skipping to plot {}'s graph.".format(users[i]))
             continue
         # Saving results
-        # with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
-        #    json.dump(user_graph_data, fp, indent=4)
+        with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
+           json.dump(user_graph_data, fp, indent=4)
 
 
 def main():

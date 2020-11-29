@@ -4,6 +4,7 @@ SAVE_PATH = "D:\\network_games\\"
 
 
 def plot_er():
+    """Plots a visualization of an E-R random graph"""
     g = Graph.Erdos_Renyi(n=100, m=100)
     visual_style = {"bbox": (3000, 3000), "margin": 100, "vertex_color": 'orange', "vertex_size": 50,
                     "vertex_label_size": 10, "edge_curved": False, "edge_color": 'black', "edge_width": 7}
@@ -14,6 +15,7 @@ def plot_er():
 
 
 def plot_ba():
+    """Plots a visualization of an B-A scale-free graph"""
     g = Graph.Barabasi(n=150)
     visual_style = {"bbox": (3000, 3000), "margin": 100, "vertex_color": 'blue', "vertex_size": 50,
                     "vertex_label_size": 10, "edge_curved": False, "edge_color": 'black', "edge_width": 7}
@@ -24,10 +26,11 @@ def plot_ba():
 
 
 def main():
-    # g = Graph().K_Regular(20, 3)
+    g = Graph().K_Regular(20, 3)
     # for edge in g.es:
     #    print(edge)
-    plot_ba()
+    # plot_er()
+    # plot_ba()
 
 
 if __name__ == '__main__':
