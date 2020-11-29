@@ -7,7 +7,8 @@ Analysis of the data from TheWikiGame and Matrice datasets
 * **json_data**: Data from the Matrice android game application
 * **matrice_graph**: Scripts for assembling the whole graph describing the logical structure of the Matrice game
 * **python_scripts**: Scripts for analysing data
-* **schemas**: Database shcemas of The Wiki Game database
+* **sample_results**: Sample results from the analyses
+* **schemas**: Database schemas of The Wiki Game database
 * **sql_data**: Extracted data from the data dump
 * **sql_scripts**: Scripts for extracting specific data from the MySQL and PostgreSQL databases
 
