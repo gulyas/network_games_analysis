@@ -177,6 +177,21 @@ def plot_data(user_stat):
 
 def plot_graph(graph):
     """Plots graph and saves it in .png format"""
+    # Creating edge weight distribution
+    edge_weights = graph.es['weight']
+    counts = np.bincount(edge_weights)
+    x = range(counts.size)
+
+    fig, ax = plt.subplots()
+    ax.plot(x, counts, 'bo')
+    ax.set_xlabel("Weights (Number of uses)")
+    ax.set_ylabel("Occurrences (Number of edges with particular weight)")
+    ax.set_title("Edge weight distribution")
+    plt.yscale("log")
+    plt.xscale("log")
+    plt.grid()
+    fig.savefig(SAVE_PATH + f"mysql_{USER}_shortest_ew.png")
+    # plt.show()
 
     # Creating subgraph by betweenness centrality
     btwn = graph.betweenness(directed=True, weights=None)
