@@ -46,7 +46,7 @@ def plot_degree_dist(graph):
     # fig.close()
 
     # Plotting degree distributions
-    degree_dist = np.bincount(graph.degree())
+    degree_dist = np.bincount(degrees)
     x = range(degree_dist.size)
     ba_degree_dist = np.bincount(ba_graph.degree())
     ba_x = range(ba_degree_dist.size)

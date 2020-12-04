@@ -71,6 +71,22 @@ def analyse_graph(user_graph, user):
     """
     print("Analysing user graph...")
 
+    # Plotting degree distributions
+    degree_dist = np.bincount(user_graph.degree())
+    x = range(degree_dist.size)
+
+    fig = plt.figure()
+    fig.suptitle("Degree distribution")
+    plt.plot(x, degree_dist, c="blue")
+    plt.xlabel("Number of connections")
+    plt.ylabel("Number of nodes")
+    plt.xscale("log")
+    plt.yscale("log")
+
+    # plt.show()
+    fig.savefig(SAVE_PATH + f"mysql_{user}_dd.png")
+    plt.close(fig)
+
     # Creating edge weight distribution
     edge_weights = user_graph.es['weight']
     counts = np.bincount(edge_weights)
@@ -86,6 +102,7 @@ def analyse_graph(user_graph, user):
     plt.grid()
     fig.savefig(SAVE_PATH + f"mysql_{user}_ew.png")
     # plt.show()
+    plt.close(fig)
 
     # Creating subgraph by betweenness centrality
     btwn = user_graph.betweenness(directed=True, weights=None)
@@ -125,15 +142,25 @@ def analyse_graph(user_graph, user):
         print("Memory error. Skipping to plot {}'s graph.".format(user))
 
 
+def load_graph(filename):
+    """Loads graph from file"""
+    return igraph.load(filename)
+
+
 def save_graph(graph):
     """Saves scaffold graph in GML format"""
     igraph.save(graph, filename=SAVE_PATH + f'mysql_{USER}.gml')
 
 
 def main():
+    # Complete analysis of the user
     user_graph, user = parse_data(PATH + FILENAME)
     analyse_graph(user_graph, user)
     save_graph(user_graph)
+
+    # Load and analyse graph
+    # user_graph = load_graph(SAVE_PATH + f'mysql_{USER}.gml')
+    # analyse_graph(user_graph, USER)
 
 
 if __name__ == '__main__':
