@@ -1,0 +1,1091 @@
+[
+    {
+        "user": "460",
+        "node_count": 8079,
+        "edge_count": 12405,
+        "apl": 6.411678172191151,
+        "diameter": 46,
+        "avg_degree": 3.0709246193835855,
+        "giant_component_size": 7920
+    },
+    {
+        "user": "674",
+        "node_count": 9110,
+        "edge_count": 15259,
+        "apl": 5.767597888133131,
+        "diameter": 24,
+        "avg_degree": 3.3499451152579645,
+        "giant_component_size": 8971
+    },
+    {
+        "user": "2826",
+        "node_count": 4815,
+        "edge_count": 7695,
+        "apl": 5.963321219752637,
+        "diameter": 25,
+        "avg_degree": 3.1962616822429926,
+        "giant_component_size": 4620
+    },
+    {
+        "user": "1766",
+        "node_count": 4915,
+        "edge_count": 6672,
+        "apl": 6.620373643049672,
+        "diameter": 28,
+        "avg_degree": 2.714954221770095,
+        "giant_component_size": 4660
+    },
+    {
+        "user": "2521",
+        "node_count": 3038,
+        "edge_count": 12007,
+        "apl": 3.379805684636108,
+        "diameter": 11,
+        "avg_degree": 7.904542462146156,
+        "giant_component_size": 3025
+    },
+    {
+        "user": "957",
+        "node_count": 10106,
+        "edge_count": 16530,
+        "apl": 6.07536243904869,
+        "diameter": 26,
+        "avg_degree": 3.2713239659608004,
+        "giant_component_size": 9987
+    },
+    {
+        "user": "4",
+        "node_count": 7611,
+        "edge_count": 11472,
+        "apl": 6.40260934836603,
+        "diameter": 27,
+        "avg_degree": 3.014584154513204,
+        "giant_component_size": 7450
+    },
+    {
+        "user": "1226",
+        "node_count": 5405,
+        "edge_count": 7727,
+        "apl": 6.591779692055088,
+        "diameter": 26,
+        "avg_degree": 2.859204440333032,
+        "giant_component_size": 5209
+    },
+    {
+        "user": "452",
+        "node_count": 4752,
+        "edge_count": 6754,
+        "apl": 6.636026120227775,
+        "diameter": 26,
+        "avg_degree": 2.8425925925925943,
+        "giant_component_size": 4587
+    },
+    {
+        "user": "1888",
+        "node_count": 5079,
+        "edge_count": 7009,
+        "apl": 6.750395641057324,
+        "diameter": 24,
+        "avg_degree": 2.7599921244339414,
+        "giant_component_size": 4855
+    },
+    {
+        "user": "998",
+        "node_count": 5339,
+        "edge_count": 7465,
+        "apl": 6.837194090880439,
+        "diameter": 33,
+        "avg_degree": 2.7964038209402515,
+        "giant_component_size": 5126
+    },
+    {
+        "user": "1776",
+        "node_count": 4563,
+        "edge_count": 6247,
+        "apl": 7.112090064148166,
+        "diameter": 31,
+        "avg_degree": 2.738110891957054,
+        "giant_component_size": 4355
+    },
+    {
+        "user": "456",
+        "node_count": 4711,
+        "edge_count": 6409,
+        "apl": 6.998484875106944,
+        "diameter": 42,
+        "avg_degree": 2.7208660581617465,
+        "giant_component_size": 4552
+    },
+    {
+        "user": "495",
+        "node_count": 11976,
+        "edge_count": 21572,
+        "apl": 5.621438084222894,
+        "diameter": 31,
+        "avg_degree": 3.602538410153637,
+        "giant_component_size": 11880
+    },
+    {
+        "user": "500",
+        "node_count": 7740,
+        "edge_count": 11980,
+        "apl": 6.177516627777473,
+        "diameter": 27,
+        "avg_degree": 3.0956072351421233,
+        "giant_component_size": 7553
+    },
+    {
+        "user": "873",
+        "node_count": 8302,
+        "edge_count": 13306,
+        "apl": 6.054389016245429,
+        "diameter": 27,
+        "avg_degree": 3.205492652372924,
+        "giant_component_size": 8160
+    },
+    {
+        "user": "1741",
+        "node_count": 3918,
+        "edge_count": 5066,
+        "apl": 7.300744689399054,
+        "diameter": 29,
+        "avg_degree": 2.58601327207759,
+        "giant_component_size": 3697
+    },
+    {
+        "user": "478",
+        "node_count": 7949,
+        "edge_count": 12715,
+        "apl": 5.959695414214058,
+        "diameter": 26,
+        "avg_degree": 3.1991445464838404,
+        "giant_component_size": 7841
+    },
+    {
+        "user": "988",
+        "node_count": 4780,
+        "edge_count": 6412,
+        "apl": 7.064417407167489,
+        "diameter": 32,
+        "avg_degree": 2.6828451882845097,
+        "giant_component_size": 4575
+    },
+    {
+        "user": "1115",
+        "node_count": 3953,
+        "edge_count": 5197,
+        "apl": 7.172157631423178,
+        "diameter": 30,
+        "avg_degree": 2.629395395901842,
+        "giant_component_size": 3750
+    },
+    {
+        "user": "2065",
+        "node_count": 4160,
+        "edge_count": 5547,
+        "apl": 6.885414042330071,
+        "diameter": 28,
+        "avg_degree": 2.666826923076923,
+        "giant_component_size": 3992
+    },
+    {
+        "user": "455",
+        "node_count": 7288,
+        "edge_count": 11708,
+        "apl": 5.75916713994239,
+        "diameter": 24,
+        "avg_degree": 3.212952799121842,
+        "giant_component_size": 7191
+    },
+    {
+        "user": "637",
+        "node_count": 4821,
+        "edge_count": 6702,
+        "apl": 6.781866622481402,
+        "diameter": 26,
+        "avg_degree": 2.7803360298693223,
+        "giant_component_size": 4620
+    },
+    {
+        "user": "518",
+        "node_count": 3906,
+        "edge_count": 5015,
+        "apl": 7.337906707362086,
+        "diameter": 36,
+        "avg_degree": 2.567844342037889,
+        "giant_component_size": 3629
+    },
+    {
+        "user": "2262",
+        "node_count": 4122,
+        "edge_count": 5388,
+        "apl": 7.248286737081916,
+        "diameter": 34,
+        "avg_degree": 2.6142649199417822,
+        "giant_component_size": 3937
+    },
+    {
+        "user": "885",
+        "node_count": 6379,
+        "edge_count": 9415,
+        "apl": 6.561351266183784,
+        "diameter": 35,
+        "avg_degree": 2.9518733343784325,
+        "giant_component_size": 6242
+    },
+    {
+        "user": "5787",
+        "node_count": 3724,
+        "edge_count": 4938,
+        "apl": 7.081513259727398,
+        "diameter": 32,
+        "avg_degree": 2.6519871106337236,
+        "giant_component_size": 3554
+    },
+    {
+        "user": "830",
+        "node_count": 4354,
+        "edge_count": 5886,
+        "apl": 7.008102308222266,
+        "diameter": 32,
+        "avg_degree": 2.703720716582452,
+        "giant_component_size": 4128
+    },
+    {
+        "user": "1586",
+        "node_count": 3694,
+        "edge_count": 4786,
+        "apl": 7.410749367667559,
+        "diameter": 29,
+        "avg_degree": 2.591229020032489,
+        "giant_component_size": 3512
+    },
+    {
+        "user": "583",
+        "node_count": 6661,
+        "edge_count": 9926,
+        "apl": 6.397286001310698,
+        "diameter": 29,
+        "avg_degree": 2.9803332832907943,
+        "giant_component_size": 6518
+    },
+    {
+        "user": "582",
+        "node_count": 4328,
+        "edge_count": 5665,
+        "apl": 7.147451003720469,
+        "diameter": 27,
+        "avg_degree": 2.617837338262475,
+        "giant_component_size": 4084
+    },
+    {
+        "user": "1755",
+        "node_count": 4268,
+        "edge_count": 5458,
+        "apl": 7.232457676324985,
+        "diameter": 35,
+        "avg_degree": 2.55763823805061,
+        "giant_component_size": 3977
+    },
+    {
+        "user": "2432",
+        "node_count": 4431,
+        "edge_count": 6001,
+        "apl": 6.652433903452767,
+        "diameter": 28,
+        "avg_degree": 2.708643647032268,
+        "giant_component_size": 4202
+    },
+    {
+        "user": "490",
+        "node_count": 6179,
+        "edge_count": 8954,
+        "apl": 6.714043454985221,
+        "diameter": 39,
+        "avg_degree": 2.8982035928143763,
+        "giant_component_size": 6011
+    },
+    {
+        "user": "1068",
+        "node_count": 4315,
+        "edge_count": 5504,
+        "apl": 7.844638462611853,
+        "diameter": 33,
+        "avg_degree": 2.5511008111239883,
+        "giant_component_size": 4062
+    },
+    {
+        "user": "648",
+        "node_count": 3995,
+        "edge_count": 5235,
+        "apl": 7.262970173974637,
+        "diameter": 32,
+        "avg_degree": 2.6207759699624473,
+        "giant_component_size": 3778
+    },
+    {
+        "user": "571",
+        "node_count": 11271,
+        "edge_count": 19919,
+        "apl": 5.66709488817938,
+        "diameter": 28,
+        "avg_degree": 3.5345577144885176,
+        "giant_component_size": 11164
+    },
+    {
+        "user": "511",
+        "node_count": 3644,
+        "edge_count": 5080,
+        "apl": 6.04828609707813,
+        "diameter": 21,
+        "avg_degree": 2.788144895718986,
+        "giant_component_size": 3546
+    },
+    {
+        "user": "728",
+        "node_count": 5534,
+        "edge_count": 7692,
+        "apl": 6.762145556294952,
+        "diameter": 30,
+        "avg_degree": 2.7799060354174197,
+        "giant_component_size": 5343
+    },
+    {
+        "user": "2581",
+        "node_count": 7879,
+        "edge_count": 12580,
+        "apl": 6.017093152360363,
+        "diameter": 33,
+        "avg_degree": 3.193298641959629,
+        "giant_component_size": 7727
+    },
+    {
+        "user": "3118",
+        "node_count": 4127,
+        "edge_count": 5369,
+        "apl": 7.003653641104753,
+        "diameter": 36,
+        "avg_degree": 2.601889992730793,
+        "giant_component_size": 3877
+    },
+    {
+        "user": "836",
+        "node_count": 4443,
+        "edge_count": 5879,
+        "apl": 7.046699484587628,
+        "diameter": 33,
+        "avg_degree": 2.6464100832770656,
+        "giant_component_size": 4236
+    },
+    {
+        "user": "1958",
+        "node_count": 4680,
+        "edge_count": 6467,
+        "apl": 6.769979402407094,
+        "diameter": 25,
+        "avg_degree": 2.7636752136752087,
+        "giant_component_size": 4492
+    },
+    {
+        "user": "1414",
+        "node_count": 4206,
+        "edge_count": 5665,
+        "apl": 6.92945001503555,
+        "diameter": 27,
+        "avg_degree": 2.693770803613874,
+        "giant_component_size": 4056
+    },
+    {
+        "user": "7947",
+        "node_count": 4239,
+        "edge_count": 5820,
+        "apl": 7.221905502384963,
+        "diameter": 40,
+        "avg_degree": 2.745930644019818,
+        "giant_component_size": 4026
+    },
+    {
+        "user": "1754",
+        "node_count": 5531,
+        "edge_count": 7905,
+        "apl": 6.582363915869108,
+        "diameter": 35,
+        "avg_degree": 2.8584342795154654,
+        "giant_component_size": 5347
+    },
+    {
+        "user": "1897",
+        "node_count": 4837,
+        "edge_count": 6604,
+        "apl": 6.949456776287137,
+        "diameter": 28,
+        "avg_degree": 2.730618151746949,
+        "giant_component_size": 4616
+    },
+    {
+        "user": "644",
+        "node_count": 3860,
+        "edge_count": 4978,
+        "apl": 7.628442429252716,
+        "diameter": 31,
+        "avg_degree": 2.579274611398958,
+        "giant_component_size": 3708
+    },
+    {
+        "user": "3422",
+        "node_count": 6676,
+        "edge_count": 10088,
+        "apl": 6.386466892236354,
+        "diameter": 39,
+        "avg_degree": 3.0221689634511772,
+        "giant_component_size": 6575
+    },
+    {
+        "user": "2038",
+        "node_count": 9266,
+        "edge_count": 15636,
+        "apl": 5.915957524200074,
+        "diameter": 30,
+        "avg_degree": 3.3749190589250992,
+        "giant_component_size": 9153
+    },
+    {
+        "user": "33844",
+        "node_count": 4296,
+        "edge_count": 5115,
+        "apl": 10.344825809711049,
+        "diameter": 36,
+        "avg_degree": 2.381284916201119,
+        "giant_component_size": 4105
+    },
+    {
+        "user": "1328",
+        "node_count": 4106,
+        "edge_count": 5753,
+        "apl": 6.739713996341814,
+        "diameter": 32,
+        "avg_degree": 2.8022406234778345,
+        "giant_component_size": 3985
+    },
+    {
+        "user": "1936",
+        "node_count": 4633,
+        "edge_count": 6274,
+        "apl": 7.1212479067079135,
+        "diameter": 28,
+        "avg_degree": 2.7083962875027003,
+        "giant_component_size": 4468
+    },
+    {
+        "user": "1507",
+        "node_count": 5226,
+        "edge_count": 7380,
+        "apl": 6.561651781246137,
+        "diameter": 31,
+        "avg_degree": 2.824339839265207,
+        "giant_component_size": 5048
+    },
+    {
+        "user": "1223",
+        "node_count": 6316,
+        "edge_count": 8940,
+        "apl": 6.834265429651237,
+        "diameter": 33,
+        "avg_degree": 2.830905636478776,
+        "giant_component_size": 6086
+    },
+    {
+        "user": "555",
+        "node_count": 6158,
+        "edge_count": 8971,
+        "apl": 6.576610134709387,
+        "diameter": 26,
+        "avg_degree": 2.9136083143877882,
+        "giant_component_size": 5927
+    },
+    {
+        "user": "1687",
+        "node_count": 5304,
+        "edge_count": 7181,
+        "apl": 6.931150578551929,
+        "diameter": 35,
+        "avg_degree": 2.707767722473604,
+        "giant_component_size": 5049
+    },
+    {
+        "user": "3745",
+        "node_count": 4426,
+        "edge_count": 5881,
+        "apl": 7.23891420294516,
+        "diameter": 31,
+        "avg_degree": 2.65747853592408,
+        "giant_component_size": 4200
+    },
+    {
+        "user": "1032",
+        "node_count": 5925,
+        "edge_count": 8202,
+        "apl": 6.680410616422008,
+        "diameter": 25,
+        "avg_degree": 2.768607594936713,
+        "giant_component_size": 5658
+    },
+    {
+        "user": "51815",
+        "node_count": 4046,
+        "edge_count": 7785,
+        "apl": 5.209342804519126,
+        "diameter": 25,
+        "avg_degree": 3.8482451804250988,
+        "giant_component_size": 4018
+    },
+    {
+        "user": "2375",
+        "node_count": 4054,
+        "edge_count": 5473,
+        "apl": 7.156568227305592,
+        "diameter": 33,
+        "avg_degree": 2.7000493339911205,
+        "giant_component_size": 3908
+    },
+    {
+        "user": "60624",
+        "node_count": 2025,
+        "edge_count": 3159,
+        "apl": 5.027912642041895,
+        "diameter": 17,
+        "avg_degree": 3.1200000000000068,
+        "giant_component_size": 1998
+    },
+    {
+        "user": "604",
+        "node_count": 4095,
+        "edge_count": 5679,
+        "apl": 6.709475409691683,
+        "diameter": 27,
+        "avg_degree": 2.773626373626378,
+        "giant_component_size": 3930
+    },
+    {
+        "user": "2889",
+        "node_count": 4774,
+        "edge_count": 6467,
+        "apl": 7.107550529501429,
+        "diameter": 41,
+        "avg_degree": 2.7092584834520355,
+        "giant_component_size": 4646
+    },
+    {
+        "user": "18464",
+        "node_count": 3348,
+        "edge_count": 4471,
+        "apl": 7.327350593786349,
+        "diameter": 43,
+        "avg_degree": 2.6708482676224583,
+        "giant_component_size": 3160
+    },
+    {
+        "user": "29340",
+        "node_count": 4233,
+        "edge_count": 5671,
+        "apl": 7.11337801582868,
+        "diameter": 27,
+        "avg_degree": 2.6794235766595804,
+        "giant_component_size": 4085
+    },
+    {
+        "user": "1381",
+        "node_count": 6750,
+        "edge_count": 10587,
+        "apl": 6.127844129213614,
+        "diameter": 25,
+        "avg_degree": 3.136888888888891,
+        "giant_component_size": 6619
+    },
+    {
+        "user": "558",
+        "node_count": 4145,
+        "edge_count": 5253,
+        "apl": 7.5134965673067375,
+        "diameter": 34,
+        "avg_degree": 2.5346200241254544,
+        "giant_component_size": 3825
+    },
+    {
+        "user": "85711",
+        "node_count": 705,
+        "edge_count": 1095,
+        "apl": 6.105842440565598,
+        "diameter": 19,
+        "avg_degree": 3.1063829787234023,
+        "giant_component_size": 233
+    },
+    {
+        "user": "9558",
+        "node_count": 4733,
+        "edge_count": 7138,
+        "apl": 6.057677147226165,
+        "diameter": 23,
+        "avg_degree": 3.016268751320525,
+        "giant_component_size": 4642
+    },
+    {
+        "user": "2616",
+        "node_count": 2856,
+        "edge_count": 4416,
+        "apl": 5.8607286533531475,
+        "diameter": 22,
+        "avg_degree": 3.0924369747899227,
+        "giant_component_size": 2815
+    },
+    {
+        "user": "5969",
+        "node_count": 4365,
+        "edge_count": 7152,
+        "apl": 5.389491321596786,
+        "diameter": 24,
+        "avg_degree": 3.27697594501718,
+        "giant_component_size": 4309
+    },
+    {
+        "user": "2497",
+        "node_count": 5339,
+        "edge_count": 7290,
+        "apl": 7.159807272098951,
+        "diameter": 32,
+        "avg_degree": 2.7308484734969047,
+        "giant_component_size": 5115
+    },
+    {
+        "user": "116973",
+        "node_count": 2041,
+        "edge_count": 2788,
+        "apl": 6.275226054470993,
+        "diameter": 29,
+        "avg_degree": 2.731994120529152,
+        "giant_component_size": 2010
+    },
+    {
+        "user": "115086",
+        "node_count": 4011,
+        "edge_count": 5646,
+        "apl": 6.631611182330617,
+        "diameter": 25,
+        "avg_degree": 2.8152580403889322,
+        "giant_component_size": 3893
+    },
+    {
+        "user": "155433",
+        "node_count": 19212,
+        "edge_count": 47652,
+        "apl": 4.518354426523611,
+        "diameter": 17,
+        "avg_degree": 4.960649594003745,
+        "giant_component_size": 19209
+    },
+    {
+        "user": "158367",
+        "node_count": 2393,
+        "edge_count": 3238,
+        "apl": 5.2360305232170195,
+        "diameter": 16,
+        "avg_degree": 2.706226493940654,
+        "giant_component_size": 2307
+    },
+    {
+        "user": "206597",
+        "node_count": 2509,
+        "edge_count": 3468,
+        "apl": 6.453247210665813,
+        "diameter": 26,
+        "avg_degree": 2.7644479872459136,
+        "giant_component_size": 2470
+    },
+    {
+        "user": "185483",
+        "node_count": 3148,
+        "edge_count": 4333,
+        "apl": 6.882510009437275,
+        "diameter": 30,
+        "avg_degree": 2.752858958068614,
+        "giant_component_size": 3091
+    },
+    {
+        "user": "195459",
+        "node_count": 3889,
+        "edge_count": 5062,
+        "apl": 7.062983102391282,
+        "diameter": 27,
+        "avg_degree": 2.603239907431216,
+        "giant_component_size": 3760
+    },
+    {
+        "user": "189916",
+        "node_count": 2531,
+        "edge_count": 3171,
+        "apl": 6.383947610151417,
+        "diameter": 27,
+        "avg_degree": 2.505728960885025,
+        "giant_component_size": 2256
+    },
+    {
+        "user": "227849",
+        "node_count": 4323,
+        "edge_count": 6076,
+        "apl": 6.668392676828044,
+        "diameter": 26,
+        "avg_degree": 2.811010872079575,
+        "giant_component_size": 4177
+    },
+    {
+        "user": "231090",
+        "node_count": 2145,
+        "edge_count": 2997,
+        "apl": 5.97323371796142,
+        "diameter": 23,
+        "avg_degree": 2.7944055944055974,
+        "giant_component_size": 2074
+    },
+    {
+        "user": "236996",
+        "node_count": 661,
+        "edge_count": 1177,
+        "apl": 3.092316513761468,
+        "diameter": 10,
+        "avg_degree": 3.5612708018154344,
+        "giant_component_size": 79
+    },
+    {
+        "user": "239535",
+        "node_count": 2150,
+        "edge_count": 2805,
+        "apl": 7.1827269727655585,
+        "diameter": 36,
+        "avg_degree": 2.6093023255813943,
+        "giant_component_size": 2026
+    },
+    {
+        "user": "264981",
+        "node_count": 2105,
+        "edge_count": 2903,
+        "apl": 7.215265313712174,
+        "diameter": 27,
+        "avg_degree": 2.7581947743467916,
+        "giant_component_size": 2059
+    },
+    {
+        "user": "281754",
+        "node_count": 8684,
+        "edge_count": 13068,
+        "apl": 6.601848098923614,
+        "diameter": 28,
+        "avg_degree": 3.009672961768781,
+        "giant_component_size": 8556
+    },
+    {
+        "user": "290146",
+        "node_count": 3168,
+        "edge_count": 4477,
+        "apl": 7.133220150546201,
+        "diameter": 28,
+        "avg_degree": 2.826388888888894,
+        "giant_component_size": 3127
+    },
+    {
+        "user": "302169",
+        "node_count": 2673,
+        "edge_count": 3536,
+        "apl": 5.813821075939265,
+        "diameter": 23,
+        "avg_degree": 2.6457164234942088,
+        "giant_component_size": 2616
+    },
+    {
+        "user": "303918",
+        "node_count": 3550,
+        "edge_count": 4960,
+        "apl": 5.563125409859281,
+        "diameter": 25,
+        "avg_degree": 2.7943661971830953,
+        "giant_component_size": 3455
+    },
+    {
+        "user": "244438",
+        "node_count": 2762,
+        "edge_count": 3539,
+        "apl": 7.410740745853121,
+        "diameter": 29,
+        "avg_degree": 2.562635771180309,
+        "giant_component_size": 2582
+    },
+    {
+        "user": "310562",
+        "node_count": 1842,
+        "edge_count": 2432,
+        "apl": 6.41932566843162,
+        "diameter": 24,
+        "avg_degree": 2.6406080347448406,
+        "giant_component_size": 1727
+    },
+    {
+        "user": "326110",
+        "node_count": 3593,
+        "edge_count": 5095,
+        "apl": 5.92115418388376,
+        "diameter": 25,
+        "avg_degree": 2.8360701363762906,
+        "giant_component_size": 3535
+    },
+    {
+        "user": "373729",
+        "node_count": 22251,
+        "edge_count": 35951,
+        "apl": 6.626821054090173,
+        "diameter": 22,
+        "avg_degree": 3.2314053300975165,
+        "giant_component_size": 22213
+    },
+    {
+        "user": "372255",
+        "node_count": 1702,
+        "edge_count": 2423,
+        "apl": 6.757236696811764,
+        "diameter": 26,
+        "avg_degree": 2.847238542890717,
+        "giant_component_size": 1584
+    },
+    {
+        "user": "372256",
+        "node_count": 1703,
+        "edge_count": 2468,
+        "apl": 6.73388176900528,
+        "diameter": 24,
+        "avg_degree": 2.8984145625367,
+        "giant_component_size": 1653
+    },
+    {
+        "user": "159285",
+        "node_count": 2825,
+        "edge_count": 4176,
+        "apl": 5.208030630656156,
+        "diameter": 17,
+        "avg_degree": 2.956460176991156,
+        "giant_component_size": 2787
+    },
+    {
+        "user": "394138",
+        "node_count": 3399,
+        "edge_count": 4880,
+        "apl": 6.560847961228276,
+        "diameter": 28,
+        "avg_degree": 2.8714327743453936,
+        "giant_component_size": 3306
+    },
+    {
+        "user": "401621",
+        "node_count": 88,
+        "edge_count": 46,
+        "apl": 1.2321428571428572,
+        "diameter": 3,
+        "avg_degree": 1.0454545454545454,
+        "giant_component_size": 6
+    },
+    {
+        "user": "401706",
+        "node_count": 19,
+        "edge_count": 9,
+        "apl": 1.0,
+        "diameter": 1,
+        "avg_degree": 0.9473684210526316,
+        "giant_component_size": 2
+    },
+    {
+        "user": "425",
+        "node_count": 3218,
+        "edge_count": 4175,
+        "apl": 6.979457308526577,
+        "diameter": 25,
+        "avg_degree": 2.5947793660658744,
+        "giant_component_size": 3114
+    },
+    {
+        "user": "410030",
+        "node_count": 4751,
+        "edge_count": 6475,
+        "apl": 7.806036351886141,
+        "diameter": 27,
+        "avg_degree": 2.7257419490633543,
+        "giant_component_size": 4684
+    },
+    {
+        "user": "457274",
+        "node_count": 4344,
+        "edge_count": 5775,
+        "apl": 7.166942188081562,
+        "diameter": 32,
+        "avg_degree": 2.6588397790055165,
+        "giant_component_size": 4162
+    },
+    {
+        "user": "169137",
+        "node_count": 8973,
+        "edge_count": 18730,
+        "apl": 4.610845515842534,
+        "diameter": 16,
+        "avg_degree": 4.174746461607046,
+        "giant_component_size": 8917
+    },
+    {
+        "user": "489157",
+        "node_count": 2537,
+        "edge_count": 3493,
+        "apl": 5.978337615010768,
+        "diameter": 25,
+        "avg_degree": 2.753646038628298,
+        "giant_component_size": 2444
+    },
+    {
+        "user": "510769",
+        "node_count": 2511,
+        "edge_count": 3332,
+        "apl": 7.107972340714786,
+        "diameter": 33,
+        "avg_degree": 2.6539227399442487,
+        "giant_component_size": 2498
+    },
+    {
+        "user": "519892",
+        "node_count": 1394,
+        "edge_count": 2100,
+        "apl": 6.1855919895567055,
+        "diameter": 25,
+        "avg_degree": 3.012912482065992,
+        "giant_component_size": 1381
+    },
+    {
+        "user": "165047",
+        "node_count": 2551,
+        "edge_count": 3354,
+        "apl": 6.304680886087857,
+        "diameter": 22,
+        "avg_degree": 2.6295570364562932,
+        "giant_component_size": 2475
+    },
+    {
+        "user": "553",
+        "node_count": 1917,
+        "edge_count": 3862,
+        "apl": 3.837833421005716,
+        "diameter": 14,
+        "avg_degree": 4.029212310902451,
+        "giant_component_size": 1907
+    },
+    {
+        "user": "588215",
+        "node_count": 6197,
+        "edge_count": 8506,
+        "apl": 7.073624853747773,
+        "diameter": 29,
+        "avg_degree": 2.74519928997902,
+        "giant_component_size": 6108
+    },
+    {
+        "user": "596021",
+        "node_count": 3112,
+        "edge_count": 4138,
+        "apl": 6.3404542717085395,
+        "diameter": 25,
+        "avg_degree": 2.6593830334190227,
+        "giant_component_size": 2963
+    },
+    {
+        "user": "615647",
+        "node_count": 12461,
+        "edge_count": 24018,
+        "apl": 5.231895796382278,
+        "diameter": 20,
+        "avg_degree": 3.8549073108097027,
+        "giant_component_size": 12460
+    },
+    {
+        "user": "179062",
+        "node_count": 2071,
+        "edge_count": 2819,
+        "apl": 6.593633757021987,
+        "diameter": 26,
+        "avg_degree": 2.7223563495895724,
+        "giant_component_size": 2022
+    },
+    {
+        "user": "676049",
+        "node_count": 2192,
+        "edge_count": 3012,
+        "apl": 5.914544572553699,
+        "diameter": 24,
+        "avg_degree": 2.748175182481752,
+        "giant_component_size": 2049
+    },
+    {
+        "user": "425554",
+        "node_count": 3085,
+        "edge_count": 4271,
+        "apl": 6.5017190438306285,
+        "diameter": 23,
+        "avg_degree": 2.768881685575362,
+        "giant_component_size": 2970
+    },
+    {
+        "user": "704373",
+        "node_count": 4749,
+        "edge_count": 7662,
+        "apl": 5.760337295591592,
+        "diameter": 27,
+        "avg_degree": 3.226784586228681,
+        "giant_component_size": 4437
+    },
+    {
+        "user": "652638",
+        "node_count": 3159,
+        "edge_count": 4273,
+        "apl": 7.129729436580601,
+        "diameter": 29,
+        "avg_degree": 2.7052864830642602,
+        "giant_component_size": 3073
+    },
+    {
+        "user": "731900",
+        "node_count": 2506,
+        "edge_count": 3253,
+        "apl": 7.113098401453286,
+        "diameter": 35,
+        "avg_degree": 2.5961691939345615,
+        "giant_component_size": 2316
+    },
+    {
+        "user": "181290",
+        "node_count": 2764,
+        "edge_count": 3546,
+        "apl": 6.6063166940196805,
+        "diameter": 34,
+        "avg_degree": 2.565846599131692,
+        "giant_component_size": 2670
+    },
+    {
+        "user": "236806",
+        "node_count": 2832,
+        "edge_count": 4009,
+        "apl": 6.0959699010279635,
+        "diameter": 27,
+        "avg_degree": 2.8312146892655345,
+        "giant_component_size": 2790
+    },
+    {
+        "user": "369537",
+        "node_count": 2942,
+        "edge_count": 4002,
+        "apl": 6.888163612551669,
+        "diameter": 24,
+        "avg_degree": 2.7205982324949036,
+        "giant_component_size": 2859
+    }
+]
