@@ -40,7 +40,7 @@ def parse_data(filename):
             except ValueError:
                 # New user found
                 users.append(user)
-                user_graphs.append(igraph.Graph())
+                user_graphs.append(igraph.Graph(directed=True))
                 user_last_clicks.append({"article": article, "game": game})
                 user_count += 1
                 idx = len(users) - 1

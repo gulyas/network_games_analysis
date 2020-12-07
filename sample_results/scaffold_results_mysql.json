@@ -1,0 +1,1271 @@
+[
+    {
+        "user": "tamas",
+        "node_count": 3698,
+        "edge_count": 4575,
+        "apl": 6.061396235046044,
+        "diameter": 23,
+        "avg_degree": 2.4743104380746335,
+        "giant_component_size": 3645
+    },
+    {
+        "user": "Mursuka",
+        "node_count": 3970,
+        "edge_count": 4982,
+        "apl": 4.653682923964598,
+        "diameter": 19,
+        "avg_degree": 2.5098236775818683,
+        "giant_component_size": 3825
+    },
+    {
+        "user": "BirdEyeView",
+        "node_count": 4689,
+        "edge_count": 6205,
+        "apl": 6.303245934983372,
+        "diameter": 25,
+        "avg_degree": 2.6466197483471943,
+        "giant_component_size": 4618
+    },
+    {
+        "user": "arzaqi",
+        "node_count": 2541,
+        "edge_count": 2909,
+        "apl": 6.29605833450698,
+        "diameter": 25,
+        "avg_degree": 2.289649744195201,
+        "giant_component_size": 2460
+    },
+    {
+        "user": "ThatOneGuy",
+        "node_count": 5221,
+        "edge_count": 7069,
+        "apl": 4.982213666566994,
+        "diameter": 22,
+        "avg_degree": 2.7079103619996037,
+        "giant_component_size": 5171
+    },
+    {
+        "user": "meezocool",
+        "node_count": 2316,
+        "edge_count": 2776,
+        "apl": 5.711110554970522,
+        "diameter": 22,
+        "avg_degree": 2.3972366148532016,
+        "giant_component_size": 2262
+    },
+    {
+        "user": "skillz25",
+        "node_count": 2878,
+        "edge_count": 3477,
+        "apl": 5.8283846289663845,
+        "diameter": 29,
+        "avg_degree": 2.4162612925642866,
+        "giant_component_size": 2786
+    },
+    {
+        "user": "iloveredrobot",
+        "node_count": 2987,
+        "edge_count": 3391,
+        "apl": 7.3583929781247015,
+        "diameter": 47,
+        "avg_degree": 2.27050552393706,
+        "giant_component_size": 2775
+    },
+    {
+        "user": "mistermendoza",
+        "node_count": 3084,
+        "edge_count": 3728,
+        "apl": 5.898253019944256,
+        "diameter": 24,
+        "avg_degree": 2.4176394293125845,
+        "giant_component_size": 2983
+    },
+    {
+        "user": "Orbiter5",
+        "node_count": 4264,
+        "edge_count": 5137,
+        "apl": 5.356547904926227,
+        "diameter": 23,
+        "avg_degree": 2.4094746716697806,
+        "giant_component_size": 4035
+    },
+    {
+        "user": "dju",
+        "node_count": 6651,
+        "edge_count": 9098,
+        "apl": 5.617957757192607,
+        "diameter": 27,
+        "avg_degree": 2.73582919861674,
+        "giant_component_size": 6562
+    },
+    {
+        "user": "jgfoot",
+        "node_count": 3985,
+        "edge_count": 4944,
+        "apl": 5.465232374660514,
+        "diameter": 20,
+        "avg_degree": 2.481304893350065,
+        "giant_component_size": 3793
+    },
+    {
+        "user": "citrus",
+        "node_count": 3903,
+        "edge_count": 4702,
+        "apl": 7.383116045644433,
+        "diameter": 33,
+        "avg_degree": 2.409428644632334,
+        "giant_component_size": 3730
+    },
+    {
+        "user": "tazend",
+        "node_count": 4749,
+        "edge_count": 5686,
+        "apl": 6.739584984929078,
+        "diameter": 33,
+        "avg_degree": 2.3946093914508264,
+        "giant_component_size": 4638
+    },
+    {
+        "user": "fossycasas",
+        "node_count": 2895,
+        "edge_count": 3366,
+        "apl": 5.470309676748879,
+        "diameter": 22,
+        "avg_degree": 2.3253886010362717,
+        "giant_component_size": 2733
+    },
+    {
+        "user": "d3dhook",
+        "node_count": 3288,
+        "edge_count": 3837,
+        "apl": 6.1140462416061565,
+        "diameter": 28,
+        "avg_degree": 2.3339416058394105,
+        "giant_component_size": 3239
+    },
+    {
+        "user": "dw3015",
+        "node_count": 3400,
+        "edge_count": 4208,
+        "apl": 5.674213228681395,
+        "diameter": 23,
+        "avg_degree": 2.4752941176470586,
+        "giant_component_size": 3349
+    },
+    {
+        "user": "beastly",
+        "node_count": 3906,
+        "edge_count": 3946,
+        "apl": 12.144597724252172,
+        "diameter": 41,
+        "avg_degree": 2.0204813108038846,
+        "giant_component_size": 2975
+    },
+    {
+        "user": "Solennon",
+        "node_count": 5280,
+        "edge_count": 6174,
+        "apl": 7.005915498480103,
+        "diameter": 37,
+        "avg_degree": 2.338636363636359,
+        "giant_component_size": 5010
+    },
+    {
+        "user": "rosso99",
+        "node_count": 3741,
+        "edge_count": 4386,
+        "apl": 6.0396252971020274,
+        "diameter": 24,
+        "avg_degree": 2.3448275862068995,
+        "giant_component_size": 3566
+    },
+    {
+        "user": "Elmyr",
+        "node_count": 6434,
+        "edge_count": 7874,
+        "apl": 6.5973359378953775,
+        "diameter": 30,
+        "avg_degree": 2.4476220080820648,
+        "giant_component_size": 6230
+    },
+    {
+        "user": "tpshrine",
+        "node_count": 3844,
+        "edge_count": 4488,
+        "apl": 5.617838727147195,
+        "diameter": 23,
+        "avg_degree": 2.3350676378772075,
+        "giant_component_size": 3640
+    },
+    {
+        "user": "Tierralandia",
+        "node_count": 2857,
+        "edge_count": 3240,
+        "apl": 6.469869049351657,
+        "diameter": 31,
+        "avg_degree": 2.2681134056702845,
+        "giant_component_size": 2632
+    },
+    {
+        "user": "Lowestone",
+        "node_count": 6792,
+        "edge_count": 9108,
+        "apl": 5.615240826973098,
+        "diameter": 23,
+        "avg_degree": 2.6819787985865675,
+        "giant_component_size": 6727
+    },
+    {
+        "user": "422institute",
+        "node_count": 3720,
+        "edge_count": 4393,
+        "apl": 6.750367976414292,
+        "diameter": 35,
+        "avg_degree": 2.3618279569892566,
+        "giant_component_size": 3567
+    },
+    {
+        "user": "Tcw7468",
+        "node_count": 3911,
+        "edge_count": 4832,
+        "apl": 6.470672463378325,
+        "diameter": 25,
+        "avg_degree": 2.4709792891843496,
+        "giant_component_size": 3822
+    },
+    {
+        "user": "Booyakasha",
+        "node_count": 3465,
+        "edge_count": 4221,
+        "apl": 5.580157948157918,
+        "diameter": 30,
+        "avg_degree": 2.436363636363638,
+        "giant_component_size": 3345
+    },
+    {
+        "user": "Nasco",
+        "node_count": 9409,
+        "edge_count": 13321,
+        "apl": 5.5959911506065385,
+        "diameter": 28,
+        "avg_degree": 2.8315442661281724,
+        "giant_component_size": 9383
+    },
+    {
+        "user": "mckenziac",
+        "node_count": 3655,
+        "edge_count": 4253,
+        "apl": 5.729558656239516,
+        "diameter": 22,
+        "avg_degree": 2.327222982216141,
+        "giant_component_size": 3537
+    },
+    {
+        "user": "Rae87",
+        "node_count": 7300,
+        "edge_count": 9508,
+        "apl": 5.990202081961239,
+        "diameter": 23,
+        "avg_degree": 2.604931506849317,
+        "giant_component_size": 7132
+    },
+    {
+        "user": "Stargrass",
+        "node_count": 6207,
+        "edge_count": 7845,
+        "apl": 5.859176391673556,
+        "diameter": 25,
+        "avg_degree": 2.5277912034799432,
+        "giant_component_size": 6078
+    },
+    {
+        "user": "yizikes",
+        "node_count": 8077,
+        "edge_count": 10527,
+        "apl": 5.863569714983137,
+        "diameter": 32,
+        "avg_degree": 2.6066608889439133,
+        "giant_component_size": 7951
+    },
+    {
+        "user": "Hoguiesamich",
+        "node_count": 3783,
+        "edge_count": 4484,
+        "apl": 5.462148724242437,
+        "diameter": 21,
+        "avg_degree": 2.3706053396774998,
+        "giant_component_size": 3680
+    },
+    {
+        "user": "WodenScribe",
+        "node_count": 6225,
+        "edge_count": 7739,
+        "apl": 5.1152369998639,
+        "diameter": 20,
+        "avg_degree": 2.4864257028112493,
+        "giant_component_size": 6190
+    },
+    {
+        "user": "satyadasa",
+        "node_count": 7540,
+        "edge_count": 8750,
+        "apl": 10.487990321599353,
+        "diameter": 44,
+        "avg_degree": 2.3209549071617994,
+        "giant_component_size": 7250
+    },
+    {
+        "user": "jwags999",
+        "node_count": 4317,
+        "edge_count": 5140,
+        "apl": 6.543864557208517,
+        "diameter": 32,
+        "avg_degree": 2.3812832985869843,
+        "giant_component_size": 4127
+    },
+    {
+        "user": "Fandy",
+        "node_count": 5659,
+        "edge_count": 6579,
+        "apl": 7.967536258299738,
+        "diameter": 32,
+        "avg_degree": 2.3251457854744695,
+        "giant_component_size": 5263
+    },
+    {
+        "user": "goingmissing",
+        "node_count": 3726,
+        "edge_count": 4338,
+        "apl": 7.013857713780574,
+        "diameter": 35,
+        "avg_degree": 2.3285024154589355,
+        "giant_component_size": 3450
+    },
+    {
+        "user": "heptone",
+        "node_count": 7902,
+        "edge_count": 9877,
+        "apl": 5.286830418854251,
+        "diameter": 21,
+        "avg_degree": 2.499873449759561,
+        "giant_component_size": 7240
+    },
+    {
+        "user": "badhanddoek",
+        "node_count": 13740,
+        "edge_count": 21372,
+        "apl": 5.295416245000904,
+        "diameter": 24,
+        "avg_degree": 3.1109170305676677,
+        "giant_component_size": 13662
+    },
+    {
+        "user": "joi",
+        "node_count": 3246,
+        "edge_count": 3757,
+        "apl": 5.755921464848904,
+        "diameter": 23,
+        "avg_degree": 2.314849044978436,
+        "giant_component_size": 3098
+    },
+    {
+        "user": "SwimFellow",
+        "node_count": 3264,
+        "edge_count": 3902,
+        "apl": 6.985219849916422,
+        "diameter": 28,
+        "avg_degree": 2.390931372549015,
+        "giant_component_size": 3182
+    },
+    {
+        "user": "Pooptartz",
+        "node_count": 3897,
+        "edge_count": 4762,
+        "apl": 5.535805802708764,
+        "diameter": 21,
+        "avg_degree": 2.443931229150629,
+        "giant_component_size": 3853
+    },
+    {
+        "user": "benny685",
+        "node_count": 4014,
+        "edge_count": 4709,
+        "apl": 6.264585477080219,
+        "diameter": 29,
+        "avg_degree": 2.346287992027907,
+        "giant_component_size": 3748
+    },
+    {
+        "user": "RageOfTheJedi",
+        "node_count": 8726,
+        "edge_count": 12353,
+        "apl": 5.347526072303072,
+        "diameter": 20,
+        "avg_degree": 2.831308732523489,
+        "giant_component_size": 8603
+    },
+    {
+        "user": "nbobbed37",
+        "node_count": 7420,
+        "edge_count": 8929,
+        "apl": 7.662169957967844,
+        "diameter": 37,
+        "avg_degree": 2.406738544474396,
+        "giant_component_size": 7014
+    },
+    {
+        "user": "Akamu",
+        "node_count": 4250,
+        "edge_count": 5228,
+        "apl": 5.643890042510995,
+        "diameter": 19,
+        "avg_degree": 2.4602352941176497,
+        "giant_component_size": 4085
+    },
+    {
+        "user": "gingerheadedsailor",
+        "node_count": 8292,
+        "edge_count": 10887,
+        "apl": 5.727143751150104,
+        "diameter": 25,
+        "avg_degree": 2.625904486251821,
+        "giant_component_size": 8034
+    },
+    {
+        "user": "WClarkFan",
+        "node_count": 3831,
+        "edge_count": 4444,
+        "apl": 6.469905116871858,
+        "diameter": 27,
+        "avg_degree": 2.3200208822761663,
+        "giant_component_size": 3674
+    },
+    {
+        "user": "ethernal",
+        "node_count": 3673,
+        "edge_count": 4392,
+        "apl": 6.274679979919106,
+        "diameter": 37,
+        "avg_degree": 2.391505581268714,
+        "giant_component_size": 3612
+    },
+    {
+        "user": "realnutter",
+        "node_count": 5828,
+        "edge_count": 5994,
+        "apl": 6.7497687581845724,
+        "diameter": 25,
+        "avg_degree": 2.0569663692518847,
+        "giant_component_size": 4345
+    },
+    {
+        "user": "Yams",
+        "node_count": 6149,
+        "edge_count": 8031,
+        "apl": 6.63804257373369,
+        "diameter": 30,
+        "avg_degree": 2.612132053992516,
+        "giant_component_size": 6100
+    },
+    {
+        "user": "fredfuchs",
+        "node_count": 4133,
+        "edge_count": 4919,
+        "apl": 6.084689692013851,
+        "diameter": 31,
+        "avg_degree": 2.380353254294705,
+        "giant_component_size": 3962
+    },
+    {
+        "user": "Betathunder",
+        "node_count": 6668,
+        "edge_count": 8781,
+        "apl": 6.037313368905366,
+        "diameter": 29,
+        "avg_degree": 2.6337732453509273,
+        "giant_component_size": 6483
+    },
+    {
+        "user": "bradyguy",
+        "node_count": 4699,
+        "edge_count": 5581,
+        "apl": 7.232305790487831,
+        "diameter": 30,
+        "avg_degree": 2.375399021068306,
+        "giant_component_size": 4360
+    },
+    {
+        "user": "Tititienne",
+        "node_count": 5107,
+        "edge_count": 6118,
+        "apl": 7.35784014539085,
+        "diameter": 27,
+        "avg_degree": 2.3959271588016415,
+        "giant_component_size": 4905
+    },
+    {
+        "user": "YodaX",
+        "node_count": 4785,
+        "edge_count": 5812,
+        "apl": 6.390523405434987,
+        "diameter": 24,
+        "avg_degree": 2.4292580982236203,
+        "giant_component_size": 4627
+    },
+    {
+        "user": "KLMflyer",
+        "node_count": 4904,
+        "edge_count": 5799,
+        "apl": 6.975693436631799,
+        "diameter": 29,
+        "avg_degree": 2.365008156606841,
+        "giant_component_size": 4587
+    },
+    {
+        "user": "TheNnnes",
+        "node_count": 4494,
+        "edge_count": 5469,
+        "apl": 6.760457957367001,
+        "diameter": 31,
+        "avg_degree": 2.4339118825100154,
+        "giant_component_size": 4357
+    },
+    {
+        "user": "DsMoto371",
+        "node_count": 4874,
+        "edge_count": 5944,
+        "apl": 6.483993234491504,
+        "diameter": 28,
+        "avg_degree": 2.4390644234714847,
+        "giant_component_size": 4703
+    },
+    {
+        "user": "TheLordNicoll115",
+        "node_count": 3595,
+        "edge_count": 4280,
+        "apl": 6.1273582441541805,
+        "diameter": 33,
+        "avg_degree": 2.381084840055632,
+        "giant_component_size": 3412
+    },
+    {
+        "user": "either1",
+        "node_count": 5575,
+        "edge_count": 7050,
+        "apl": 6.079073806973192,
+        "diameter": 24,
+        "avg_degree": 2.529147982062782,
+        "giant_component_size": 5443
+    },
+    {
+        "user": "ftigbm",
+        "node_count": 5875,
+        "edge_count": 7446,
+        "apl": 6.151835380169489,
+        "diameter": 28,
+        "avg_degree": 2.5348085106383027,
+        "giant_component_size": 5700
+    },
+    {
+        "user": "sarahdowns",
+        "node_count": 7490,
+        "edge_count": 9844,
+        "apl": 5.791879278410643,
+        "diameter": 31,
+        "avg_degree": 2.6285714285714232,
+        "giant_component_size": 7329
+    },
+    {
+        "user": "Rachel228",
+        "node_count": 13926,
+        "edge_count": 20163,
+        "apl": 6.055107280435444,
+        "diameter": 28,
+        "avg_degree": 2.8957345971563777,
+        "giant_component_size": 13657
+    },
+    {
+        "user": "ClearSound",
+        "node_count": 4769,
+        "edge_count": 5484,
+        "apl": 8.581407427957675,
+        "diameter": 40,
+        "avg_degree": 2.2998532187041287,
+        "giant_component_size": 4575
+    },
+    {
+        "user": "lovewiki",
+        "node_count": 13348,
+        "edge_count": 19604,
+        "apl": 5.805946988199522,
+        "diameter": 24,
+        "avg_degree": 2.9373688942163634,
+        "giant_component_size": 13224
+    },
+    {
+        "user": "DeanRexal",
+        "node_count": 4858,
+        "edge_count": 5935,
+        "apl": 7.1524041182587785,
+        "diameter": 33,
+        "avg_degree": 2.443392342527785,
+        "giant_component_size": 4743
+    },
+    {
+        "user": "becauseican",
+        "node_count": 4470,
+        "edge_count": 5258,
+        "apl": 7.337130553336796,
+        "diameter": 30,
+        "avg_degree": 2.352572706935126,
+        "giant_component_size": 4146
+    },
+    {
+        "user": "darigan17",
+        "node_count": 5014,
+        "edge_count": 6248,
+        "apl": 5.7106142658259325,
+        "diameter": 19,
+        "avg_degree": 2.492221779018746,
+        "giant_component_size": 4924
+    },
+    {
+        "user": "wijcoots",
+        "node_count": 5735,
+        "edge_count": 7295,
+        "apl": 6.372768828927586,
+        "diameter": 28,
+        "avg_degree": 2.5440278988666205,
+        "giant_component_size": 5670
+    },
+    {
+        "user": "cheenisblast",
+        "node_count": 7098,
+        "edge_count": 10024,
+        "apl": 5.665585285147606,
+        "diameter": 22,
+        "avg_degree": 2.8244575936883702,
+        "giant_component_size": 7067
+    },
+    {
+        "user": "azachan",
+        "node_count": 4378,
+        "edge_count": 5392,
+        "apl": 6.928695436999347,
+        "diameter": 32,
+        "avg_degree": 2.463225216994056,
+        "giant_component_size": 4263
+    },
+    {
+        "user": "ohaitrans",
+        "node_count": 4915,
+        "edge_count": 6363,
+        "apl": 6.434425861486466,
+        "diameter": 26,
+        "avg_degree": 2.589216683621565,
+        "giant_component_size": 4841
+    },
+    {
+        "user": "pri_18",
+        "node_count": 9347,
+        "edge_count": 13048,
+        "apl": 5.9657391797619646,
+        "diameter": 25,
+        "avg_degree": 2.791911843372204,
+        "giant_component_size": 9301
+    },
+    {
+        "user": "jeagal",
+        "node_count": 4544,
+        "edge_count": 5165,
+        "apl": 7.660664807884404,
+        "diameter": 33,
+        "avg_degree": 2.2733274647887356,
+        "giant_component_size": 4233
+    },
+    {
+        "user": "jadot",
+        "node_count": 3365,
+        "edge_count": 4092,
+        "apl": 6.040944824593743,
+        "diameter": 24,
+        "avg_degree": 2.432095096582467,
+        "giant_component_size": 3341
+    },
+    {
+        "user": "TheMCGamer13",
+        "node_count": 4128,
+        "edge_count": 5034,
+        "apl": 7.186548208517577,
+        "diameter": 24,
+        "avg_degree": 2.4389534883720936,
+        "giant_component_size": 4011
+    },
+    {
+        "user": "Krab",
+        "node_count": 6962,
+        "edge_count": 8804,
+        "apl": 6.17304023357441,
+        "diameter": 26,
+        "avg_degree": 2.529158287848311,
+        "giant_component_size": 6931
+    },
+    {
+        "user": "bavnah",
+        "node_count": 19766,
+        "edge_count": 29283,
+        "apl": 6.873093144704126,
+        "diameter": 26,
+        "avg_degree": 2.962966710512995,
+        "giant_component_size": 19553
+    },
+    {
+        "user": "Mr_Jinx",
+        "node_count": 9173,
+        "edge_count": 12326,
+        "apl": 6.011271390267244,
+        "diameter": 29,
+        "avg_degree": 2.687452305679696,
+        "giant_component_size": 9138
+    },
+    {
+        "user": "NetSwimmer",
+        "node_count": 6806,
+        "edge_count": 8201,
+        "apl": 6.906087372986556,
+        "diameter": 29,
+        "avg_degree": 2.4099324125771413,
+        "giant_component_size": 6434
+    },
+    {
+        "user": "Ottr",
+        "node_count": 3901,
+        "edge_count": 4716,
+        "apl": 6.1030872886892995,
+        "diameter": 24,
+        "avg_degree": 2.4178415790822827,
+        "giant_component_size": 3822
+    },
+    {
+        "user": "dbw",
+        "node_count": 4661,
+        "edge_count": 5630,
+        "apl": 7.752914559808135,
+        "diameter": 32,
+        "avg_degree": 2.4157906028749156,
+        "giant_component_size": 4474
+    },
+    {
+        "user": "neil_corcoran",
+        "node_count": 4052,
+        "edge_count": 4662,
+        "apl": 8.113175804625243,
+        "diameter": 43,
+        "avg_degree": 2.3010858835143084,
+        "giant_component_size": 3885
+    },
+    {
+        "user": "collector123",
+        "node_count": 4207,
+        "edge_count": 5207,
+        "apl": 6.6850678498283855,
+        "diameter": 37,
+        "avg_degree": 2.4753981459472274,
+        "giant_component_size": 4119
+    },
+    {
+        "user": "GodOfAllGods",
+        "node_count": 4311,
+        "edge_count": 5194,
+        "apl": 6.351012407009645,
+        "diameter": 25,
+        "avg_degree": 2.409649733240554,
+        "giant_component_size": 4281
+    },
+    {
+        "user": "Joe1234",
+        "node_count": 3724,
+        "edge_count": 4562,
+        "apl": 6.085647116107946,
+        "diameter": 24,
+        "avg_degree": 2.450053705692799,
+        "giant_component_size": 3653
+    },
+    {
+        "user": "usernate1",
+        "node_count": 4171,
+        "edge_count": 5243,
+        "apl": 6.046100944885267,
+        "diameter": 24,
+        "avg_degree": 2.514025413569882,
+        "giant_component_size": 4086
+    },
+    {
+        "user": "pntblank",
+        "node_count": 4720,
+        "edge_count": 6000,
+        "apl": 5.478906805788357,
+        "diameter": 21,
+        "avg_degree": 2.542372881355925,
+        "giant_component_size": 4588
+    },
+    {
+        "user": "Ada",
+        "node_count": 4598,
+        "edge_count": 5424,
+        "apl": 7.395938058458494,
+        "diameter": 24,
+        "avg_degree": 2.359286646367981,
+        "giant_component_size": 4416
+    },
+    {
+        "user": "TXjenaimee",
+        "node_count": 9054,
+        "edge_count": 11764,
+        "apl": 6.660708079393236,
+        "diameter": 28,
+        "avg_degree": 2.5986304395847197,
+        "giant_component_size": 8737
+    },
+    {
+        "user": "NoNews",
+        "node_count": 4044,
+        "edge_count": 4992,
+        "apl": 6.434349017197499,
+        "diameter": 24,
+        "avg_degree": 2.468842729970325,
+        "giant_component_size": 3962
+    },
+    {
+        "user": "RavenSpyder",
+        "node_count": 3426,
+        "edge_count": 4089,
+        "apl": 6.088565494678255,
+        "diameter": 29,
+        "avg_degree": 2.3870402802101487,
+        "giant_component_size": 3320
+    },
+    {
+        "user": "RabbiFreund",
+        "node_count": 4307,
+        "edge_count": 5259,
+        "apl": 6.920203355451229,
+        "diameter": 29,
+        "avg_degree": 2.442071047132573,
+        "giant_component_size": 4142
+    },
+    {
+        "user": "wintertime",
+        "node_count": 11002,
+        "edge_count": 15168,
+        "apl": 6.0639738736624444,
+        "diameter": 28,
+        "avg_degree": 2.75731685148155,
+        "giant_component_size": 10757
+    },
+    {
+        "user": "adelia",
+        "node_count": 4903,
+        "edge_count": 6147,
+        "apl": 5.877856706525531,
+        "diameter": 20,
+        "avg_degree": 2.507444421782581,
+        "giant_component_size": 4811
+    },
+    {
+        "user": "crazygoatlady",
+        "node_count": 4307,
+        "edge_count": 5520,
+        "apl": 5.592142098809269,
+        "diameter": 25,
+        "avg_degree": 2.5632690968191394,
+        "giant_component_size": 4230
+    },
+    {
+        "user": "JSA17",
+        "node_count": 3385,
+        "edge_count": 3947,
+        "apl": 6.672926873261727,
+        "diameter": 30,
+        "avg_degree": 2.3320531757754877,
+        "giant_component_size": 3317
+    },
+    {
+        "user": "TriggeredSJW",
+        "node_count": 3439,
+        "edge_count": 4043,
+        "apl": 6.800625859106606,
+        "diameter": 24,
+        "avg_degree": 2.3512649025879693,
+        "giant_component_size": 3333
+    },
+    {
+        "user": "LillaMy",
+        "node_count": 7267,
+        "edge_count": 9360,
+        "apl": 7.094932428622162,
+        "diameter": 33,
+        "avg_degree": 2.5760286225402615,
+        "giant_component_size": 7184
+    },
+    {
+        "user": "Yer_Da",
+        "node_count": 4420,
+        "edge_count": 5981,
+        "apl": 5.846995552828727,
+        "diameter": 26,
+        "avg_degree": 2.706334841628963,
+        "giant_component_size": 4314
+    },
+    {
+        "user": "alex_icon",
+        "node_count": 6408,
+        "edge_count": 7762,
+        "apl": 8.128675575472737,
+        "diameter": 40,
+        "avg_degree": 2.422596754057428,
+        "giant_component_size": 6300
+    },
+    {
+        "user": "golodhendil",
+        "node_count": 3648,
+        "edge_count": 4008,
+        "apl": 7.563295204281555,
+        "diameter": 30,
+        "avg_degree": 2.197368421052628,
+        "giant_component_size": 3333
+    },
+    {
+        "user": "AlcoolismSteve",
+        "node_count": 5371,
+        "edge_count": 6971,
+        "apl": 6.255902834615861,
+        "diameter": 27,
+        "avg_degree": 2.5957922174641594,
+        "giant_component_size": 5305
+    },
+    {
+        "user": "the_wiki_reader",
+        "node_count": 3317,
+        "edge_count": 3993,
+        "apl": 5.770501849640837,
+        "diameter": 26,
+        "avg_degree": 2.40759722640941,
+        "giant_component_size": 3197
+    },
+    {
+        "user": "kate280283",
+        "node_count": 8585,
+        "edge_count": 9963,
+        "apl": 7.427541713508042,
+        "diameter": 31,
+        "avg_degree": 2.321025043680833,
+        "giant_component_size": 7702
+    },
+    {
+        "user": "OneLickLess",
+        "node_count": 4549,
+        "edge_count": 5547,
+        "apl": 7.261456216372335,
+        "diameter": 30,
+        "avg_degree": 2.4387777533523862,
+        "giant_component_size": 4421
+    },
+    {
+        "user": "DucatiZappa",
+        "node_count": 19837,
+        "edge_count": 31482,
+        "apl": 5.885529668944119,
+        "diameter": 24,
+        "avg_degree": 3.1740686595755143,
+        "giant_component_size": 19796
+    },
+    {
+        "user": "IkexXIsHere",
+        "node_count": 4585,
+        "edge_count": 5574,
+        "apl": 5.614259743921278,
+        "diameter": 29,
+        "avg_degree": 2.4314067611777617,
+        "giant_component_size": 4522
+    },
+    {
+        "user": "aly11",
+        "node_count": 5016,
+        "edge_count": 5919,
+        "apl": 7.895078643859993,
+        "diameter": 33,
+        "avg_degree": 2.3600478468899464,
+        "giant_component_size": 4747
+    },
+    {
+        "user": "balzac",
+        "node_count": 4544,
+        "edge_count": 5347,
+        "apl": 7.592353564853187,
+        "diameter": 35,
+        "avg_degree": 2.35343309859155,
+        "giant_component_size": 4341
+    },
+    {
+        "user": "bruce241",
+        "node_count": 4013,
+        "edge_count": 4872,
+        "apl": 6.372757022523104,
+        "diameter": 24,
+        "avg_degree": 2.4281086468975808,
+        "giant_component_size": 3899
+    },
+    {
+        "user": "SonicBoomSensei",
+        "node_count": 4313,
+        "edge_count": 5251,
+        "apl": 6.327777563434803,
+        "diameter": 30,
+        "avg_degree": 2.4349640621377335,
+        "giant_component_size": 4211
+    },
+    {
+        "user": "blahbla",
+        "node_count": 4171,
+        "edge_count": 4868,
+        "apl": 6.150598182939101,
+        "diameter": 28,
+        "avg_degree": 2.3342124190841567,
+        "giant_component_size": 3878
+    },
+    {
+        "user": "JinkyO",
+        "node_count": 8089,
+        "edge_count": 9871,
+        "apl": 8.258358520020689,
+        "diameter": 34,
+        "avg_degree": 2.4405983434293512,
+        "giant_component_size": 7748
+    },
+    {
+        "user": "jcmpineda",
+        "node_count": 4538,
+        "edge_count": 5716,
+        "apl": 6.229188664390608,
+        "diameter": 29,
+        "avg_degree": 2.519171441163506,
+        "giant_component_size": 4414
+    },
+    {
+        "user": "SpatenOptimator",
+        "node_count": 14262,
+        "edge_count": 21024,
+        "apl": 5.498065733030183,
+        "diameter": 29,
+        "avg_degree": 2.948254101808998,
+        "giant_component_size": 14183
+    },
+    {
+        "user": "DarkSparklyUnicorn",
+        "node_count": 3741,
+        "edge_count": 4601,
+        "apl": 6.254868836379158,
+        "diameter": 30,
+        "avg_degree": 2.459770114942528,
+        "giant_component_size": 3665
+    },
+    {
+        "user": "sittaford",
+        "node_count": 2100,
+        "edge_count": 2233,
+        "apl": 4.821483168933701,
+        "diameter": 16,
+        "avg_degree": 2.126666666666669,
+        "giant_component_size": 1824
+    },
+    {
+        "user": "Bopping",
+        "node_count": 8040,
+        "edge_count": 10684,
+        "apl": 6.279051950296278,
+        "diameter": 26,
+        "avg_degree": 2.657711442786082,
+        "giant_component_size": 7938
+    },
+    {
+        "user": "BlueCrystal004",
+        "node_count": 3811,
+        "edge_count": 4679,
+        "apl": 6.641733107093808,
+        "diameter": 34,
+        "avg_degree": 2.4555234846496976,
+        "giant_component_size": 3762
+    },
+    {
+        "user": "vd",
+        "node_count": 4403,
+        "edge_count": 5428,
+        "apl": 5.568300251833337,
+        "diameter": 28,
+        "avg_degree": 2.465591642062223,
+        "giant_component_size": 4341
+    },
+    {
+        "user": "paxkek",
+        "node_count": 8438,
+        "edge_count": 11392,
+        "apl": 5.590385902777402,
+        "diameter": 23,
+        "avg_degree": 2.7001659160938742,
+        "giant_component_size": 8312
+    },
+    {
+        "user": "MassiveRoar",
+        "node_count": 5203,
+        "edge_count": 6131,
+        "apl": 6.818092795710577,
+        "diameter": 28,
+        "avg_degree": 2.35671727849318,
+        "giant_component_size": 4840
+    },
+    {
+        "user": "nikolaspikolas",
+        "node_count": 3973,
+        "edge_count": 4851,
+        "apl": 6.220440331202325,
+        "diameter": 44,
+        "avg_degree": 2.4419833878681096,
+        "giant_component_size": 3797
+    },
+    {
+        "user": "hadestown",
+        "node_count": 5058,
+        "edge_count": 6364,
+        "apl": 6.201535906013709,
+        "diameter": 29,
+        "avg_degree": 2.51640964808225,
+        "giant_component_size": 4987
+    },
+    {
+        "user": "beckied",
+        "node_count": 3836,
+        "edge_count": 4675,
+        "apl": 6.092406749362025,
+        "diameter": 27,
+        "avg_degree": 2.4374348279457734,
+        "giant_component_size": 3707
+    },
+    {
+        "user": "khana",
+        "node_count": 4980,
+        "edge_count": 5876,
+        "apl": 7.333707794871199,
+        "diameter": 40,
+        "avg_degree": 2.3598393574297245,
+        "giant_component_size": 4874
+    },
+    {
+        "user": "DickWrangler",
+        "node_count": 3548,
+        "edge_count": 4262,
+        "apl": 6.111852395548846,
+        "diameter": 25,
+        "avg_degree": 2.402480270574978,
+        "giant_component_size": 3474
+    },
+    {
+        "user": "LAXGod",
+        "node_count": 3959,
+        "edge_count": 4734,
+        "apl": 6.675749358162013,
+        "diameter": 27,
+        "avg_degree": 2.3915130083354352,
+        "giant_component_size": 3903
+    },
+    {
+        "user": "ryanj107",
+        "node_count": 6127,
+        "edge_count": 7684,
+        "apl": 7.145646928689839,
+        "diameter": 30,
+        "avg_degree": 2.5082422066264094,
+        "giant_component_size": 5975
+    },
+    {
+        "user": "Disintegrate",
+        "node_count": 3922,
+        "edge_count": 4693,
+        "apl": 6.5197523990108,
+        "diameter": 23,
+        "avg_degree": 2.3931667516573234,
+        "giant_component_size": 3736
+    },
+    {
+        "user": "milson721",
+        "node_count": 13302,
+        "edge_count": 19916,
+        "apl": 5.389909011894608,
+        "diameter": 22,
+        "avg_degree": 2.9944369267779316,
+        "giant_component_size": 13101
+    },
+    {
+        "user": "b3b6",
+        "node_count": 3422,
+        "edge_count": 4115,
+        "apl": 6.594711773946551,
+        "diameter": 26,
+        "avg_degree": 2.4050263004091152,
+        "giant_component_size": 3352
+    },
+    {
+        "user": "McGoat",
+        "node_count": 3609,
+        "edge_count": 4245,
+        "apl": 6.303261640673206,
+        "diameter": 28,
+        "avg_degree": 2.3524522028262616,
+        "giant_component_size": 3544
+    },
+    {
+        "user": "YerBoiClutch",
+        "node_count": 4486,
+        "edge_count": 5685,
+        "apl": 5.940028306906072,
+        "diameter": 22,
+        "avg_degree": 2.5345519393669216,
+        "giant_component_size": 4448
+    },
+    {
+        "user": "Rhinowire",
+        "node_count": 5456,
+        "edge_count": 6792,
+        "apl": 6.33176195019249,
+        "diameter": 26,
+        "avg_degree": 2.4897360703812415,
+        "giant_component_size": 5326
+    },
+    {
+        "user": "AmandaAgudelo55",
+        "node_count": 6572,
+        "edge_count": 8195,
+        "apl": 6.813396801785782,
+        "diameter": 34,
+        "avg_degree": 2.4939135727328017,
+        "giant_component_size": 6379
+    },
+    {
+        "user": "spirals",
+        "node_count": 3603,
+        "edge_count": 4075,
+        "apl": 7.358581173315569,
+        "diameter": 31,
+        "avg_degree": 2.2620038856508544,
+        "giant_component_size": 3451
+    },
+    {
+        "user": "jallentucker",
+        "node_count": 3875,
+        "edge_count": 4483,
+        "apl": 7.1164062659777185,
+        "diameter": 33,
+        "avg_degree": 2.3138064516128978,
+        "giant_component_size": 3674
+    }
+]

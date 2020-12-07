@@ -45,7 +45,7 @@ def parse_data(filename):
                 except ValueError:
                     # New user found
                     users.append(user)
-                    user_graphs.append(igraph.Graph())
+                    user_graphs.append(igraph.Graph(directed=True))
                     user_last_clicks.append({"article": article, "game": game})
                     user_count += 1
                     idx = len(users) - 1
@@ -127,7 +127,7 @@ def analyse_graphs(user_graphs, users):
             continue
         # Saving results
         with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:
-           json.dump(user_graph_data, fp, indent=4)
+            json.dump(user_graph_data, fp, indent=4)
 
 
 def main():
