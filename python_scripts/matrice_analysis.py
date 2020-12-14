@@ -31,6 +31,7 @@ def analyse_data(data, graph):
     """Perform analysis"""
 
     players_stats = []
+    average_degrees = []
     player_count = 0
     good_player_count = 0  # who played at least 35 games
     all_game_count = 0
@@ -46,7 +47,7 @@ def analyse_data(data, graph):
         }
         # Creating an own copy of the Matrice graph for the player's routes
         player_graph = copy.deepcopy(graph)
-        player_graph.es['weight'] = [0 in range(player_graph.ecount())]
+        player_graph.es['weight'] = [0 for i in range(player_graph.ecount())]
         game_count = 0
 
         for game in player_games.values():
@@ -127,6 +128,13 @@ def analyse_data(data, graph):
         players_stats.append(player_stats)
         with open(SAVE_PATH + 'matrice_results.json', 'w') as fp:
             json.dump(players_stats, fp, indent=2)
+
+        # Counting average degree for player graph
+        # player_graph.delete_edges(weight_eq=0)
+        # avg_degree = igraph.mean(player_graph.degree())
+        # average_degrees.append({"player": player, "average_degree": avg_degree, "game_count": game_count})
+        # with open(SAVE_PATH + "avg_deg.json", "w") as fp:
+        #    json.dump(average_degrees, fp, indent=2)
 
     print(f'Players: {player_count}, good players: {good_player_count}, games: {all_game_count}')
 
