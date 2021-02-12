@@ -14,7 +14,15 @@ def load_graph(filename):
     return igraph.load(filename=filename)
 
 
-def plot_degree_dist(graph):
+def plot_graph_stats(graph):
+    """Plot statistics of the Matrice and a BA graph in order to facilitate comparison.
+    Uses:
+        -- matplotlib
+        -- numpy
+        -- igraph
+    """
+
+    # Creating a BA graph as a basis for comparison
     ba_graph = igraph.Graph.Barabasi(n=512, directed=True)
 
     # Plotting mean degrees and standard deviation
@@ -92,7 +100,7 @@ def plot_degree_dist(graph):
 
 def main():
     graph = load_graph(GRAPH_FILE)
-    plot_degree_dist(graph)
+    plot_graph_stats(graph)
 
 
 if __name__ == '__main__':

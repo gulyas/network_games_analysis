@@ -74,7 +74,7 @@ def result_threaded(path):
 
 
 if __name__ == '__main__':
-    starttime = time.time()
+    start_time = time.time()
     input_json = '''
     {
         "start": "https://en.wikipedia.org/wiki/Acoustic_Kitty",
@@ -94,7 +94,7 @@ if __name__ == '__main__':
         path = find_shortest_path_threaded(start, end)
         json_result = result_threaded(path)
         print(json_result)
-        endtime = time.time()
-        print(endtime - starttime)
+        end_time = time.time()
+        print(end_time - start_time)
     else:
         print('Check your start & end links')

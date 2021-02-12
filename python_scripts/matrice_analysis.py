@@ -36,7 +36,7 @@ def analyse_data(data, graph):
     good_player_count = 0  # who played at least 35 games
     all_game_count = 0
     for player, player_games in data.items():
-        print("Analysing {}'s data...".format(player))
+        print(f"Analysing {player}'s data...")
         player_count += 1
         good_player_count += 1
         player_stats = {
@@ -50,6 +50,7 @@ def analyse_data(data, graph):
         player_graph.es['weight'] = [0 for i in range(player_graph.ecount())]
         game_count = 0
 
+        # Analysing games
         for game in player_games.values():
             clicks = game['chainLength']
             duration = game['duration']

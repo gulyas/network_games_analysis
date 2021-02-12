@@ -26,6 +26,8 @@ def plot_ba():
 
 
 def main():
+    """Tests if igraph package've been installed successfully."""
+
     g = Graph().K_Regular(20, 3)
     # for edge in g.es:
     #    print(edge)

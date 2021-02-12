@@ -16,18 +16,22 @@ PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\paths\\"
 FILENAME = "paths_data_mysql2.csv"
 
+# Specify the name of the user whose data is needed to be processed
 USER = "b3b6"
 
+# URL of the local Six Degrees of Wikipedia instance
 BASE_URL = "http://localhost:5000/paths"
 
 
-def choose_random(list):
+def choose_random(target):
     """Chooses a random element from a list"""
-    n = len(list)
-    if n == 1:
-        return list[0]
+    n = len(target)
+    if n == 0:
+        raise ValueError("Empty target.")
+    elif n == 1:
+        return target[0]
     idx = randint(0, n - 1)
-    return list[idx]
+    return target[idx]
 
 
 def moving_average(x, w):
@@ -76,7 +80,7 @@ def parse_data(filename):
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
-        print("Parsed file: {}".format(FILENAME))
+        print(f"Parsed file: {FILENAME}")
         line_count = 0
 
         for row in csv_reader:
@@ -225,9 +229,9 @@ def plot_graph(graph):
         visual_style["layout"] = layout
         save_name = f'mysql_{USER}_shortest.png'
         igraph.plot(sub_graph, SAVE_PATH + save_name, **visual_style)
-        print("Graph from {} analysed and plotted to {}".format(USER, save_name))
+        print(f"Graph from {USER} analysed and plotted to {save_name}")
     except MemoryError:
-        print("Memory error. Skipping to plot {}'s graph.".format(USER))
+        print(f"Memory error. Skipping to plot {USER}'s graph.")
 
 
 def save_data(user_stat):

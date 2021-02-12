@@ -1,6 +1,8 @@
 # network_games_analysis
 Analysis of the data from TheWikiGame and Matrice datasets
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 *Bachelor's Thesis - DEPARTMENT OF TELECOMMUNICATIONS AND MEDIA INFORMATICS @ Budapest Univerity of Technology and Economics*
 
 ## File structure

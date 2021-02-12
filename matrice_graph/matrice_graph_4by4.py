@@ -6,6 +6,11 @@ import igraph
 
 
 def get_id(state):
+    """
+    Assigns a unique natural number to each board state.
+    :param state: Two dimensional array containing the state of the game board
+    :return: Id number of the state
+    """
     cell_id = 0
     exponent = 15
     for row in state:
@@ -17,6 +22,11 @@ def get_id(state):
 
 
 def get_state(cell_id):
+    """
+    Gets the state from a state identification number.
+    :param cell_id: Natural number identifying the state
+    :return: Two dimensional array containing the state
+    """
     state = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     binary = '{0:09b}'.format(cell_id)
     index = 0
@@ -27,6 +37,13 @@ def get_state(cell_id):
 
 
 def invert(state, row, col):
+    """
+    Inversion on a state cell
+    :param state: Two dimensional array containing the state
+    :param row: Row index of the cell
+    :param col: Column index of the cell
+    :return: Nothing
+    """
     if state[row][col] == 1:
         state[row][col] = 0
     else:
@@ -36,7 +53,8 @@ def invert(state, row, col):
 
 def main():
     # ---- MAIN PART ----
-    graph = igraph.Graph(65536, directed=True)
+    # Undirected graph, because the only transformation applied in this variant is reversible.
+    graph = igraph.Graph(65536)
 
     for i in range(65536):
         print(i)

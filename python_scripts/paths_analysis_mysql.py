@@ -13,8 +13,10 @@ SAVE_PATH = "D:\\network_games\\paths\\"
 FILENAME = "paths_data_mysql2.csv"
 EXPORT_FILE_NAME = "paths_stats.json"
 
+# URL of the local Six Degrees of Wikipedia instance
 BASE_URL = "http://localhost:5000/paths"
 
+# Line of the input csv file that was processed last
 LAST_READ_LINES = 16750
 
 
@@ -41,7 +43,7 @@ def parse_data(filename, users, user_stats, global_stats):
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
-        print("Parsed file: {}".format(FILENAME))
+        print(f"Parsed file: {FILENAME}")
         line_count = 0
         user_count = 0
 
@@ -73,7 +75,7 @@ def parse_data(filename, users, user_stats, global_stats):
                     user_stats.append({"user_clicks": [], "shortest_clicks": [], "durations": []})
                     user_count += 1
                     idx = len(users) - 1
-                    print("At line {} user {} created with index {}".format(line_count, user, idx))
+                    print(f"At line {line_count} user {user} created with index {idx}")
                     save_data(users, user_stats, global_stats)
 
                 # Finding shortest path

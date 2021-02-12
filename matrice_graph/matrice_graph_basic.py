@@ -27,7 +27,7 @@ def get_state(cell_id):
     """
     Gets the state from a state identification number.
     :param cell_id: Natural number identifying the state
-    :return: Twon dimensional array containing the state
+    :return: Two dimensional array containing the state
     """
     state = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     binary = '{0:09b}'.format(cell_id)
@@ -55,6 +55,7 @@ def invert(state, row, col):
 
 def main():
     # ---- MAIN PART ----
+    # Undirected graph, because the only transformation applied in this variant is reversible.
     graph = igraph.Graph(512)
 
     for i in range(512):
@@ -91,12 +92,14 @@ def main():
     graph.simplify(True, True)
     graph.vs["label"] = range(graph.vcount())
 
+    # Check whether graph is fully connected
     components = graph.components()
     component_sizes = components.sizes()
 
     print(component_sizes)
     # print(components.giant())
 
+    # Print statistics
     diam = igraph.Graph.diameter(graph, False, False, None)
     apl = igraph.Graph.average_path_length(graph, False, False)
     cl = igraph.Graph.transitivity_undirected(graph)
@@ -107,6 +110,7 @@ def main():
 
     print(graph.neighbors(0))
 
+    # Plot graph
     layout = graph.layout("kk")
     igraph.plot(graph, "graph.pdf", layout=layout)
 

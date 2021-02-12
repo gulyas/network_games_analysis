@@ -12,6 +12,7 @@ PATH = "D:\\network_games\\"
 SAVE_PATH = "D:\\network_games\\scaffold\\"
 FILENAME = "scaffold_data_mysql.csv"
 
+# Specify the name of the user whose data is needed to be processed
 USER = "darigan17"
 
 
@@ -24,7 +25,7 @@ def parse_data(filename):
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
-        print("Parsed file: {}".format(FILENAME))
+        print(f"Parsed file: {FILENAME}")
         line_count = 0
         user_count = 0
 
@@ -61,7 +62,7 @@ def parse_data(filename):
             else:
                 continue
 
-    print("{} users created".format(user_count))
+    print(f"{user_count} users created")
     return user_graph, user
 
 
@@ -137,9 +138,9 @@ def analyse_graph(user_graph, user):
         visual_style["layout"] = layout
         save_name = f'mysql_{user}_reduced.png'
         igraph.plot(sub_graph, SAVE_PATH + save_name, **visual_style)
-        print("Graph from {} analysed and plotted to {}".format(user, save_name))
+        print(f"Graph from {user} analysed and plotted to {save_name}")
     except MemoryError:
-        print("Memory error. Skipping to plot {}'s graph.".format(user))
+        print(f"Memory error. Skipping to plot {user}'s graph.")
 
 
 def load_graph(filename):

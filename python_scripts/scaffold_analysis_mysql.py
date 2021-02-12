@@ -24,7 +24,7 @@ def parse_data(filename):
 
     with open(filename, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile, delimiter='\t')
-        print("Parsed file: {}".format(FILENAME))
+        print(f"Parsed file: {FILENAME}")
         line_count = 0
         user_count = 0
 
@@ -49,7 +49,7 @@ def parse_data(filename):
                     user_last_clicks.append({"article": article, "game": game})
                     user_count += 1
                     idx = len(users) - 1
-                    print("At line {} user {} created with index {}".format(line_count, user, idx))
+                    print(f"At line {line_count} user {user} created with index {idx}")
 
                 # Add edges to the user graph
                 try:
@@ -67,7 +67,7 @@ def parse_data(filename):
 
                 user_last_clicks[idx] = {"article": article, "game": game}
 
-    print("{} users created".format(user_count))
+    print(f"{user_count} users created.")
     return user_graphs, users
 
 
@@ -121,9 +121,9 @@ def analyse_graphs(user_graphs, users):
             visual_style["layout"] = layout
             save_name = f'mysql_{users[i]}.png'
             igraph.plot(user_graph, SAVE_PATH + save_name, **visual_style)
-            print("Graph from {} analysed and plotted to {}".format(users[i], save_name))
+            print(f"Graph from {users[i]} analysed and plotted to {save_name}")
         except MemoryError:
-            print("Memory error. Skipping to plot {}'s graph.".format(users[i]))
+            print(f"Memory error. Skipping to plot {users[i]}'s graph.")
             continue
         # Saving results
         with open(SAVE_PATH + 'scaffold_results_mysql.json', 'w') as fp:

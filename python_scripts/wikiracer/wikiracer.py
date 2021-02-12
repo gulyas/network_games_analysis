@@ -1,10 +1,10 @@
+import argparse
 import json
 import time
-import requests
-import argparse
-import functools
-from bs4 import BeautifulSoup
 from collections import deque
+
+import requests
+from bs4 import BeautifulSoup
 
 
 def find_shortest_path(start, end):
@@ -93,7 +93,7 @@ def redirected(end):
     return {end, base_url + title}
 
 
-def result(start, end, path):
+def get_result(start, end, path):
     """
     Returns json object of shortest path result.
     """
@@ -105,7 +105,7 @@ def result(start, end, path):
     return json.dumps(d, indent=4)
 
 
-def main(args):
+def main(args=None):
     """
     Executes the WikiRacer for args (input arguments).
     """
@@ -116,20 +116,20 @@ def main(args):
     end = data["end"]
     if check_pages(start, end):
         path = find_shortest_path(start, redirected(end))
-        json_result = result(start, end, path)
+        json_result = get_result(start, end, path)
         return json_result
 
 
 if __name__ == '__main__':
-    starttime = time.time()
+    start_time = time.time()
 
     parser = argparse.ArgumentParser(
         description='WikiRacer for finding the shortest path between two Wikipedia articles')
     parser.add_argument('input_json', help='JSON object with "start" & "end" name/value pairs of Wikipedia links')
     args = parser.parse_args()
 
-    print(main(args))
+    print(main())
 
-    endtime = time.time()
-    totaltime = endtime - starttime
-    print('Time: {}m {:.3f}s'.format(int(totaltime) / 60, totaltime % 60))
+    end_time = time.time()
+    total_time = end_time - start_time
+    print('Time: {}m {:.3f}s'.format(int(total_time) / 60, total_time % 60))

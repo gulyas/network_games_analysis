@@ -29,7 +29,7 @@ def get_state(cell_id):
     """
     Gets the state from a state identification number.
     :param cell_id: Natural number identifying the state
-    :return: Twon dimensional array containing the state
+    :return: Two dimensional array containing the state
     """
     state = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     binary = '{0:09b}'.format(cell_id)
@@ -85,6 +85,7 @@ def rotate(state, n, is_row):
 
 def main():
     # ---- MAIN PART ----
+    # Directed graph, because the rotation transformation applied here is irreversible.
     graph = igraph.Graph(n=512, directed=True)
 
     for i in range(512):
@@ -123,12 +124,14 @@ def main():
     graph.simplify(multiple=True)
     graph.vs["label"] = range(graph.vcount())
 
+    # Check whether graph is fully connected
     components = graph.components()
     component_sizes = components.sizes()
 
     print(component_sizes)
     # print(components.giant())
 
+    # Print statistics
     diam = igraph.Graph.diameter(graph, True, False, None)
     apl = igraph.Graph.average_path_length(graph, True, False)
     cl = igraph.Graph.transitivity_undirected(graph)
@@ -145,7 +148,7 @@ def main():
     layout = graph.layout("lgl")
     visual_style = {"vertex_size": 40, "edge_width": 2, "layout": layout, "bbox": (3000, 3000)}
 
-    # Plotting graph
+    # Plot graph
     igraph.plot(graph, SAVE_PATH + "graphall.eps", **visual_style)
 
     # Save graph

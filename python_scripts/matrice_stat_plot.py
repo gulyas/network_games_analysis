@@ -8,6 +8,7 @@ import json
 PATH = "D:\\network_games\\matrice\\"
 FILENAME = "matrice_results.json"
 
+# Specify the Firebase UID of the user whose stats are needed to be plotted.
 USER = "kGgIUjtRccY1QxnvFPdmHB4QM542"
 
 
