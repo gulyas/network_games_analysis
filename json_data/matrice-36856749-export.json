@@ -16964,6 +16964,834 @@
         "startState" : 130,
         "startTime" : 1612817113196,
         "stateChain" : "130 258 260 257 313 "
+      },
+      "-MTKQUJRcXkdtujnLu7Z" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 18,
+        "endState" : 221,
+        "startState" : 99,
+        "startTime" : 1613119728446,
+        "stateChain" : "99 91 94 93 207 95 221 "
+      },
+      "-MTKQXLg1tl4GEvEfiNJ" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 9,
+        "endState" : 409,
+        "startState" : 294,
+        "startTime" : 1613119749794,
+        "stateChain" : "294 286 281 89 409 "
+      },
+      "-MTKQcdOIbAmWOqKtUix" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 22,
+        "endState" : 103,
+        "startState" : 106,
+        "startTime" : 1613119762871,
+        "stateChain" : "106 90 93 117 229 103 "
+      },
+      "-MTKQgMFemfnCTj7iKlh" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 11,
+        "endState" : 46,
+        "startState" : 264,
+        "startTime" : 1613119788979,
+        "stateChain" : "264 271 334 327 270 46 "
+      },
+      "-MTKQk40hEivknqIsBZw" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 11,
+        "endState" : 158,
+        "startState" : 176,
+        "startTime" : 1613119803980,
+        "stateChain" : "176 183 403 151 158 "
+      },
+      "-MTKQoHxIIy2rCYWVikX" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 14,
+        "endState" : 224,
+        "startState" : 468,
+        "startTime" : 1613119818431,
+        "stateChain" : "468 240 200 208 224 "
+      },
+      "-MTKQwETmGtkMSvcVk3U" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 28,
+        "endState" : 477,
+        "startState" : 389,
+        "startTime" : 1613119836329,
+        "stateChain" : "389 387 275 278 351 461 335 477 "
+      },
+      "-MTKRCYLkaIWAslpcScC" : {
+        "boardSize" : 3,
+        "chainLength" : 11,
+        "duration" : 43,
+        "endState" : 123,
+        "startState" : 1,
+        "startTime" : 1613119892527,
+        "stateChain" : "1 2 58 114 117 61 59 287 223 251 315 123 "
+      },
+      "-MTKRHJpdGxsemywQzn0" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 14,
+        "endState" : 133,
+        "startState" : 219,
+        "startTime" : 1613119940769,
+        "stateChain" : "219 222 250 194 131 134 133 "
+      },
+      "-MTVRWTr022r_dADLMLK" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 18,
+        "endState" : 401,
+        "startState" : 484,
+        "startTime" : 1613304548839,
+        "stateChain" : "484 421 419 422 417 393 401 "
+      },
+      "-MTVRbkJo-IrFGspJZpa" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 22,
+        "endState" : 131,
+        "startState" : 454,
+        "startTime" : 1613304569967,
+        "stateChain" : "454 6 148 134 133 131 "
+      },
+      "-MTVRf_rgvYneWM-GvZh" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 12,
+        "endState" : 213,
+        "startState" : 383,
+        "startTime" : 1613304596250,
+        "stateChain" : "383 327 341 213 "
+      },
+      "-MTVRkNftaa1rTSZr_-M" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 16,
+        "endState" : 218,
+        "startState" : 204,
+        "startTime" : 1613304611377,
+        "stateChain" : "204 212 228 220 217 218 "
+      },
+      "-MTVRnbGGS1o9c1s1r-N" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 10,
+        "endState" : 137,
+        "startState" : 181,
+        "startTime" : 1613304630602,
+        "stateChain" : "181 141 139 142 137 "
+      },
+      "-MTVRtnJXu2o5LRkiwzc" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 22,
+        "endState" : 49,
+        "startState" : 211,
+        "startTime" : 1613304643999,
+        "stateChain" : "211 275 385 133 7 21 49 "
+      },
+      "-MTVS1o3j2EMmyqlfjnZ" : {
+        "boardSize" : 3,
+        "chainLength" : 10,
+        "duration" : 33,
+        "endState" : 351,
+        "startState" : 270,
+        "startTime" : 1613304669718,
+        "stateChain" : "270 326 263 199 87 31 59 287 223 415 351 "
+      },
+      "-MTVS4FpChDF8uKO3Lp2" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 7,
+        "endState" : 79,
+        "startState" : 287,
+        "startTime" : 1613304706305,
+        "stateChain" : "287 295 103 79 "
+      },
+      "-MTVS9qg1iOh-1DhkhWT" : {
+        "boardSize" : 3,
+        "chainLength" : 8,
+        "duration" : 20,
+        "endState" : 471,
+        "startState" : 298,
+        "startTime" : 1613304716033,
+        "stateChain" : "298 312 319 127 191 254 247 499 471 "
+      },
+      "-MTVSKVIrTG1dMqQ8MM1" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 25,
+        "endState" : 368,
+        "startState" : 411,
+        "startTime" : 1613304754292,
+        "stateChain" : "411 412 420 294 102 116 368 "
+      },
+      "-MTVSNpd9UFOjAPRUQTd" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 10,
+        "endState" : 211,
+        "startState" : 5,
+        "startTime" : 1613304783326,
+        "stateChain" : "5 151 179 403 339 211 "
+      },
+      "-MTVSPDgvm6NjTC_Qdc4" : {
+        "boardSize" : 3,
+        "chainLength" : 1,
+        "duration" : 3,
+        "endState" : 402,
+        "startState" : 475,
+        "startTime" : 1613304796201,
+        "stateChain" : "475 402 "
+      },
+      "-MTVSRMfKIazqxvcKmnz" : {
+        "boardSize" : 3,
+        "chainLength" : 2,
+        "duration" : 6,
+        "endState" : 205,
+        "startState" : 373,
+        "startTime" : 1613304801892,
+        "stateChain" : "373 333 205 "
+      },
+      "-MTVSZ7UZJUl7Ig9jPrX" : {
+        "boardSize" : 3,
+        "chainLength" : 9,
+        "duration" : 27,
+        "endState" : 456,
+        "startState" : 41,
+        "startTime" : 1613304812101,
+        "stateChain" : "41 96 33 25 137 200 240 464 480 456 "
+      },
+      "-MTVSbU9ZVYM7xyuKpav" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 11,
+        "endState" : 245,
+        "startState" : 124,
+        "startTime" : 1613304842586,
+        "stateChain" : "124 117 229 103 245 "
+      },
+      "-MTVSfIrtL5eLjJNb93a" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 12,
+        "endState" : 326,
+        "startState" : 315,
+        "startTime" : 1613304856703,
+        "stateChain" : "315 123 187 131 134 326 "
+      },
+      "-MTVSjuphjKX6gxLI0AE" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 15,
+        "endState" : 72,
+        "startState" : 45,
+        "startTime" : 1613304872706,
+        "stateChain" : "45 29 27 51 54 14 9 72 "
+      },
+      "-MTVSmNYjYJTnus4dJEd" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 7,
+        "endState" : 351,
+        "startState" : 253,
+        "startTime" : 1613304890674,
+        "stateChain" : "253 239 127 379 351 "
+      },
+      "-MTVSr6w_Zer6s_4Q1PO" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 10,
+        "endState" : 60,
+        "startState" : 234,
+        "startTime" : 1613304907044,
+        "stateChain" : "234 298 270 46 60 "
+      },
+      "-MTVSwpoDGbmJzQztbZ5" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 7,
+        "endState" : 111,
+        "startState" : 122,
+        "startTime" : 1613304934034,
+        "stateChain" : "122 125 237 111 "
+      },
+      "-MTVT4R0Pz_HOFblGNmN" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 23,
+        "endState" : 423,
+        "startState" : 464,
+        "startTime" : 1613304953322,
+        "stateChain" : "464 471 414 470 407 423 "
+      },
+      "-MTVT9ZmuZ1PlLlG1PY9" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 16,
+        "endState" : 366,
+        "startState" : 276,
+        "startTime" : 1613304980615,
+        "stateChain" : "276 300 357 355 358 295 366 "
+      },
+      "-MTVTEKopDRBEywgxqfF" : {
+        "boardSize" : 3,
+        "chainLength" : 8,
+        "duration" : 17,
+        "endState" : 482,
+        "startState" : 438,
+        "startTime" : 1613304999940,
+        "stateChain" : "438 437 444 500 497 498 458 466 482 "
+      },
+      "-MTVTM_0AdF0MFVFXjdS" : {
+        "boardSize" : 3,
+        "chainLength" : 10,
+        "duration" : 31,
+        "endState" : 247,
+        "startState" : 14,
+        "startTime" : 1613305019374,
+        "stateChain" : "14 462 391 447 127 253 251 475 499 471 247 "
+      },
+      "-MTVTbxfsvNZafQcFE_b" : {
+        "boardSize" : 3,
+        "chainLength" : 12,
+        "duration" : 35,
+        "endState" : 143,
+        "startState" : 32,
+        "startTime" : 1613305082635,
+        "stateChain" : "32 178 170 226 163 155 179 403 151 179 171 395 143 "
+      },
+      "-MTVTg2pZ57JogzPUe4U" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 13,
+        "endState" : 351,
+        "startState" : 77,
+        "startTime" : 1613305120988,
+        "stateChain" : "77 223 415 351 "
+      },
+      "-MTVTjw9ZUbvUek2MpGe" : {
+        "boardSize" : 3,
+        "chainLength" : 2,
+        "duration" : 13,
+        "endState" : 496,
+        "startState" : 447,
+        "startTime" : 1613305137269,
+        "stateChain" : "447 440 496 "
+      },
+      "-MTVTmOUU9VmvN_8JUym" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 7,
+        "endState" : 384,
+        "startState" : 400,
+        "startTime" : 1613305153555,
+        "stateChain" : "400 258 272 384 "
+      },
+      "-MTVTqTh6J7eecL6xHHn" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 14,
+        "endState" : 150,
+        "startState" : 79,
+        "startTime" : 1613305163267,
+        "stateChain" : "79 6 148 145 150 "
+      },
+      "-MTVTuNN68DLk3cDEm7E" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 13,
+        "endState" : 64,
+        "startState" : 207,
+        "startTime" : 1613305179991,
+        "stateChain" : "207 200 129 136 192 256 64 "
+      },
+      "-MTVU1Pxjj2w7NiYfgu5" : {
+        "boardSize" : 3,
+        "chainLength" : 10,
+        "duration" : 30,
+        "endState" : 412,
+        "startState" : 23,
+        "startTime" : 1613305195731,
+        "stateChain" : "23 47 61 313 285 397 271 413 468 405 412 "
+      },
+      "-MTegEn324uLXlubvzUg" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 13,
+        "endState" : 85,
+        "startState" : 152,
+        "startTime" : 1613476447178,
+        "stateChain" : "152 209 401 337 85 "
+      },
+      "-MTegH73WYESY9fFvs8D" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 4,
+        "endState" : 429,
+        "startState" : 411,
+        "startTime" : 1613476465687,
+        "stateChain" : "411 435 427 430 429 "
+      },
+      "-MTegPFj0o1ts25QZat2" : {
+        "boardSize" : 3,
+        "chainLength" : 11,
+        "duration" : 30,
+        "endState" : 374,
+        "startState" : 376,
+        "startTime" : 1613476473244,
+        "stateChain" : "376 490 378 380 494 382 375 319 382 375 319 374 "
+      },
+      "-MTegThDEQhI2qwMdQAU" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 14,
+        "endState" : 417,
+        "startState" : 163,
+        "startTime" : 1613476508015,
+        "stateChain" : "163 166 161 289 97 417 "
+      },
+      "-MTegXqp0NvmZxDvqLG6" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 14,
+        "endState" : 433,
+        "startState" : 155,
+        "startTime" : 1613476524688,
+        "stateChain" : "155 179 182 177 305 113 433 "
+      },
+      "-MTegbWyf997DYFmg1Vb" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 16,
+        "endState" : 319,
+        "startState" : 324,
+        "startTime" : 1613476541646,
+        "stateChain" : "324 380 494 382 375 319 "
+      },
+      "-MTegfOrShCR7bleLL0i" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 13,
+        "endState" : 236,
+        "startState" : 472,
+        "startTime" : 1613476560926,
+        "stateChain" : "472 252 238 126 236 "
+      },
+      "-MTegjqzz3NBkM74mw0i" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 15,
+        "endState" : 272,
+        "startState" : 481,
+        "startTime" : 1613476576692,
+        "stateChain" : "481 355 327 320 257 264 272 "
+      },
+      "-MTegnzgO-_O2tbq7DV2" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 14,
+        "endState" : 126,
+        "startState" : 473,
+        "startTime" : 1613476594971,
+        "stateChain" : "473 474 476 252 238 126 "
+      },
+      "-MTegpgdhhvHVDC8en1k" : {
+        "boardSize" : 3,
+        "chainLength" : 1,
+        "duration" : 4,
+        "endState" : 317,
+        "startState" : 373,
+        "startTime" : 1613476611868,
+        "stateChain" : "373 317 "
+      },
+      "-MTegsRIYNyzNRh102vF" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 8,
+        "endState" : 39,
+        "startState" : 396,
+        "startTime" : 1613476619160,
+        "stateChain" : "396 172 46 102 39 "
+      },
+      "-MTegye0yo7uRW1lnR7Y" : {
+        "boardSize" : 3,
+        "chainLength" : 9,
+        "duration" : 23,
+        "endState" : 427,
+        "startState" : 359,
+        "startTime" : 1613476629802,
+        "stateChain" : "359 351 375 367 239 459 207 399 175 427 "
+      },
+      "-MTeh4ps4iBosEjqvvVU" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 26,
+        "endState" : 444,
+        "startState" : 177,
+        "startTime" : 1613476655807,
+        "stateChain" : "177 184 412 411 414 190 442 444 "
+      },
+      "-MTeh87VHlEO8RymNjOW" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 10,
+        "endState" : 95,
+        "startState" : 506,
+        "startTime" : 1613476685868,
+        "stateChain" : "506 222 221 207 95 "
+      },
+      "-MTehCJlWCEP10sHo_EM" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 14,
+        "endState" : 168,
+        "startState" : 267,
+        "startTime" : 1613476698225,
+        "stateChain" : "267 322 336 448 385 392 140 168 "
+      },
+      "-MTehGOTuchTVCZIoJgn" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 14,
+        "endState" : 419,
+        "startState" : 97,
+        "startTime" : 1613476715589,
+        "stateChain" : "97 417 97 98 100 99 419 "
+      },
+      "-MTehLaIEPEpGzg38PHC" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 18,
+        "endState" : 233,
+        "startState" : 158,
+        "startTime" : 1613476732146,
+        "stateChain" : "158 182 36 109 361 233 "
+      },
+      "-MTehPknroOC_VgUYstS" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 13,
+        "endState" : 307,
+        "startState" : 119,
+        "startTime" : 1613476755076,
+        "stateChain" : "119 339 211 275 291 267 307 "
+      },
+      "-MTehU8oq5WgOUkhPQ3N" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 15,
+        "endState" : 168,
+        "startState" : 62,
+        "startTime" : 1613476770926,
+        "stateChain" : "62 172 424 396 168 "
+      },
+      "-MTehZ-N6foWp6P2-uEn" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 17,
+        "endState" : 58,
+        "startState" : 72,
+        "startTime" : 1613476788390,
+        "stateChain" : "72 65 121 122 51 58 "
+      },
+      "-MTehcyQ2GUp_T0zleh3" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 17,
+        "endState" : 49,
+        "startState" : 488,
+        "startTime" : 1613476809361,
+        "stateChain" : "488 417 97 98 112 49 "
+      },
+      "-MTehjsHwYXnFEm9QlkG" : {
+        "boardSize" : 3,
+        "chainLength" : 8,
+        "duration" : 25,
+        "endState" : 15,
+        "startState" : 410,
+        "startTime" : 1613476828912,
+        "stateChain" : "410 158 350 158 12 11 14 71 15 "
+      },
+      "-MTehnSacg_A2fLanK3u" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 11,
+        "endState" : 494,
+        "startState" : 79,
+        "startTime" : 1613476857789,
+        "stateChain" : "79 87 407 414 470 494 "
+      },
+      "-MTehvqlWG87d-NMnqyH" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 16,
+        "endState" : 290,
+        "startState" : 63,
+        "startTime" : 1613476887542,
+        "stateChain" : "63 56 168 152 176 304 416 290 "
+      },
+      "-MTehxe5clVaqFBs1fvs" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 4,
+        "endState" : 259,
+        "startState" : 130,
+        "startTime" : 1613476906366,
+        "stateChain" : "130 133 131 259 "
+      },
+      "-MTei-FUoRuCudIiAlBg" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 8,
+        "endState" : 134,
+        "startState" : 107,
+        "startTime" : 1613476913427,
+        "stateChain" : "107 171 59 185 129 134 "
+      },
+      "-MTei4Ps3onieBGN1IBd" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 18,
+        "endState" : 273,
+        "startState" : 397,
+        "startTime" : 1613476924317,
+        "stateChain" : "397 460 389 263 277 49 273 "
+      },
+      "-MTei71zN-FdVaZcw7dg" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 8,
+        "endState" : 187,
+        "startState" : 447,
+        "startTime" : 1613476945301,
+        "stateChain" : "447 127 379 187 "
+      },
+      "-MTeiB7vIukRg820S3tj" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 14,
+        "endState" : 265,
+        "startState" : 48,
+        "startTime" : 1613476955922,
+        "stateChain" : "48 8 65 129 257 264 320 265 "
+      },
+      "-MTeiHwJug461_OxCm0M" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 25,
+        "endState" : 5,
+        "startState" : 504,
+        "startTime" : 1613476972775,
+        "stateChain" : "504 56 170 146 148 6 5 "
+      },
+      "-MTeiI2cIGBJ8rvhH-xg" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 25,
+        "endState" : 5,
+        "startState" : 504,
+        "startTime" : 1613476972775,
+        "stateChain" : "504 56 170 146 148 6 5 "
+      },
+      "-MTeiMXukiEhhVL_uO3E" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 11,
+        "endState" : 149,
+        "startState" : 420,
+        "startTime" : 1613477005126,
+        "stateChain" : "420 396 404 401 149 "
+      },
+      "-MTeiPxgndTaw69RYWSd" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 10,
+        "endState" : 313,
+        "startState" : 462,
+        "startTime" : 1613477020417,
+        "stateChain" : "462 455 399 285 61 313 "
+      },
+      "-MTei_sOYEIV0faxtMSf" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 18,
+        "endState" : 138,
+        "startState" : 8,
+        "startTime" : 1613477057314,
+        "stateChain" : "8 65 129 200 208 194 131 138 "
+      },
+      "-MTeigFEzoLE1kysHBFt" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 23,
+        "endState" : 23,
+        "startState" : 335,
+        "startTime" : 1613477078354,
+        "stateChain" : "335 143 206 270 269 267 15 23 "
+      },
+      "-MTeij7aSxS2L2qaaYk2" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 8,
+        "endState" : 283,
+        "startState" : 262,
+        "startTime" : 1613477104994,
+        "stateChain" : "262 318 313 285 283 "
+      },
+      "-MTeio3WSgmgPjpOtB4J" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 17,
+        "endState" : 234,
+        "startState" : 107,
+        "startTime" : 1613477116019,
+        "stateChain" : "107 108 105 169 297 233 234 "
+      },
+      "-MTeipjRikhLBWp0CbCk" : {
+        "boardSize" : 3,
+        "chainLength" : 2,
+        "duration" : 4,
+        "endState" : 208,
+        "startState" : 360,
+        "startTime" : 1613477136451,
+        "stateChain" : "360 232 208 "
+      },
+      "-MTeisEK3x0sUDc0k6ob" : {
+        "boardSize" : 3,
+        "chainLength" : 2,
+        "duration" : 1,
+        "endState" : 363,
+        "startState" : 435,
+        "startTime" : 1613477149537,
+        "stateChain" : "435 371 363 "
+      },
+      "-MTeizIQ42paEvndkUBv" : {
+        "boardSize" : 3,
+        "chainLength" : 11,
+        "duration" : 23,
+        "endState" : 104,
+        "startState" : 511,
+        "startTime" : 1613477156344,
+        "stateChain" : "511 504 362 170 146 162 138 266 74 88 112 104 "
+      },
+      "-MTej23qlAopucdVpvid" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 11,
+        "endState" : 44,
+        "startState" : 103,
+        "startTime" : 1613477183767,
+        "stateChain" : "103 96 41 42 44 "
+      },
+      "-MTej4wJdiwYtVL0MX1j" : {
+        "boardSize" : 3,
+        "chainLength" : 3,
+        "duration" : 9,
+        "endState" : 339,
+        "startState" : 163,
+        "startTime" : 1613477197944,
+        "stateChain" : "163 139 147 339 "
+      },
+      "-MTej7xa-uiCjrCSjmTI" : {
+        "boardSize" : 3,
+        "chainLength" : 5,
+        "duration" : 9,
+        "endState" : 351,
+        "startState" : 311,
+        "startTime" : 1613477210446,
+        "stateChain" : "311 119 183 175 159 351 "
+      },
+      "-MTejGyB51JgGPmNNWBa" : {
+        "boardSize" : 3,
+        "chainLength" : 8,
+        "duration" : 33,
+        "endState" : 63,
+        "startState" : 269,
+        "startTime" : 1613477223030,
+        "stateChain" : "269 45 43 46 103 47 189 175 63 "
+      },
+      "-MTejITkPeKUEx_-ZVkU" : {
+        "boardSize" : 3,
+        "chainLength" : 2,
+        "duration" : 3,
+        "endState" : 131,
+        "startState" : 325,
+        "startTime" : 1613477258651,
+        "stateChain" : "325 133 131 "
+      },
+      "-MTejNN4nmvAapAyCuKp" : {
+        "boardSize" : 3,
+        "chainLength" : 4,
+        "duration" : 16,
+        "endState" : 464,
+        "startState" : 380,
+        "startTime" : 1613477266598,
+        "stateChain" : "380 492 200 240 464 "
+      },
+      "-MTejT3xtYPPwn1oxBTs" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 20,
+        "endState" : 114,
+        "startState" : 16,
+        "startTime" : 1613477285279,
+        "stateChain" : "16 40 97 98 240 226 114 "
+      },
+      "-MTej_GlmlJXJKcYEQ-L" : {
+        "boardSize" : 3,
+        "chainLength" : 8,
+        "duration" : 27,
+        "endState" : 408,
+        "startState" : 185,
+        "startTime" : 1613477308478,
+        "stateChain" : "185 413 271 285 283 409 464 401 408 "
+      },
+      "-MTejghYQsL1ndGp3MHK" : {
+        "boardSize" : 3,
+        "chainLength" : 9,
+        "duration" : 26,
+        "endState" : 312,
+        "startState" : 444,
+        "startTime" : 1613477339483,
+        "stateChain" : "444 302 316 315 318 26 50 53 60 312 "
+      },
+      "-MTejmEzmuvUR3q63IdC" : {
+        "boardSize" : 3,
+        "chainLength" : 6,
+        "duration" : 20,
+        "endState" : 251,
+        "startState" : 208,
+        "startTime" : 1613477368225,
+        "stateChain" : "208 153 158 215 231 223 251 "
+      },
+      "-MTejt7o3Q0jW7f4XrZS" : {
+        "boardSize" : 3,
+        "chainLength" : 7,
+        "duration" : 13,
+        "endState" : 336,
+        "startState" : 423,
+        "startTime" : 1613477403387,
+        "stateChain" : "423 416 96 324 324 321 322 336 "
+      },
+      "-MTek--lEiJy1awQUbwt" : {
+        "boardSize" : 3,
+        "chainLength" : 11,
+        "duration" : 25,
+        "endState" : 205,
+        "startState" : 183,
+        "startTime" : 1613477419954,
+        "stateChain" : "183 37 108 105 106 109 85 101 165 293 229 205 "
       }
     },
     "Kwv3K0PUQaViQQAfNFSVLQ8G1z83" : {
