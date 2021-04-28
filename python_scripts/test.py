@@ -29,6 +29,7 @@ def main():
     """Tests if igraph package've been installed successfully."""
 
     g = Graph().K_Regular(20, 3)
+    plot(g)
     # for edge in g.es:
     #    print(edge)
     # plot_er()
