@@ -10,6 +10,10 @@ import igraph
 import pathpy as pp
 from scipy.stats import chi2
 from collections import Counter
+from pandas import DataFrame
+import seaborn as sns
+from scipy.stats import pearsonr
+sns.set(style='white', font_scale=1.2)
 
 PATH = os.path.expanduser("~/git/network_games_analysis/sql_data/")
 SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold/")
@@ -36,7 +40,32 @@ def listrun(pattern, values):
         runs.append(run)
     return runs
 
+def get_users():
 
+    users = list()
+
+    ##PATH COLLECTION
+
+    filename = PATH + FILENAME
+    with open(filename, 'r', encoding='utf-8') as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter='\t')
+        print(f"Parsed file: {FILENAME}")
+        line_count = 0
+        user_count = 0
+        
+        for row in csv_reader:
+            # Ignoring header row
+            if line_count == 0:
+                print(f'Columns: {", ".join(row)}')
+                line_count += 1
+                # Ignoring data from other users
+            else:
+                line_count += 1
+                user = row[2]
+                if user not in users:
+                    users.append(user)
+    return users
+                
 def estimate_user_kopt(user, top_nodes):
 
     USER = user
@@ -118,13 +147,33 @@ def estimate_user_kopt(user, top_nodes):
                         
     mog = pp.MultiOrderModel(p, max_order=2)
     #print('Optimal order = ', mog.estimate_order())
-    return(mog.estimate_order())
+    return (len(paths_reduced), mog.estimate_order())
 
+
+user_list = get_users()
 kopts = list()
-for user in users:
-    kopts.append(estimate_user_kopt(user, 75))
+pathnums = list()
+for user in user_list:
+    pathnum,kopt = estimate_user_kopt(user, 25)
+    kopts.append(kopt)
+    pathnums.append(pathnum)
     print('Optimal orders = ', kopts)
+    print(len(kopts))
 
+# plt.plot(kopts)
+# plt.plot(pathnums)
+# plt.show()
+
+eval_list = (pathnums,kopts)
+df = DataFrame(eval_list).transpose()
+df.columns = ['Number_of_paths','K_opt']
+
+g = sns.JointGrid(data=df, x='Number_of_paths', y='K_opt', xlim=(0, 1000), ylim=(0, 3), height=5)
+g = g.plot_joint(sns.regplot, color="xkcd:muted blue")
+g = g.plot_marginals(sns.distplot, kde=False, bins=12, color="xkcd:bluey grey")
+g.ax_joint.text(500, 2.8, 'r = 0.45, p < .001', fontstyle='italic')
+plt.tight_layout()
+plt.show()
 ###########################################################     Unused pathpy code
 
 # path = ('a','b','c','d','e','c','b','a','c','d','e','c','e','d','c','a')
