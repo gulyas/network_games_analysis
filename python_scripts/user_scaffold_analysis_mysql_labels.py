@@ -10,80 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import igraph
 
-PATH = os.path.expanduser("~/git/network_games_analysis/sql_data/")
 SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold/")
-FILENAME = 'scaffold_data_mysql.csv'
-
-# Specify the name of the user whose data is needed to be processed
-USER = "darigan17"
-## USER = "Fandy"
-## USER = "heptone"
-## USER = "khana"
-## USER = "badhanddoek"
-
-def read_tag_data(tagfile = os.path.expanduser("~/git/network_games_analysis/python_scripts/tags.csv")):
-    tag_df = pd.read_csv(tagfile)
-    return tag_df
-
-def get_article_tag(article, tag_df):
-    tag = tag_df.loc[tag_df["Title"] == article]["Tag"]
-    if len(tag) == 0:
-        return("Unk")
-    else:
-        return tag.values[0]
-
-def parse_data(filename, tag_df):
-    """
-    Parses data from a tab delimited CSV file, assembles user graph
-    :param filename: Input file name
-    :return: The user and its edge usage graph
-    """
-
-    with open(filename, 'r', encoding='utf-8') as csvfile:
-        csv_reader = csv.reader(csvfile, delimiter='\t')
-        print(f"Parsed file: {FILENAME}")
-        line_count = 0
-        user_count = 0
-
-        user_last_clicks = {}
-        user_graph = igraph.Graph()
-
-        for row in csv_reader:
-            # Ignoring header row
-            if line_count == 0:
-                print(f'Columns: {", ".join(row)}')
-                line_count += 1
-            # Ignoring data from other users
-            elif row[2] == USER:
-                line_count += 1
-                user = row[2]
-                article = row[3]
-                game = row[4]
-
-                # Add edge to the user graph
-                try:
-                    node = user_graph.vs.find(article)
-                    node['weight'] += 1
-                except ValueError:
-                    user_graph.add_vertex(name=article)
-                    node = user_graph.vs.find(article)
-                    node['weight'] = 1
-                    node['tag'] = get_article_tag(article, tag_df)
-                if user_last_clicks.get('game', "") == game:
-                    if user_last_clicks['article'] != article:
-                        # Either add edge or increase its weight if it already exists
-                        try:
-                            e = user_graph.es.find(_source=user_last_clicks['article'], _target=article)
-                            e['weight'] += 1
-                        except ValueError:
-                            user_graph.add_edge(source=user_last_clicks['article'], target=article, weight=1)
-
-                user_last_clicks = {"article": article, "game": game}
-            else:
-                continue
-
-    print(f"{user_count} users created")
-    return user_graph, user
 
 def analyse_graph(user_graph, user):
     """
@@ -182,17 +109,17 @@ def save_graph(graph):
 
 
 def main():
-    # Complete analysis of the user
 
     # Load and analyse graph
+    # Specify the name of the user whose data is needed to be processed
+    ##USER = "darigan17"
+    USER = "tamas"
+    ## USER = "heptone"
+    ## USER = "khana"
+    ## USER = "badhanddoek"
     user_graph = load_graph(SAVE_PATH + f'mysql_{USER}.gml')
     analyse_graph(user_graph, USER)
 
-
-    #tag_df = read_tag_data()
-    #user_graph, user = parse_data(PATH + FILENAME, tag_df)
-    #analyse_graph(user_graph, user)
-    #save_graph(user_graph)
 
 if (__name__ == '__main__'):
     main()
