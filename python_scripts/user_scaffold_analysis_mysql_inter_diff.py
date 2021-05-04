@@ -139,7 +139,7 @@ def main():
 
     #stats_on_unions(users)
     #stats_on_intersections(users_short)
-    #stats_on_jaccards(users)
+    stats_on_jaccards(all_users)
     
 if (__name__ == '__main__'):
     main()

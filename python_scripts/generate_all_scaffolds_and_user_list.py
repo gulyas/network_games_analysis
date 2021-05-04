@@ -120,21 +120,25 @@ def save_user_graphs(users, tag_df):
 
 def main():
 
-    all_users = get_users()
-    all_users.remove("yizikes")
-    all_users.remove("Rachel228")
-    all_users.remove("bavnah")
-    all_users.remove("Joe1234")
-    all_users.remove("alex_icon")
-    all_users.remove("SonicBoomSensei")
-    all_users.remove("SpatenOptimator")
-    all_users.remove("Rhinowire")
-    # Dump user names 
-    with open('users.txt', 'w') as filehandle:
-        for listitem in all_users:
-            filehandle.write('%s\n' % listitem)
+    # Generate graph for all
     tag_df = read_tag_data()
-    save_user_graphs(all_users, tag_df)
+    user_graph, user = parse_data(PATH + FILENAME, "all", tag_df)
+    save_graph(user_graph,user)
+    
+    # all_users = get_users()
+    # all_users.remove("yizikes")
+    # all_users.remove("Rachel228")
+    # all_users.remove("bavnah")
+    # all_users.remove("Joe1234")
+    # all_users.remove("alex_icon")
+    # all_users.remove("SonicBoomSensei")
+    # all_users.remove("SpatenOptimator")
+    # all_users.remove("Rhinowire")
+    # # Dump user names 
+    # with open('users.txt', 'w') as filehandle:
+    #     for listitem in all_users:
+    #         filehandle.write('%s\n' % listitem)
+    # save_user_graphs(all_users, tag_df)
 
     
 if (__name__ == '__main__'):
