@@ -6,6 +6,7 @@ import csv
 import json
 import os
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import igraph
 
@@ -24,7 +25,45 @@ users_short = ["darigan17", "Fandy", "heptone"]
 ## USER = "khana"
 ## USER = "badhanddoek"
 
-def parse_data(filename, user):
+def read_tag_data(tagfile = os.path.expanduser("~/git/network_games_analysis/python_scripts/tags.csv")):
+    tag_df = pd.read_csv(tagfile)
+    return tag_df
+
+def get_article_tag(article, tag_df):
+    tag = tag_df.loc[tag_df["Title"] == article]["Tag"]
+    if len(tag) == 0:
+        return("Unk")
+    else:
+        return tag.values[0]
+
+
+def get_users():
+
+    users = list()
+
+    ##PATH COLLECTION
+
+    filename = PATH + FILENAME
+    with open(filename, 'r', encoding='utf-8') as csvfile:
+        csv_reader = csv.reader(csvfile, delimiter='\t')
+        print(f"Parsed file: {FILENAME}")
+        line_count = 0
+        user_count = 0
+        
+        for row in csv_reader:
+            # Ignoring header row
+            if line_count == 0:
+                print(f'Columns: {", ".join(row)}')
+                line_count += 1
+                # Ignoring data from other users
+            else:
+                line_count += 1
+                user = row[2]
+                if user not in users:
+                    users.append(user)
+    return users
+
+def parse_data(filename, user, tag_df):
     """
     Parses data from a tab delimited CSV file, assembles user graph
     :param filename: Input file name
@@ -60,6 +99,7 @@ def parse_data(filename, user):
                     user_graph.add_vertex(name=article)
                     node = user_graph.vs.find(article)
                     node['weight'] = 1
+                    node['tag'] = get_article_tag(article, tag_df)                    
                 if user_last_clicks.get('game', "") == game:
                     if user_last_clicks['article'] != article:
                         # Either add edge or increase its weight if it already exists
@@ -171,10 +211,10 @@ def save_graph(graph,user):
     """Saves scaffold graph in GML format"""
     igraph.save(graph, filename=SAVE_PATH + f'mysql_{user}.gml')
 
-def save_user_graphs(users):
+def save_user_graphs(users, tag_df):
     """Saves scaffold graph in GML format for a list of users"""
     for user in users:
-         user_graph, user = parse_data(PATH + FILENAME, user)
+         user_graph, user = parse_data(PATH + FILENAME, user, tag_df)
          save_graph(user_graph,user)
 
 def stats_on_unions(users):
@@ -230,6 +270,13 @@ def stats_on_intersections(users):
                     "vertex_label": inter.vs["name"], "edge_curved": True}
     igraph.plot(inter, **visual_style)
         
+    with open('intersection_nodes.txt', 'w') as filehandle:
+        for listitem in vcounts:
+            filehandle.write('%s\n' % listitem)
+    with open('intersection_edges.txt', 'w') as filehandle:
+        for listitem in ecounts:
+            filehandle.write('%s\n' % listitem)
+
     plt.semilogy(vcounts)
     plt.plot(ecounts)
     plt.show()
@@ -252,17 +299,19 @@ def stats_on_jaccards(users):
                 jaccards.append(jaccard)
 
     print(jaccards)
+    with open('jaccards.txt', 'w') as filehandle:
+        for listitem in jaccards:
+            filehandle.write('%s\n' % listitem)
     plt.boxplot(jaccards)
     plt.show()
 
 def main():
 
-    # Complete analysis of the user
-    # user_graph, user = parse_data(PATH + FILENAME, users[0])
-    # analyse_graph(user_graph, user)
-    # save_graph(user_graph,user)
+    all_users = get_users()
+    tag_df = read_tag_data()
 
-    
+    save_user_graphs(all_users, tag_df)
+
     # Load and analyse graph
 
     # g1 = load_graph(SAVE_PATH + f'mysql_{users[0]}.gml')
@@ -279,7 +328,7 @@ def main():
 
     # stats_on_unions(users)
     # stats_on_intersections(users)
-    stats_on_jaccards(users)
+    # stats_on_jaccards(all_users)
     
 if (__name__ == '__main__'):
     main()
