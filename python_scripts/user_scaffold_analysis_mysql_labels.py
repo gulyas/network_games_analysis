@@ -183,15 +183,16 @@ def save_graph(graph):
 
 def main():
     # Complete analysis of the user
-    tag_df = read_tag_data()
-    user_graph, user = parse_data(PATH + FILENAME, tag_df)
-    analyse_graph(user_graph, user)
-    save_graph(user_graph)
 
     # Load and analyse graph
-    # user_graph = load_graph(SAVE_PATH + f'mysql_{USER}.gml')
-    # analyse_graph(user_graph, USER)
+    user_graph = load_graph(SAVE_PATH + f'mysql_{USER}.gml')
+    analyse_graph(user_graph, USER)
 
+
+    #tag_df = read_tag_data()
+    #user_graph, user = parse_data(PATH + FILENAME, tag_df)
+    #analyse_graph(user_graph, user)
+    #save_graph(user_graph)
 
 if (__name__ == '__main__'):
     main()

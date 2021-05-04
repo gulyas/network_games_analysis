@@ -309,8 +309,16 @@ def main():
 
     all_users = get_users()
     tag_df = read_tag_data()
-
-    save_user_graphs(all_users, tag_df)
+    all_users.remove("yizikes")
+    all_users.remove("Rachel228")
+    all_users.remove("bavnah")
+    all_users.remove("Joe1234")
+    all_users.remove("alex_icon")
+    all_users.remove("SonicBoomSensei")
+    all_users.remove("SpatenOptimator")
+    all_users.remove("Rhinowire")
+    #all_users.remove("SonicBoomSensei")
+    # save_user_graphs(all_users, tag_df)
 
     # Load and analyse graph
 
@@ -328,7 +336,7 @@ def main():
 
     # stats_on_unions(users)
     # stats_on_intersections(users)
-    # stats_on_jaccards(all_users)
+    stats_on_jaccards(users)
     
 if (__name__ == '__main__'):
     main()
