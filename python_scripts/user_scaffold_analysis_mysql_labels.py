@@ -6,6 +6,7 @@ import csv
 import json
 import os
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import igraph
 
@@ -20,7 +21,18 @@ USER = "darigan17"
 ## USER = "khana"
 ## USER = "badhanddoek"
 
-def parse_data(filename):
+def read_tag_data(tagfile = os.path.expanduser("~/git/network_games_analysis/python_scripts/tags.csv")):
+    tag_df = pd.read_csv(tagfile)
+    return tag_df
+
+def get_article_tag(article, tag_df):
+    tag = tag_df.loc[tag_df["Title"] == article]["Tag"]
+    if len(tag) == 0:
+        return("Unk")
+    else:
+        return tag.values[0]
+
+def parse_data(filename, tag_df):
     """
     Parses data from a tab delimited CSV file, assembles user graph
     :param filename: Input file name
@@ -56,6 +68,7 @@ def parse_data(filename):
                     user_graph.add_vertex(name=article)
                     node = user_graph.vs.find(article)
                     node['weight'] = 1
+                    node['tag'] = get_article_tag(article, tag_df)
                 if user_last_clicks.get('game', "") == game:
                     if user_last_clicks['article'] != article:
                         # Either add edge or increase its weight if it already exists
@@ -170,7 +183,8 @@ def save_graph(graph):
 
 def main():
     # Complete analysis of the user
-    user_graph, user = parse_data(PATH + FILENAME)
+    tag_df = read_tag_data()
+    user_graph, user = parse_data(PATH + FILENAME, tag_df)
     analyse_graph(user_graph, user)
     save_graph(user_graph)
 
@@ -179,5 +193,5 @@ def main():
     # analyse_graph(user_graph, USER)
 
 
-if __name__ == '__main__':
+if (__name__ == '__main__'):
     main()
