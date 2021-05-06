@@ -9,6 +9,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import igraph
+from collections import Counter
+
 
 SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold_statistics/")
 LOAD_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold/")
@@ -139,6 +141,103 @@ def plot_scaffold(scaffold, user):
     except MemoryError:
         print(f"Memory error. Skipping to plot {user}'s graph.")
 
+def plot_scaffold_tags(scaffold, user):
+    """
+    Plot scaffold.
+    """
+
+    # Plotting subgraph
+    # Coloring edges
+    colors = ["#8A2BE280", "#FF00FF80", "#FF8C0080", "#FF000080"]
+    for e in scaffold.es:
+        weight = e['weight']
+        if weight >= 15:
+            e['color'] = colors[3]
+        elif 8 <= weight < 15:
+            e['color'] = colors[2]
+        elif 3 <= weight < 8:
+            e['color'] = colors[1]
+        else:
+            e['color'] = colors[0]
+
+    # Clipping edge widths
+    #edge_widths = np.clip(a=scaffold.es['weight'], a_min=2, a_max=55)
+    edge_widths = [val/5 + 2 for val in scaffold.es['weight']]
+    node_weights = scaffold.vs["weight"]
+    maxw = max(node_weights)
+    node_weights = [val/25 + 20 for val in node_weights]
+    for v in scaffold.vs():
+        if v.degree() < 3:
+            v['name'] = ""
+    # Styling graph
+    visual_style = {"bbox": (3000, 3000), "margin": 17,
+                    "vertex_color": '#BA55D380',
+                    "vertex_size": node_weights,
+                    "vertex_label_size": 35,
+                    "vertex_label_dist": 1,
+                    "vertex_label": scaffold.vs["tag"], "edge_curved": True,
+                    "edge_width": edge_widths}
+
+    # Set the layout
+    try:
+        layout = scaffold.layout("fr")
+        visual_style["layout"] = layout
+        save_name = f'mysql_{user}_reduced_tags.png'
+        igraph.plot(scaffold, SAVE_PATH + save_name, **visual_style)
+        print(f"Graph from {user} analysed and plotted to {save_name}")
+    except MemoryError:
+        print(f"Memory error. Skipping to plot {user}'s graph.")
+
+def plot_scaffold_tag_subgraph(scaffold, user, tag):
+    """
+    Plot scaffold.
+    """
+    propScaf = scaffold.vs["tag"]
+    sub_vs = scaffold.vs.select([v for v, b in enumerate(propScaf) if b == tag])
+    scaffold_sub = scaffold.subgraph(sub_vs)
+
+    # Plotting subgraph
+    # Coloring edges
+    colors = ["#8A2BE280", "#FF00FF80", "#FF8C0080", "#FF000080"]
+    for e in scaffold_sub.es:
+        weight = e['weight']
+        if weight >= 15:
+            e['color'] = colors[3]
+        elif 8 <= weight < 15:
+            e['color'] = colors[2]
+        elif 3 <= weight < 8:
+            e['color'] = colors[1]
+        else:
+            e['color'] = colors[0]
+
+    # Clipping edge widths
+    #edge_widths = np.clip(a=scaffold.es['weight'], a_min=2, a_max=55)
+    edge_widths = [val/5 + 2 for val in scaffold_sub.es['weight']]
+    node_weights = scaffold_sub.vs["weight"]
+    maxw = max(node_weights)
+    node_weights = [val/25 + 20 for val in node_weights]
+    for v in scaffold_sub.vs():
+        if v.degree() < 3:
+            v['name'] = ""
+    # Styling graph
+    visual_style = {"bbox": (3000, 3000), "margin": 17,
+                    "vertex_color": '#BA55D380',
+                    "vertex_size": node_weights,
+                    "vertex_label_size": 35,
+                    "vertex_label_dist": 1,
+                    "vertex_label": scaffold_sub.vs["tag"], "edge_curved": True,
+                    "edge_width": edge_widths}
+
+    # Set the layout
+    try:
+        layout = scaffold_sub.layout("fr")
+        visual_style["layout"] = layout
+        save_name = f'mysql_{user}_reduced_tagsub.png'
+        igraph.plot(scaffold_sub, SAVE_PATH + save_name, **visual_style)
+        print(f"Graph from {user} analysed and plotted to {save_name}")
+    except MemoryError:
+        print(f"Memory error. Skipping to plot {user}'s graph.")
+
         
 
 def load_graph(filename):
@@ -160,6 +259,7 @@ def basic_stats(users):
         print(LOAD_PATH + f'mysql_{user}.gml')
         user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
         scaffold=extract_scaffold(user_graph, user)
+        #scaffold=user_graph
         vcounts.append(scaffold.vcount())
         ecounts.append(scaffold.ecount())
         avgDeg.append(2*scaffold.ecount()/scaffold.vcount())
@@ -289,6 +389,15 @@ def stats_on_jaccards(users):
     plt.boxplot(jaccards)
     plt.show()
 
+def scaffold_tag_statistics(scaffold):
+    node_tags = scaffold.vs["tag"]
+    print(Counter(node_tags))
+    
+def scaffold_tag_statistics(scaffold):
+    node_tags = scaffold.vs["tag"]
+    print(Counter(node_tags))
+
+    
 def main():
 
     all_users = list()
@@ -299,18 +408,23 @@ def main():
             all_users.append(user)
 
     # Load and analyse single scaffold
-    user = all_users[1]
+    #user = all_users[4]
+    user = 'Mursuka'
     user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
     scaffold=extract_scaffold(user_graph, user)
-    plot_scaffold(scaffold, user)
+    #plot_scaffold(scaffold, user)
+    plot_scaffold_tags(scaffold, user)
+    plot_scaffold_tag_subgraph(scaffold, user, "Geography")
     #export_scaffold_distributions(scaffold, user)
     #plot_scaffold_distributions(scaffold, user)
-
+    # Single scaffold tag analysis
+    scaffold_tag_statistics(scaffold)
+    
     # Load and analyse all user scaffolds
     #basic_stats(all_users)
     #stats_on_unions(all_users)
     #stats_on_intersections(all_users)
     #stats_on_jaccards(all_users)
-    
+
 if (__name__ == '__main__'):
     main()
