@@ -121,8 +121,8 @@ def main():
 
     with open('users.txt', 'r') as filehandle:
         for line in filehandle:
-            currentPlace = line[:-1]
-            all_users.append(currentPlace)
+            user = line[:-1]
+            all_users.append(user)
 
     #print(all_users)
     # g1 = load_graph(SAVE_PATH + f'mysql_{users[0]}.gml')
