@@ -134,6 +134,7 @@ def main():
     # all_users.remove("SonicBoomSensei")
     # all_users.remove("SpatenOptimator")
     # all_users.remove("Rhinowire")
+    # all_users.remove("beastly")
     # # Dump user names 
     # with open('users.txt', 'w') as filehandle:
     #     for listitem in all_users:

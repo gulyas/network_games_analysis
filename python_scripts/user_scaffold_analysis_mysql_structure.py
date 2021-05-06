@@ -13,6 +13,33 @@ import igraph
 SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold_statistics/")
 LOAD_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold/")
 
+def export_scaffold_distributions(scaffold, user):
+    """
+    Analyses the degree distribution and edge weight distribution.
+    """
+
+    # Plotting degree distributions
+    cdfn= list()
+    degs = scaffold.degree()
+    for k in range(1, 300):
+        cdfn.append(sum(i > k for i in degs))
+
+    with open(SAVE_PATH + 'scaffold_degdist.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'deg,num')
+        for index, listitem in enumerate(cdfn):
+            filehandle.write('%s\n' % f'{index + 1},{listitem}')
+
+    cdfw= list()
+    weights = scaffold.es['weight']
+    for k in range(1, 300):
+        cdfw.append(sum(i > k for i in weights))
+
+    with open(SAVE_PATH + 'scaffold_weightdist.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'weight,num')
+        for index, listitem in enumerate(cdfw):
+            filehandle.write('%s\n' % f'{index + 1},{listitem}')
+    
+
 def plot_scaffold_distributions(scaffold, user):
     """
     Analyses the degree distribution and edge weight distribution.
@@ -56,7 +83,6 @@ def extract_scaffold(user_graph, user):
     """
     Extract scaffold from user graph.
     """
-    print("Extract scaffold ...")
 
     # Creating subgraph by betweenness centrality
     propScaf = user_graph.es["weight"]
@@ -73,7 +99,7 @@ def plot_scaffold(scaffold, user):
 
     # Plotting subgraph
     # Coloring edges
-    colors = ["orange", "darkorange", "red", "blue"]
+    colors = ["#8A2BE280", "#FF00FF80", "#FF8C0080", "#FF000080"]
     for e in scaffold.es:
         weight = e['weight']
         if weight >= 15:
@@ -86,15 +112,20 @@ def plot_scaffold(scaffold, user):
             e['color'] = colors[0]
 
     # Clipping edge widths
-    edge_widths = np.clip(a=scaffold.es['weight'], a_min=4, a_max=15)
+    #edge_widths = np.clip(a=scaffold.es['weight'], a_min=2, a_max=55)
+    edge_widths = [val/5 + 2 for val in scaffold.es['weight']]
     node_weights = scaffold.vs["weight"]
     maxw = max(node_weights)
-    node_weights = np.divide(node_weights, maxw/100)
+    node_weights = [val/25 + 20 for val in node_weights]
+    for v in scaffold.vs():
+        if v.degree() < 3:
+            v['name'] = ""
     # Styling graph
     visual_style = {"bbox": (3000, 3000), "margin": 17,
-                    "vertex_color": 'grey',
+                    "vertex_color": '#BA55D380',
                     "vertex_size": node_weights,
                     "vertex_label_size": 35,
+                    "vertex_label_dist": 1,
                     "vertex_label": scaffold.vs["name"], "edge_curved": True,
                     "edge_width": edge_widths}
 
@@ -126,13 +157,30 @@ def basic_stats(users):
     avgDists = list()
     avgDeg = list()
     for index, user in enumerate(users):
-        print(SAVE_PATH + f'mysql_{user}.gml')
+        print(LOAD_PATH + f'mysql_{user}.gml')
         user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
         scaffold=extract_scaffold(user_graph, user)
         vcounts.append(scaffold.vcount())
         ecounts.append(scaffold.ecount())
         avgDeg.append(2*scaffold.ecount()/scaffold.vcount())
         avgDists.append(np.mean(scaffold.shortest_paths()))
+
+    with open(SAVE_PATH + 'scaffolds_nodes.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'nodes')
+        for listitem in vcounts:
+            filehandle.write('%s\n' % listitem)
+    with open(SAVE_PATH + 'scaffolds_edges.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'edges')
+        for listitem in ecounts:
+            filehandle.write('%s\n' % listitem)
+    with open(SAVE_PATH + 'scaffolds_avgdist.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'avgdist')
+        for listitem in avgDists:
+            filehandle.write('%s\n' % listitem)
+    with open(SAVE_PATH + 'scaffolds_avgdeg.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'avgdeg')
+        for listitem in avgDeg:
+            filehandle.write('%s\n' % listitem)
 
     f, (ax1, ax2, ax3) = plt.subplots(3)
     ax1.plot(vcounts)
@@ -150,15 +198,18 @@ def stats_on_unions(users):
     ecounts = list()
     avgDists = list()
     for index, user in enumerate(users):
-        print(SAVE_PATH + f'mysql_{user}.gml')
+        print(LOAD_PATH + f'mysql_{user}.gml')
         user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
-        del(user_graph.es['weight'])
+        scaffold=extract_scaffold(user_graph, user)
+        print(scaffold.vcount())
+        del(scaffold.es['weight'])
         if index == 0:
-            union = user_graph
+            union = scaffold
         else:
-            comNodes = list(set(user_graph.vs['name']) & set(union.vs['name']))
-            user_subgraph = user_graph.subgraph(comNodes)
-            union = igraph.Graph.union(union, user_subgraph, byname = True)
+            comNodes = list(set(scaffold.vs['name']) & set(union.vs['name']))
+            scaffold_subgraph = scaffold.subgraph(comNodes)
+            union = igraph.Graph.union(union, scaffold_subgraph, byname = True)
+            #union = igraph.Graph.union(union, scaffold, byname = True)
         vcounts.append(union.vcount())
         ecounts.append(union.ecount())
         avgDists.append(np.mean(union.clusters().giant().shortest_paths()))
@@ -176,14 +227,15 @@ def stats_on_intersections(users):
     vcounts = list()
     ecounts = list()
     for index, user in enumerate(users):
-        print(SAVE_PATH + f'mysql_{user}.gml')
+        print(LOAD_PATH + f'mysql_{user}.gml')
         user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
-        del(user_graph.es['weight'])
+        scaffold=extract_scaffold(user_graph, user)
+        del(scaffold.es['weight'])
         if index == 0:
-            inter = user_graph
+            inter = scaffold
         else:
             igraph.summary(inter)
-            inter = igraph.Graph.intersection(inter, user_graph, byname = True)
+            inter = igraph.Graph.intersection(inter, scaffold, byname = True)
             igraph.summary(inter)
             inter = inter.clusters().giant()
             igraph.summary(inter)
@@ -197,10 +249,12 @@ def stats_on_intersections(users):
                     "vertex_label": inter.vs["name"], "edge_curved": True}
     igraph.plot(inter, **visual_style)
         
-    with open('intersection_nodes.txt', 'w') as filehandle:
+    with open(SAVE_PATH + 'intersection_nodes.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'nodes')
         for listitem in vcounts:
             filehandle.write('%s\n' % listitem)
-    with open('intersection_edges.txt', 'w') as filehandle:
+    with open(SAVE_PATH + 'intersection_edges.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'edges')
         for listitem in ecounts:
             filehandle.write('%s\n' % listitem)
 
@@ -217,16 +271,19 @@ def stats_on_jaccards(users):
                 continue
             else:
                 user_graph1 = load_graph(LOAD_PATH + f'mysql_{user1}.gml')
+                scaffold1 = extract_scaffold(user_graph1, user1)
                 user_graph2 = load_graph(LOAD_PATH + f'mysql_{user2}.gml')
-                del(user_graph1.es['weight'])
-                del(user_graph2.es['weight'])
-                inter = igraph.Graph.intersection(user_graph1, user_graph2, byname = True)
-                union = igraph.Graph.union(user_graph1, user_graph2, byname = True)
+                scaffold2 = extract_scaffold(user_graph2, user2)
+                del(scaffold1.es['weight'])
+                del(scaffold2.es['weight'])
+                inter = igraph.Graph.intersection(scaffold1, scaffold2, byname = True)
+                union = igraph.Graph.union(scaffold1, scaffold2, byname = True)
                 jaccard = inter.ecount() / union.ecount()
                 jaccards.append(jaccard)
 
     print(jaccards)
-    with open('jaccards.txt', 'w') as filehandle:
+    with open(SAVE_PATH + 'jaccards.txt', 'w') as filehandle:
+        filehandle.write('%s\n' % 'jaccard')
         for listitem in jaccards:
             filehandle.write('%s\n' % listitem)
     plt.boxplot(jaccards)
@@ -242,14 +299,18 @@ def main():
             all_users.append(user)
 
     # Load and analyse single scaffold
-    #user = all_users[1]
-    #user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
-    #scaffold=extract_scaffold(user_graph, user)
-    #plot_scaffold(scaffold, user)
+    user = all_users[1]
+    user_graph = load_graph(LOAD_PATH + f'mysql_{user}.gml')
+    scaffold=extract_scaffold(user_graph, user)
+    plot_scaffold(scaffold, user)
+    #export_scaffold_distributions(scaffold, user)
     #plot_scaffold_distributions(scaffold, user)
 
     # Load and analyse all user scaffolds
-    basic_stats(all_users)
+    #basic_stats(all_users)
+    #stats_on_unions(all_users)
+    #stats_on_intersections(all_users)
+    #stats_on_jaccards(all_users)
     
 if (__name__ == '__main__'):
     main()
