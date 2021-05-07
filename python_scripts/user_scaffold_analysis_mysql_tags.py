@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import igraph
 import pathpy as pp
+import collections
 from scipy.stats import chi2
 from collections import Counter
 from pandas import DataFrame
@@ -17,11 +18,12 @@ from scipy.stats import pearsonr
 sns.set(style='white', font_scale=1.2)
 
 PATH = os.path.expanduser("~/git/network_games_analysis/sql_data/")
-SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/scaffold/")
+SAVE_PATH = os.path.expanduser("~/git/network_games_analysis/rank_statistics/")
 FILENAME = 'scaffold_data_mysql.csv'
 
 users = ["darigan17", "Fandy", "heptone", "khana", "badhanddoek", "sittaford", "Krab", "tamas", "skillz25", "meezocool", "ThatOneGuy", "BirdEyeView", "Mursuka"]
-users_short = ["darigan17", "Fandy", "heptone"]
+users_short = ["Mursuka", "darigan17"]
+defined_tags = ["Geography", "Culture", "Technology", "Science", "History", "Social","Religion"]
 
 def extract_top_articles(user, top_nodes):
 
@@ -93,6 +95,28 @@ def save_top_nodes(top_nodes):
     df = DataFrame(dict) 
     df.to_csv('Top_titles.csv', index = False)
 
+def save_tag_rankings(users):
+    tag_dict = collections.defaultdict(list)
+    for user in users:
+        print(user)
+        taglist = tag_analysis(user)
+        tag_cnt = Counter(taglist)
+        for index, tag in enumerate(tag_cnt.most_common()):
+            if tag[0] != 'Unk':
+                tag_dict[tag[0]].append(index)
+
+    rank_dict = collections.defaultdict(list)
+    for tag in defined_tags:
+        scores_cnt = Counter(tag_dict[tag])
+        for i in range(1, len(defined_tags) + 1):
+            rank_dict[tag].append(scores_cnt[i])
+        
+    df = DataFrame(rank_dict)
+    df.index += 1
+    df.index.name='Rank' 
+    df.to_csv(SAVE_PATH + 'Tag_ranking.csv', index = True)
+    #print(rank_dict)
+    
 
 def read_tag_data(tagfile = os.path.expanduser("~/git/network_games_analysis/python_scripts/tags.csv")):
     tag_df = pd.read_csv(tagfile)
@@ -173,15 +197,11 @@ def main():
 
     with open('users.txt', 'r') as filehandle:
         for line in filehandle:
-            currentPlace = line[:-1]
-            all_users.append(currentPlace)
-
-    for user in users_short:
-        print(user)
-        taglist = tag_analysis(user)
-        print(Counter(taglist))
-
-        #save_top_nodes(5000)
+            user = line[:-1]
+            all_users.append(user)
+        
+    save_tag_rankings(all_users)
+    #save_top_nodes(5000)
 
 
 if (__name__ == '__main__'):
